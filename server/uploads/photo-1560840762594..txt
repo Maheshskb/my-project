@@ -1,0 +1,28 @@
+Hii, I would like to share my good experience with an 3ri Techologies. I have join 3ri for an web designing and development,vaishali mam guide me for web designing and varun sir guide me for angular, 
+git commit -m " First CURD operation"
+git commit -m " Login Logout with an user authentication and JWT implementation"
+git commit -m " Login Logout with an "Login Logout form with server side and client side validations"
+
+1) CURD Opertaion Steps :
+1.1) Create server side 
+
+Commands : 
+1) create package file "npm init" command
+2) we need npm packages like express - act as a server, will need an mongodb will act as an mongodb orm, bodyparser whuch allows us to send json data to node js api let install this packages
+: npm install express mongoose body-parser --save
+3) install nodemon packages to restart server automatically when some changes are done inside the project
+ : npm install -g nodemon
+
+4) create root javascript file
+index.js
+
+5) In models folder create an js file -  this file will save all user filed details.
+(userschema will be define in this js file)
+
+6) Create an controller folder inside this folder create js file inside this file we need to implement router from express
+
+Link of materializes css cdn :
+https://materializecss.com/getting-started.html
+
+
+{"_id":"5cd6932b5f361c22b4b22a55","MinTHRange":100,"MaxTHRange":200,"MinpHRange":300,"MaxpHRange":400,"ProductName":"ABC","Dosage

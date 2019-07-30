@@ -1,0 +1,27 @@
+
+.btnGroup{padding: 5px 5px;margin: 5px 5px;}
+.Denybtn{width: 50px;}
+.resetbtn{margin-left:110px;}
+.mytable {
+    border-collapse: collapse;
+    text-align: center;
+    width:100%;
+  } 
+   th{background-color:dimgray;color:white;padding:10px 5px;text-align: center;}
+   .mytable tr{ background-color:ivory;}
+  .mytable th,td {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  .my-custom-scrollbar {
+    position: relative;
+    height: 300px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+
+   
+  h4{text-align: center;margin-top: 10px;}

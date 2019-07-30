@@ -1,0 +1,166 @@
+<app-header></app-header>
+        <!-- open new form on popup model -->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+         <h4 style="padding-top: 20px">Price List Modification</h4>          
+          <!-- Button to Open the price entry form Modal -->
+          <button type="button" class="btn btn-primary" id="addBtn" data-toggle="modal" data-target="#myModal"style="margin-top: 5px;" >
+            <i class="fa fa-calculator"></i>&nbsp;
+            Add
+          </button>
+
+          <!-- The Modal -->
+<div class="modal" id="myModal"  >
+<div class="modal-dialog">
+  <div class="modal-content">
+  
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title" >Product Price Form</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    
+    <!-- Modal body -->
+    <div class="modal-body" >
+      <form #productPriceDetailForm="ngForm" (ngSubmit)="onSubmit(productPriceDetailForm)">
+
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_priceDetailsService.selectedProductPrice._id"> 
+   
+         <div class="row">
+   
+           <div class="input-field col s12">
+               <label>Product Name:
+                   <label class="red-text">*</label> 
+                   </label>
+             <input type="text" name="ProductName" #name="ngModel" [(ngModel)]="_priceDetailsService.selectedProductPrice.ProductName" required>
+           </div>
+   
+         </div>
+   
+         <div class="row">
+   
+           <div class="input-field col s6">
+               <label>TH Min Price :</label>
+             <input type="text" name="THMinPrice" #name="ngModel" [(ngModel)]="_priceDetailsService.selectedProductPrice.THMinPrice" required>
+           </div>
+   
+           <div class="input-field col s6">
+             <label>TH Max Price :</label>
+           <input type="text" name="THMaxPrice" #name="ngModel" [(ngModel)]="_priceDetailsService.selectedProductPrice.THMaxPrice" required>
+         </div>
+   
+         </div>
+   
+         <!-- <div class="row"></div> -->
+   
+         <div class="row">
+   
+           <div class="input-field col s6">
+               <label>ph Min Price :</label>
+             <input type="text" name="phMinPrice" #name="ngModel" [(ngModel)]="_priceDetailsService.selectedProductPrice.phMinPrice" required>
+           </div>
+   
+           <div class="input-field col s6">
+             <label>Ph Max Price :</label>
+           <input type="text" name="PhMaxPrice" #name="ngModel" [(ngModel)]="_priceDetailsService.selectedProductPrice.PhMaxPrice" required>
+         </div>
+   
+         </div>
+   
+         <!-- <div class="row"></div> -->
+   
+         <div class="row">
+   
+           <div class="input-field col s12">
+               <label>Dosage :</label>
+             <input type="text" name="Dosage" #name="ngModel" [(ngModel)]="_priceDetailsService.selectedProductPrice.Dosage" required>
+           </div>
+   
+         </div>
+   
+   
+         <div class="row">
+   
+           <div class="input-field col s12 ">
+             <button class="btn btn-warning right resetbtn btnGroup" type="button" (click)="resetForm(productPriceDetailForm)">Reset</button>&nbsp;&nbsp;&nbsp;
+             <button class="btn btn-success right " type="submit" [disabled]="!productPriceDetailForm.valid" (click)="pageRefresh();">Submit</button>&nbsp;&nbsp;&nbsp;
+             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+           </div>
+   
+         </div>
+   
+       </form>
+  
+    </div>
+    
+     </div>
+</div>
+</div>
+</div><!--End of col-->
+ </div> <!--End of row-->
+ <!-- </div>End of container -->
+
+
+ <!-- Table to show product list  -->
+ <div class="row">  
+   <div class="col s12 col-md-12" >
+      <table class="table-bordered" id="dataTable" width="100%" cellspacing="0" >
+          <!-- id="mydatatable" -->
+          <thead>
+            <tr>
+              <th rowspan="2">Product Name</th>
+              <th colspan="2"style="border-bottom: none;">TH</th>
+              <th colspan="2" style="border-bottom: none;">PH</th>
+              <th rowspan="2">Dosage Price</th>
+              <th rowspan="2">Actions</th>
+            </tr>
+            <tr>
+              <!-- <th>Product Name</th> -->
+              <th>Min Price</th>
+              <th>Max Price</th>
+              <th>Min Price</th>
+              <th>Max Price</th>
+              <!-- <th>Dosage</th> -->
+              
+              </tr>
+          </thead><!--End of table head-->
+
+          <tbody>
+           <tr *ngFor="let proPrice of _priceDetailsService.priceDetails">
+
+            <td>{{proPrice.ProductName}}</td>
+
+           <td>{{proPrice.THMinPrice}}</td>
+
+             <td>{{proPrice.THMaxPrice}}</td>
+
+            <td>{{proPrice.phMinPrice}}</td>
+
+            <td>{{proPrice.PhMaxPrice}}</td>
+
+            <td>{{proPrice.Dosage}}</td>
+
+            <td>
+            
+             <!-- Button to Open the price entry form Modal -->
+             <button type="button" class="btn btn-primary btn-sm mybtn"  data-toggle="modal" data-target="#myModal" (click)="onEdit(proPrice)">
+               <i class="fa fa-edit"></i>&nbsp;Edit
+             </button>&nbsp;&nbsp;&nbsp;&nbsp;
+   
+             <button type="button" class="btn btn-danger btn-sm mybtn" (click)="onDelete(proPrice._id,productPriceDetailForm)"><i class="fa fa-trash-o"></i>&nbsp;Delete</button>
+            </td>                     
+          </tr> 
+        </tbody>
+        
+        </table>
+    
+  </div><!--End of Table Div-->
+  </div>
+</div><!--End of Container--><br><br>
+
+<button onclick="history.go(-1);" class="btn btn-outline-success " data-toggle="modal" style="margin-left: 44%"><i class="fa fa-dashboard"></i>&nbsp;Back to Dashboard</button>
+
+<!-- ADD FOOTER -->
+<app-footer></app-footer>

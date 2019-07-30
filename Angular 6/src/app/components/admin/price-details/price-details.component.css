@@ -1,0 +1,51 @@
+/* 
+body{
+  background-color: white;
+}
+h4{text-align: center;margin-top: 10px;text-align: center;}
+#addBtn{width:220px; margin-left: 40%;}
+
+.PriceForm{
+    position: absolute;
+  left: 150px;
+  top:50px;
+  width:50%;
+  border: 3px solid #73AD21;
+  z-index: 2;
+}
+.btn-custom{margin-left: 10px;}
+
+
+.table {
+  border-collapse: collapse;
+  margin-top:20px;
+  text-align: center;
+  width:100%;
+} 
+th{background-color:dimgray; color:white;}
+tr{ background-color:lightyellow;}
+th,td {
+  border: 1px solid black;
+}
+
+.resetbtn{margin-left:20%;}
+
+  */
+
+
+.mybtn{padding: 2px 5px;margin: 2px 5px;padding:5px 10px;}
+.resetbtn{margin-left:110px;}
+.mytable {
+    border-collapse: collapse;
+    text-align: center;
+    width:100%;
+  } 
+   th{background-color:dimgray;color:white;padding:10px 5px;text-align: center;}
+   .mytable tr{ background-color:ivory;}
+  .mytable th,td {
+    border: 1x solid black;
+    text-align: center;
+  }
+
+  h4{text-align: center;margin-top: 10px;}
+#addBtn{width:220px; margin-left: 40%;margin-bottom:10px;}

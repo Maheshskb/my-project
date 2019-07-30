@@ -1,0 +1,102 @@
+<!-- HEADER CODE -->
+<app-header></app-header>
+<!-- <div class="container">
+  <div class="row">
+  <div class="btn-group btn-group-md col-md-12">
+    <button type="button" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-secondary">View</button>
+    <button type="button" class="btn btn-success">Edit</button>
+  </div>End of col-->
+<!-- </div>End of row -->
+
+<!-- <div class="col-md-12"> -->
+  <!-- <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+<button type="button" class="btn btn-success btn-s" 
+  (click)="uploader.uploadAll()" 
+  [disabled]="!uploader.getNotUploadedItems().length" >
+      Upload an Image
+</button>
+</div>
+</div>End of container -->
+
+<!-- <hr> -->
+<!-- TEXT EDITOR -->
+<br>
+<h4 class="text-center" ><b>Proposal Format</b></h4><br>
+<ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools'></ejs-richtexteditor>
+
+
+<!-- <form #form='ngForm' (ngSubmit)="onSubmit(form)">
+=======
+ -->
+<!-- <form #form='ngForm' (ngSubmit)="onSubmit(form)">
+  <div class="form-group"> 
+      <ejs-richtexteditor #fromRTE [(value)]='value' required name="name" [(ngModel)]="value" ></ejs-richtexteditor> 
+      <!-- <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools'></ejs-richtexteditor> -->
+      <!-- <button onclick="history.go(-1);" class="btn btn-outline-success " data-toggle="modal" style="margin-left: 44%"><i class="fa fa-dashboard"></i>&nbsp;Back to Dashboard</button> -->
+      <!-- <button type="submit" ejs-button>Submit</button>     -->
+
+  <!-- </div> -->
+<!-- </form> -->
+  <!-- </div>
+ </form> -->
+
+
+<hr>
+<!-- <ejs-richtexteditor id='defaultRTE' [(value)]='value' [toolbarSettings]='tools' [quickToolbarSettings]='quickTools'></ejs-richtexteditor> -->
+
+
+
+<!-- <textarea cols="10" id="editor2" name="editor2" rows="10" data-sample-short>&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href=&quot;https://ckeditor.com/&quot;&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+  <script>
+    CKEDITOR.replace('editor2', {
+      extraPlugins: 'uploadimage,image2',
+      height: 300,
+
+      // Upload images to a CKFinder connector (note that the response type is set to JSON).
+      uploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+
+      // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+      filebrowserBrowseUrl: '/apps/ckfinder/3.4.5/ckfinder.html',
+      filebrowserImageBrowseUrl: '/apps/ckfinder/3.4.5/ckfinder.html?type=Images',
+      filebrowserUploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files',
+      filebrowserImageUploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+      // The following options are not necessary and are used here for presentation purposes only.
+      // They configure the Styles drop-down list and widgets to use classes.
+
+      stylesSet: [{
+          name: 'Narrow image',
+          type: 'widget',
+          widget: 'image',
+          attributes: {
+            'class': 'image-narrow'
+          }
+        },
+        {
+          name: 'Wide image',
+          type: 'widget',
+          widget: 'image',
+          attributes: {
+            'class': 'image-wide'
+          }
+        }
+      ],
+
+      // Load the default contents.css file plus customizations for this sample.
+      // contentsCss: [
+      //   'http://cdn.ckeditor.com/4.12.1/full-all/contents.css',
+      //   'assets/css/widgetstyles.css'
+      // ],
+
+      // Configure the Enhanced Image plugin to use classes instead of styles and to disable the
+      // resizer (because image size is controlled by widget styles or the image takes maximum
+      // 100% of the editor width).
+      image2_alignClasses: ['image-align-left', 'image-align-center', 'image-align-right'],
+      image2_disableResizer: true
+    });
+  </script> -->
+
+<!-- FOOTER CODE -->
+<app-footer></app-footer>

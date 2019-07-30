@@ -1,0 +1,21 @@
+<div>
+  <img src="assets/img/single_user.png" id="icon" alt="User Icon" />
+</div>
+<form #PSEsignInForm="ngForm" (ngSubmit)="PSEsignInForm.valid && onPSESubmit(PSEsignInForm)" >
+    <!-- (submit)="loginDealerSalesEngg($event)" -->
+  <input type="text" name="Email" #Email="ngModel" [(ngModel)]="model.Email" placeholder="Email" [pattern]="emailRegex" required
+    [ngClass]="{'invalid-textbox' :PSEsignInForm.submitted && !Email.valid }">
+  <div *ngIf="PSEsignInForm.submitted && Email.errors?.pattern">
+    <label class="validation-message">Invalid email address.</label>
+  </div>
+  <input type="password" name="Password" #Password="ngModel" [(ngModel)]="model.Password" placeholder="Password" required minlength="4"
+    [ngClass]="{'invalid-textbox' :PSEsignInForm.submitted && !Password.valid }">
+  <div *ngIf="PSEsignInForm.submitted && Password.errors?.minlength">
+    <label class="validation-message">Minimum 4 characters.</label>
+  </div>
+  <input type="submit" value="Sign In">
+</form>
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>

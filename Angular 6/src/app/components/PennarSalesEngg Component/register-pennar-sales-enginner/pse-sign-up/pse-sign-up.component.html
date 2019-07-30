@@ -1,0 +1,143 @@
+
+<div>
+    <img src="/assets/img/users.png" id="icon" alt="User Icon" />
+  </div>
+  
+  <form #PSEsignUpForm="ngForm" (ngSubmit)="PSEsignUpForm.valid && onPSESubmit(PSEsignUpForm)">
+     
+    <div class="row">
+    <div class="input-field col-md-4"><label>First Name :</label></div>
+    <div class="input-field col-md-8">
+    <input type="text" #FirstName="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.FirstName" name="FirstName"
+    required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !FirstName.valid }">
+  </div>
+  </div>
+  <!-- Validation Div -->
+    <div *ngIf="PSEsignUpForm.submitted && !FirstName.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+  
+      <div class="row">
+      <div class="input-field col-md-4"><label>Last Name :</label></div>
+      <div class="input-field col-md-8">
+      <input type="text" #LastName="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.LastName" name="LastName"
+      required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !LastName.valid }">
+    </div>
+    </div>
+    <!-- Validation Div -->
+      <div *ngIf="PSEsignUpForm.submitted && !LastName.valid">
+        <label class="validation-message">This field is required.</label>
+      </div>
+  
+      <div class="row">
+        <div class="input-field col-md-4"><label>Address :</label></div>
+        <div class="input-field col-md-8">
+        <input type="text" #Address="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.Address" name="Address"
+        required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !Address.valid }">
+      </div>
+      </div>
+      <!-- Validation Div -->
+        <div *ngIf="PSEsignUpForm.submitted && !Address.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+  
+        <div class="row">
+          <div class="input-field col-md-4"><label>Email :</label></div>
+          <div class="input-field col-md-8">
+          <input type="text" #Email="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.Email" name="Email"
+          required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !Email.valid }">
+        </div>
+        </div>
+        <!-- Validation Div -->
+          <div *ngIf="PSEsignUpForm.submitted && !Email.valid">
+            <label class="validation-message">This field is required.</label>
+            <label *ngIf="Email.errors.pattern" class="validation-message">Invalid email address.</label>
+          </div>
+  
+          <div class="row">
+            <div class="input-field col-md-4"><label>Mobile No :</label></div>
+            <div class="input-field col-md-8">
+            <input type="text" #MobileNumber="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.MobileNumber" name="MobileNumber"
+            required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !MobileNumber.valid }">
+          </div>
+          </div>
+          <!-- Validation Div -->
+            <div *ngIf="PSEsignUpForm.submitted && !MobileNumber.valid">
+              <label class="validation-message">This field is required.</label>
+            </div>
+  
+            <div class="row">
+              <div class="input-field col-md-4"><label>PAN No :</label></div>
+              <div class="input-field col-md-8">
+              <input type="text" #PANNumber="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.PANNumber" name="PANNumber"
+              required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !PANNumber.valid }">
+            </div>
+            </div>
+            <!-- Validation Div -->
+              <div *ngIf="PSEsignUpForm.submitted && !PANNumber.valid">
+                <label class="validation-message">This field is required.</label>
+              </div>
+  
+              <div class="row">
+                <div class="input-field col-md-4"><label>Adhar No :</label></div>
+                <div class="input-field col-md-8">
+                <input type="text" #AdharNumber="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.AdharNumber" name="AdharNumber"
+                required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !AdharNumber.valid }">
+              </div>
+              </div>
+              <!-- Validation Div -->
+                <div *ngIf="PSEsignUpForm.submitted && !AdharNumber.valid">
+                  <label class="validation-message">This field is required.</label>
+                </div>
+  
+                <div class="row">
+                  <div class="input-field col-md-4"><label>Password :</label></div>
+                  <div class="input-field col-md-8">
+                  <input type="text" #Password="ngModel" [(ngModel)]="_RegisterPennarSalesEnginnerService.selectedRegisterPennarSalesEnginner.Password" name="Password"
+                  required  [ngClass]="{'invalid-textbox' :PSEsignUpForm.submitted && !Password.valid }">
+                </div>
+                </div>
+                <!-- Validation Div -->
+                  <div *ngIf="PSEsignUpForm.submitted && !Password.valid">
+                    <label class="validation-message">This field is required.</label>
+                  </div>
+                  
+  
+                  <div class="row">
+                
+                    <div class="input-field col s12 ">
+                      &nbsp;&nbsp; 
+                      <!-- <input type="submit" value="Sign Up"> -->
+                      <button class="btn btn-info btnGroup" type="submit" onclick="onPSESubmit()">Submit for Approval</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp; 
+                      <button class="btn btn-success" routerLink="/Pennar-Sales-Engineer-Login" type="button">Back to Login Screen</button>&nbsp;&nbsp;&nbsp;
+                    </div>
+                
+                  </div>
+  
+  
+    <!-- <input type="text" #DSEemail="ngModel" [(ngModel)]="_DealerSalesEnggService.SelectedDealerSalesEngg.DSEemail" name="DSEemail" placeholder="Email"
+    required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :DSEsignUpForm.submitted && !DSEemail.valid }">
+    <div *ngIf="DSEsignUpForm.submitted && DSEemail.errors">
+      <label *ngIf="DSEemail.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="DSEemail.errors.pattern" class="validation-message">Invalid email address.</label>
+    </div>
+  
+    <input type="password" #DSEpassword="ngModel" [(ngModel)]="_DealerSalesEnggService.SelectedDealerSalesEngg.DSEpassword" name="DSEpassword" placeholder="Password"
+    minlength="4" required [ngClass]="{'invalid-textbox' :DSEsignUpForm.submitted && !DSEpassword.valid }">
+    <div *ngIf="DSEsignUpForm.submitted && DSEpassword.errors">
+      <label *ngIf="DSEpassword.errors.required" class="validation-message">This field is required.</label>
+      <label *ngIf="DSEpassword.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+    </div> -->
+    
+  </form>
+  
+  <!-- Success message -->
+  <div class="success" *ngIf="showSucessMessage">
+    Saved successfully
+  </div>
+  
+  <!-- Error message -->
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>

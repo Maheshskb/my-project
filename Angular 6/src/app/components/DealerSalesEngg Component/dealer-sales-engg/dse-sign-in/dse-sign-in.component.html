@@ -1,0 +1,21 @@
+<div>
+  <img src="assets/img/single_user.png" id="icon" alt="User Icon" />
+</div>
+<form #DSEsignInForm="ngForm" (ngSubmit)="DSEsignInForm.valid && onDSESubmit(DSEsignInForm)" >
+    <!-- (submit)="loginDealerSalesEngg($event)" -->
+  <input type="text" name="DSEemail" #DSEemail="ngModel" [(ngModel)]="model.DSEemail" placeholder="Email" [pattern]="emailRegex" required
+    [ngClass]="{'invalid-textbox' :DSEsignInForm.submitted && !DSEemail.valid }">
+  <div *ngIf="DSEsignInForm.submitted && DSEemail.errors?.pattern">
+    <label class="validation-message">Invalid email address.</label>
+  </div> 
+  <input type="password" name="DSEpassword" #DSEpassword="ngModel" [(ngModel)]="model.DSEpassword" placeholder="Password" required minlength="4"
+    [ngClass]="{'invalid-textbox' :DSEsignInForm.submitted && !DSEpassword.valid }">
+  <div *ngIf="DSEsignInForm.submitted && DSEpassword.errors?.minlength">
+    <label class="validation-message">Minimum 4 characters.</label>
+  </div>
+  <input type="submit" value="Sign In">
+</form>
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>

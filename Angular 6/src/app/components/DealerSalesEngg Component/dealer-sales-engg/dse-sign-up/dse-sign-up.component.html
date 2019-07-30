@@ -1,0 +1,169 @@
+<div>
+  <img src="/assets/img/users.png" id="icon" alt="User Icon" />
+</div>
+<!-- <form #DSEsignUpForm="ngForm" (ngSubmit)="DSEsignUpForm.valid && onDSESubmit(DSEsignUpForm)">
+  <input type="text" #DSEname="ngModel" [(ngModel)]="_DealerSalesEnggService.SelectedDealerSalesEngg.DSEname" name="DSEname" placeholder="Full Name"
+  required  [ngClass]="{'invalid-textbox' :DSEsignUpForm.submitted && !DSEname.valid }">
+  <div *ngIf="DSEsignUpForm.submitted && !DSEname.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+
+  <input type="text" #DSEemail="ngModel" [(ngModel)]="_DealerSalesEnggService.SelectedDealerSalesEngg.DSEemail" name="DSEemail" placeholder="Email"
+  required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :DSEsignUpForm.submitted && !DSEemail.valid }">
+  <div *ngIf="DSEsignUpForm.submitted && DSEemail.errors">
+    <label *ngIf="DSEemail.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="DSEemail.errors.pattern" class="validation-message">Invalid email address.</label>
+  </div>
+
+  <input type="password" #DSEpassword="ngModel" [(ngModel)]="_DealerSalesEnggService.SelectedDealerSalesEngg.DSEpassword" name="DSEpassword" placeholder="Password"
+  minlength="4" required [ngClass]="{'invalid-textbox' :DSEsignUpForm.submitted && !DSEpassword.valid }">
+  <div *ngIf="DSEsignUpForm.submitted && DSEpassword.errors">
+    <label *ngIf="DSEpassword.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="DSEpassword.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
+  </div>
+  <input type="submit" value="Sign Up">
+</form>
+
+<!-- Success message -->
+<!-- <div class="success" *ngIf="showSucessMessage">
+  Saved successfully
+</div> -->
+
+<!-- Error message -->
+<!-- <div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div> --> 
+
+<form >
+  <div class="row">
+   
+    <div class="input-field col-md-4" >
+        <label>First Name :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+</div>
+ 
+
+  <div class="row">
+    <div class="input-field col-md-4">
+      <label>Last Name :</label>
+  </div>
+  
+  <div class="input-field col-md-8">
+  <input type="text">
+  </div>
+   
+  </div>
+
+  
+ 
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Address :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Email :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Mobile No :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Pan No :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Adhar No :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Dealer Code :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Password :</label>
+    </div>
+    
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col-md-4">
+        <label>Confirm Password :</label>
+    </div>
+
+    <div class="input-field col-md-8">
+    <input type="text">
+  </div>
+
+  </div>
+
+  <div class="row">
+   
+    <div class="input-field col s12 ">
+      &nbsp;&nbsp; 
+      <button class="btn btn-info btnGroup" type="submit">Submit for Approval</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp; 
+      <button class="btn btn-success" routerLink="/DealerSalesEnggLogin" type="button">Back to Login Screen</button>&nbsp;&nbsp;&nbsp;
+    </div>
+
+  </div>
+</form>
