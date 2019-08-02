@@ -14,6 +14,7 @@ export class PSEApprovalService {
   selectedPSEApproval: PSEApproval;
   PennarSalesEnggDetails: PSEApproval[];
   readonly baseURL = 'http://localhost:3000/RegisterPennarSalesEngineer';
+  // readonly dealerBaseURL = 'http://localhost:3000/RegisterDealer';
 
   constructor(private http:HttpClient) { }
  
@@ -25,4 +26,10 @@ export class PSEApprovalService {
   {
      return this.http.delete(this.baseURL + `/${_id}`);
   }
+
+  // //Dealer operations
+  // getAllDealers()
+  // {
+  //   return this.http.get(this.dealerBaseURL);
+  // }
 }

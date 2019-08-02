@@ -1,0 +1,221 @@
+<div>
+  <img src="/assets/img/users.png" id="icon" alt="User Icon" />
+</div>
+
+<form #DealerSignUpForm="ngForm" (ngSubmit)="DealerSignUpForm.valid && onDealerSubmit(DealerSignUpForm)">
+   
+  <div class="row">
+  <div class="input-field col-md-5"><label>Dealer Name :</label></div>
+  <div class="input-field col-md-7">
+  <input type="text" #DealerName="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.DealerName" name="DealerName"
+  required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !DealerName.valid }">
+</div>
+</div>
+<!-- Validation Div -->
+  <div *ngIf="DealerSignUpForm.submitted && !DealerName.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+
+  <div class="row">
+    <div class="input-field col-md-5"><label>Address :</label></div>
+    <div class="input-field col-md-7">
+    <input type="text" #Address="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.Address" name="Address"
+    required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !Address.valid }">
+  </div>
+  </div>
+  <!-- Validation Div -->
+    <div *ngIf="DealerSignUpForm.submitted && !Address.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+
+    <div class="row">
+      <div class="input-field col-md-5"><label>Email :</label></div>
+      <div class="input-field col-md-7">
+      <input type="text" #Email="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.Email" name="Email"
+      required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !Email.valid }">
+    </div>
+    </div>
+    <!-- Validation Div -->
+      <div *ngIf="DealerSignUpForm.submitted && !Email.valid">
+        <label class="validation-message">This field is required.</label>
+        <label *ngIf="Email.errors.pattern" class="validation-message">Invalid email address.</label>
+      </div>
+
+      <div class="row">
+        <div class="input-field col-md-5"><label>Contact Number :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #ContactNumber="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.ContactNumber" name="ContactNumber"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !ContactNumber.valid }">
+      </div>
+      </div>
+      <!-- Validation Div -->
+        <div *ngIf="DealerSignUpForm.submitted && !ContactNumber.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>  
+
+      <div class="row">
+        <div class="input-field col-md-5"><label>City :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #City="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.City" name="City"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !City.valid }">
+      </div>
+       </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !City.valid">
+            <label class="validation-message">This field is required.</label>
+          </div>   
+          
+      <div class="row">
+        <div class="input-field col-md-5"><label>State :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #State="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.State" name="State"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !State.valid }">
+        </div>
+        </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !State.valid">
+            <label class="validation-message">This field is required.</label>
+          </div>   
+          
+      <div class="row">
+        <div class="input-field col-md-5"><label>Contact Key Person :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #ContactKeyPerson="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.ContactKeyPerson" name="ContactKeyPerson"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !ContactKeyPerson.valid }">
+        </div>
+        </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !ContactKeyPerson.valid">
+            <label class="validation-message">This field is required.</label>
+          </div>  
+
+      <div class="row">
+        <div class="input-field col-md-5"><label>Contact Key PersonName :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #ContactKeyPersonName="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.ContactKeyPersonName" name="ContactKeyPerson"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !ContactKeyPersonName.valid }">
+        </div>
+        </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !ContactKeyPersonName.valid">
+            <label class="validation-message">This field is required.</label>
+          </div>     
+          
+      <div class="row">
+        <div class="input-field col-md-5"><label>Contact Key Person Mobile Number :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #ContactKeyPersonMobileNumber="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.ContactKeyPersonMobileNumber" name="ContactKeyPersonMobileNumber"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !ContactKeyPersonMobileNumber.valid }">
+        </div>
+        </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !ContactKeyPersonMobileNumber.valid">
+            <label class="validation-message">This field is required.</label>
+          </div>  
+          
+      <div class="row">
+        <div class="input-field col-md-5"><label>GST Number :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #GSTnumber="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.GSTnumber" name="GSTNumber"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !GSTnumber.valid }">
+        </div>
+        </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !GSTnumber.valid">
+            <label class="validation-message">This field is required.</label>
+          </div>    
+          
+      <div class="row">
+        <div class="input-field col-md-5"><label>PAN Number :</label></div>
+        <div class="input-field col-md-7">
+        <input type="text" #PANnumber="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.PANnumber" name="PANNumber"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !PANnumber.valid }">
+        </div>
+        </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !PANnumber.valid">
+           <label class="validation-message">This field is required.</label>
+          </div>   
+
+     <div class="row">
+       <div class="input-field col-md-5"><label>Other Details :</label></div>
+       <div class="input-field col-md-7">
+       <input type="text" #OtherDetails="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.OtherDetails" name="OtherDetails"
+        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !OtherDetails.valid }">
+       </div>
+       </div>
+        <!-- Validation Div -->
+          <div *ngIf="DealerSignUpForm.submitted && !OtherDetails.valid">
+            <label class="validation-message">This field is required.</label>
+          </div> 
+
+     <div class="row">
+       <div class="input-field col-md-5"><label>Area Of Operation :</label></div>
+       <div class="input-field col-md-7">
+       <input type="text" #AreaOfOperation="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.AreaOfOperation" name="AreaOfOperation"
+       required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !AreaOfOperation.valid }">
+       </div>
+       </div>
+       <!-- Validation Div -->
+         <div *ngIf="DealerSignUpForm.submitted && !AreaOfOperation.valid">
+            <label class="validation-message">This field is required.</label>
+          </div> 
+
+    <div class="row">
+      <div class="input-field col-md-5"><label>Employee Strength :</label></div>
+      <div class="input-field col-md-7">
+      <input type="text" #EmployeeStrength="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.EmployeeStrength" name="EmployeeStrength"
+      required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !EmployeeStrength.valid }">
+      </div>
+      </div>
+      <!-- Validation Div -->
+       <div *ngIf="DealerSignUpForm.submitted && !EmployeeStrength.valid">
+          <label class="validation-message">This field is required.</label>
+        </div> 
+
+    <div class="row">
+      <div class="input-field col-md-5"><label>Any Other Info :</label></div>
+      <div class="input-field col-md-7">
+      <input type="text" #AnyOtherInfo1="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.AnyOtherInfo1" name="AnyOtherInfo1"
+      required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !AnyOtherInfo1.valid }">
+      </div>
+      </div>
+      <!-- Validation Div -->
+        <div *ngIf="DealerSignUpForm.submitted && !AnyOtherInfo1.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+
+    <div class="row">
+      <div class="input-field col-md-5"><label>Any Other Info :</label></div>
+      <div class="input-field col-md-7">
+      <input type="text" #AnyOtherInfo2="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.AnyOtherInfo2" name="AnyOtherInfo2"
+      required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !AnyOtherInfo2.valid }">
+      </div>
+      </div>
+      <!-- Validation Div -->
+        <div *ngIf="DealerSignUpForm.submitted && !AnyOtherInfo2.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+
+        
+    <div class="row">
+      <div class="input-field col s12 ">
+        &nbsp;&nbsp; 
+        <button class="btn btn-info btnGroup" type="submit" onclick="onDealerSubmit()">Submit for Approval</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp; 
+        <button class="btn btn-success" routerLink="/Dealer-Login" type="button">Back to Login Screen</button>&nbsp;&nbsp;&nbsp;
+      </div>
+      
+     </div>
+
+    </form>
+  
+    <!-- Success message -->
+    <div class="success" *ngIf="showSucessMessage">
+      Saved successfully
+    </div>
+    
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>

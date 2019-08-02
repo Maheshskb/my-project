@@ -6,30 +6,34 @@
               <br>
                <div class="col s12 col-md-12">
                 <table align="center"class=" table-bordered" id="dataTable" width="80%" cellspacing="0">
-                    <!-- class="mytable" -->
-                    <thead >
-                      <tr>
-                        <th style="width: 10%">ID</th>
-                        <th style="width: 20%">Dealer Name</th>
-                        <th style="width: 15%">Select Dealer</th>
-                        <th style="width: 15%">Approve</th>
-                        <th style="width: 15%">Deny</th>
-                      </tr>
-                      </thead>
-                    <tbody>
-                     <tr >
+                  <thead>
+                    <th>Dealer Name</th>
+                    <th>Email</th>
+                    <th>GST Number</th>
+                    <th>Contact Number</th>
+                    <th>Area Of Operation</th>
+                    <th>Approve</th>
+                    <th>Deny</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let dealerApproval of _DealerApprovalService.DealerDetails">
+         
                       <td></td>
+      
+                     <td>{{dealerApproval.DealerName}}</td>
+         
+                    <td>{{dealerApproval.Email}}</td>
+         
+                    <td>{{dealerApproval.GSTnumber}}</td>
+                    
+                    <td>{{dealerApproval.ContactNumber}}</td>
 
-                      <td></td>
-
-                      <td></td>
-
-                      <td></td>
-
-                      <td></td>                     
-  
-                    </tr> 
-                  </tbody>
+                    <td>{{dealerApproval.AreaOfOperation}}</td>
+      
+                    <td><button class="btn btn-primary btnGroup btn-sm" type="button">Approve</button></td>
+                    <td><button class="btn btn-danger Denybtn btn-sm" type="button">Deny</button></td>
+                    </tr>
+                    </tbody>
                   </table>
             </div>
               <br> <br><br>

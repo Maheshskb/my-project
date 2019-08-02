@@ -1,6 +1,5 @@
 
 const express = require('express');
-// SECOND CODE
 const mongoose = require('mongoose');
 var router = express.Router();
 
@@ -16,7 +15,7 @@ const RegisterPennarSalesEnginner = mongoose.model('RegisterPennarSalesEnginner'
     
             if (!err) { res.send(docs); }
     
-            else { console.log('Error in Retriving Product Price Details :' + JSON.stringify(err, undefined, 2)); }
+            else { console.log('Error in Retriving Pennar Sales Engineer Details :' + JSON.stringify(err, undefined, 2)); }
     
         });
     

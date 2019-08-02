@@ -68,10 +68,10 @@ import { ApprovalForNewDealerComponent } from './components/SalesManagerHo Compo
 import { ApprovalForPennarSalesEngineerComponent } from './components/SalesManagerHo Component/sales-manager-ho/approval-for-pennar-sales-engineer/approval-for-pennar-sales-engineer.component';
 import { ListOfPennarSalesEngineerComponent } from './components/SalesManagerHo Component/sales-manager-ho/list-of-pennar-sales-engineer/list-of-pennar-sales-engineer.component';
 import { ListOfDealersComponent } from './components/SalesManagerHo Component/sales-manager-ho/list-of-dealers/list-of-dealers.component';
-import { DealerComponent } from './components/dealer/dealer.component';
-import { DmheaderComponent } from './components/dealer/Common Component/dmheader/dmheader.component';
-import { DmfooterComponent } from './components/dealer/Common Component/dmfooter/dmfooter.component';
-import { ListofsalesengineerComponent } from './components/dealer/listofsalesengineer/listofsalesengineer.component';
+import { DealerComponent } from './components/Dealer Component/dealer/dealer.component';
+import { DmheaderComponent } from './components/Dealer Component/dealer/Common Component/dmheader/dmheader.component';
+import { DmfooterComponent } from './components/Dealer Component/dealer/Common Component/dmfooter/dmfooter.component';
+import { ListofsalesengineerComponent } from './components/Dealer Component/dealer/listofsalesengineer/listofsalesengineer.component';
 
 
 import { RegistrationStep10Component } from './components/DealerSalesEngg Component/dealer-sales-engg-dashboard/registration-step10/registration-step10.component';
@@ -86,6 +86,9 @@ import { PennarSalesEnggDashboardComponent } from './components/PennarSalesEngg 
 import { RegisterPennarSalesEnginnerComponent } from './components/PennarSalesEngg Component/register-pennar-sales-enginner/register-pennar-sales-enginner.component';
 import { PseSignInComponent } from './components/PennarSalesEngg Component/register-pennar-sales-enginner/pse-sign-in/pse-sign-in.component';
 import { PseSignUpComponent } from './components/PennarSalesEngg Component/register-pennar-sales-enginner/pse-sign-up/pse-sign-up.component';
+import { RegisterDealerComponent } from './components/Dealer Component/register-dealer/register-dealer.component';
+import { DealerSignInComponent } from './components/Dealer Component/register-dealer/dealer-sign-in/dealer-sign-in.component';
+import { DealerSignUpComponent } from './components/Dealer Component/register-dealer/dealer-sign-up/dealer-sign-up.component';
 
 
 
@@ -141,6 +144,9 @@ import { PseSignUpComponent } from './components/PennarSalesEngg Component/regis
     RegisterPennarSalesEnginnerComponent,
     PseSignInComponent,
     PseSignUpComponent,
+    RegisterDealerComponent,
+    DealerSignInComponent,
+    DealerSignUpComponent,
 
   ],
   imports: [

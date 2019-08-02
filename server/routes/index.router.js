@@ -13,6 +13,7 @@ const ctrRegisterPennarSalesEngg = require('../controllers/PennarSalesEngineer/P
 const jwtHelper = require('../config/jwtHelper');
 const DSEjwtHelper = require('../config/DSEjwtHelper');
 
+//Admin Routes
 router.post('/register', ctrlUser.register);
 router.post('/authenticate', ctrlUser.authenticate);
 //  router.get('/userProfile',jwtHelper.verifyJwtToken, ctrlUser.userProfile);
@@ -30,6 +31,9 @@ router.get('/DealerSalesEnggDashboard',DSEjwtHelper.verifyJwtToken, ctrDealerSal
 //Pennar Sales Engineer Routes
 //router.post('/RegisterPennarSalesEngineer', ctrRegisterPennarSalesEngg.RegisterPennarSalesEngineer);
 //router.get('/RegisterPennarSalesEngineer', DSEjwtHelper.verifyJwtToken,ctrRegisterPennarSalesEngg.RegisterPennarSalesEngineer);
+
+//Dealer 
+// router.post('/RegisterDealer', ctrDealerSalesEngg.RegisterDealerSalesEngg);
 
 module.exports = router;
 

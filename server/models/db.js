@@ -10,6 +10,11 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
 require('./user.model');
 require('./DealerSalesEngg/DSEUser.model');
 // require('./DealerSalesEngg/DSEregister.model');
+
 //Add model for Registration of pennar sales engg
 require('./PennarSalesEngineer/PSEregister.model');
+
+//Add DealerRegister Model
+require('./Dealer/DealerRegister.model');
+
 module.exports = mongoose;

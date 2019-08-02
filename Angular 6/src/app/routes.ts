@@ -28,9 +28,11 @@ import { ListOfPennarSalesEngineerComponent } from './components/SalesManagerHo 
 import { ListOfDealersComponent } from './components/SalesManagerHo Component/sales-manager-ho/list-of-dealers/list-of-dealers.component';
 
 // Dealer //
-import {DealerComponent} from './components/dealer/dealer.component';
-import{ ListofsalesengineerComponent } from './components/dealer/listofsalesengineer/listofsalesengineer.component';
-
+import { RegisterDealerComponent } from './components/Dealer Component/register-dealer/register-dealer.component';
+import { DealerSignUpComponent } from './components/Dealer Component/register-dealer/dealer-sign-up/dealer-sign-up.component';
+import { DealerSignInComponent } from './components/Dealer Component/register-dealer/dealer-sign-in/dealer-sign-in.component';
+import {DealerComponent} from './components/Dealer Component/dealer/dealer.component';
+import{ ListofsalesengineerComponent } from './components/Dealer Component/dealer/listofsalesengineer/listofsalesengineer.component';
 
 
 import { from } from 'rxjs';
@@ -133,7 +135,14 @@ export const appRoutes: Routes = [
     },
 
     // Dealers // 
-
+    {
+        path: 'Dealer-Sign-Up', component: RegisterDealerComponent,
+        children: [{ path: '', component: DealerSignUpComponent }]
+    },
+    {
+        path: 'Dealer-Login', component: RegisterDealerComponent,
+        children: [{ path: '', component: DealerSignInComponent }]
+    },
     {
         path: 'DealerComponent', component: DealerComponent
     },

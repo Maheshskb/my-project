@@ -11,6 +11,7 @@ var customerDetailsController = require('./controllers/DealerSalesEngg/customerD
 //Register Dealer Sales Enginee Controller
 var registerDealerSalesEnggController = require('./controllers/DealerSalesEngg/DSEregisterController');
 var registerPennarSalesEnggController = require('./controllers/PennarSalesEngineer/PSEregisterController');
+var registerDealerController = require('./controllers/Dealer/DealerRegisterController');
 
 
 const express = require('express');
@@ -50,7 +51,10 @@ app.use('/priceDetails', priceDetailsController);
 app.use('/customerDetails', customerDetailsController);
 //Register Dealer Sales Engg
 app.use('/RegisterDealerSalesEngineer', registerDealerSalesEnggController);
+//Pennar Sales Engineer
 app.use('/RegisterPennarSalesEngineer', registerPennarSalesEnggController);
+//Dealer
+app.use('/RegisterDealer', registerDealerController);
 
 
 // start server
