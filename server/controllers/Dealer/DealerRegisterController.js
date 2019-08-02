@@ -4,6 +4,18 @@ var router = express.Router();
 
 const RegisterDealer = mongoose.model('RegisterDealer');
 
+router.get('/', (req, res) => {
+
+    RegisterDealer.find((err, docs) => {
+
+        if (!err) { res.send(docs); }
+
+        else { console.log('Error in Retriving Dealer Details :' + JSON.stringify(err, undefined, 2)); }
+
+    });
+
+});
+
 //post the dealer Info and save dealer to the database
 router.post('/', (req, res, next) => {
     var registerDealer = new RegisterDealer();

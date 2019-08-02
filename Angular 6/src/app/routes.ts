@@ -47,6 +47,7 @@ import { PseSignUpComponent } from './components/PennarSalesEngg Component/regis
 import { PseSignInComponent } from './components/PennarSalesEngg Component/register-pennar-sales-enginner/pse-sign-in/pse-sign-in.component';
 
 export const appRoutes: Routes = [
+    //Admin Routes
     {
         path: 'signup', component: UserComponent,
         children: [{ path: '', component: SignUpComponent }]
@@ -55,12 +56,9 @@ export const appRoutes: Routes = [
         path: 'login', component: UserComponent,
         children: [{ path: '', component: SignInComponent }]
     },
-    // {
-    //     path: 'userprofile', component: UserProfileComponent,canActivate:[AuthGuard]
-    // },
     {
         path: 'adminDashboard', component: AdminComponent, canActivate: [AuthGuard],
-        },
+    },
     {
         path: 'productDetails' , component: ProductCURDComponent, canActivate: [AuthGuard],
     },
@@ -81,7 +79,7 @@ export const appRoutes: Routes = [
     {
         path: 'approval-for-new-dealer' , component: ApprovalForNewDealerComponent, canActivate: [AuthGuard],
     },
-{
+    {
         path: 'pennar-sales-engg-approval' , component: ApprovalForPennarSalesEngineerComponent, canActivate: [AuthGuard],
     },
     {
@@ -95,7 +93,7 @@ export const appRoutes: Routes = [
     },
 
 
-    // Dealer Sales Engg //
+    // Dealer Sales Engineer Routes
     {
         path: 'DealerSalesEnggSignup', component: DealerSalesEnggComponent,
         children: [{ path: '', component:  DSESignUpComponent}]
@@ -121,7 +119,6 @@ export const appRoutes: Routes = [
 
     // Pennar sales engg routes
    
-
     {
         path: 'DealerSalesEnggLogin', component: DealerSalesEnggComponent,
         children: [{ path: '', component: DseSignInComponent}]
