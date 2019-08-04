@@ -28,12 +28,9 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 // components
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { SignUpComponent } from './user/sign-up/sign-up.component';
 //routes
 import { appRoutes } from './routes';
 
-import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AdminService } from './Business Services/Admin.service';
 //other
 import { AuthGuard } from './auth/auth.guard';
@@ -79,8 +76,6 @@ import { RegistrationStep11Component } from './components/DealerSalesEngg Compon
 import { RegistrationStep12Component } from './components/DealerSalesEngg Component/dealer-sales-engg-dashboard/registration-step12/registration-step12.component';
 import { RegistrationStep13Component } from './components/DealerSalesEngg Component/dealer-sales-engg-dashboard/registration-step13/registration-step13.component'
 
-
-
 import { CustomerListComponent } from './components/DealerSalesEngg Component/dealer-sales-engg-dashboard/customer-list/customer-list.component';
 import { PennarSalesEnggDashboardComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/pennar-sales-engg-dashboard.component';
 import { RegisterPennarSalesEnginnerComponent } from './components/PennarSalesEngg Component/register-pennar-sales-enginner/register-pennar-sales-enginner.component';
@@ -94,14 +89,9 @@ import { AdminSignInComponent } from './components/admin/admin-login/admin-sign-
 import { AdminSignUpComponent } from './components/admin/admin-login/admin-sign-up/admin-sign-up.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    SignUpComponent,
-    SignInComponent,
     NavbarComponent,
     AdminComponent,
     ProductCURDComponent,

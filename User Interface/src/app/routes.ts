@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
-import { UserComponent } from './user/user.component';
+
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
+import { AdminSignInComponent } from './components/admin/admin-login/admin-sign-in/admin-sign-in.component';
 import { AdminSignUpComponent } from './components/admin/admin-login/admin-sign-up/admin-sign-up.component';
-import { SignUpComponent } from './user/sign-up/sign-up.component';
-import { SignInComponent } from './user/sign-in/sign-in.component';
 // import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth/auth.guard';
 // import { AuthGuard} from './components/DealerSalesEngg Component/auth/auth.guard';
@@ -51,13 +50,22 @@ import { PseSignInComponent } from './components/PennarSalesEngg Component/regis
 
 export const appRoutes: Routes = [
     //Admin Routes
+    // {
+    //     path: 'signup', component: UserComponent,
+    //     children: [{ path: '', component: SignUpComponent }]
+    // },
     {
-        path: 'signup', component: UserComponent,
-        children: [{ path: '', component: SignUpComponent }]
+        path: 'Admin-sign-up', component: AdminLoginComponent,
+        children: [{ path: '', component: AdminSignUpComponent }]
     },
+    // {
+    //     path: 'login', component: UserComponent,
+    //     children: [{ path: '', component: SignInComponent }]
+    // },
+
     {
-        path: 'login', component: UserComponent,
-        children: [{ path: '', component: SignInComponent }]
+        path: 'Admin-login', component: AdminLoginComponent,
+        children: [{ path: '', component: AdminSignInComponent }]
     },
     {
         path: 'adminDashboard', component: AdminComponent, canActivate: [AuthGuard],

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm,} from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { PriceDetailsService} from '../shared/price-details.service';
-import { PriceDetails } from '../shared/price-details.model';
+import { PriceDetailsService} from '../../../Business Services/price-details.service';
+// import { PriceDetails } from '../shared/price-details.model';
+import { PriceDetails } from '../../../../../../Data Access Layer/models/PriceDetails.model';
 import { from } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 

@@ -54,4 +54,5 @@ userSchema.methods.generateJwt = function () {
 
 
 
-mongoose.model('User', userSchema);
+// mongoose.model('User', userSchema);
+mongoose.model('User', userSchema, 'AdminLoginDetails');

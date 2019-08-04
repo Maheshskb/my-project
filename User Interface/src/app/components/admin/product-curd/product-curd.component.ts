@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm,} from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductDetailsService} from '../shared/product-details.service';
-import { ProductDetails } from '../shared/product-details.model';
+import { ProductDetailsService} from '../../../Business Services/product-details.service';
+// import { ProductDetails } from '../shared/product-details.model';
+import { ProductDetails } from '../../../../../../Data Access Layer/models/ProductDetails.model';
 
 import { ToastrService } from 'ngx-toastr';
 

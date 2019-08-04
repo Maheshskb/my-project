@@ -7,7 +7,8 @@ var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 
 
-var { productDetail } = require('../models/ProductDetails.model');
+// var { productDetail } = require('../models/ProductDetails.model');
+var { productDetail } = require('../../Data Access Layer/models/ProductDetails.model');
 
 
 // => localhost:3000/productDetails/

@@ -8,7 +8,8 @@ import { observable} from 'rxjs';
 
 
 
-import { ProductDetails } from './product-details.model';
+// import { ProductDetails } from './product-details.model';
+import { ProductDetails } from '../../../../Data Access Layer/models/ProductDetails.model';
 
 @Injectable({
   providedIn: 'root'

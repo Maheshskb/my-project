@@ -2,10 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { observable} from 'rxjs';
 
-
-
-
-import { PriceDetails } from './price-details.model';
+// import { PriceDetails } from './price-details.model';
+import { PriceDetails } from '../../../../Data Access Layer/models/PriceDetails.model';
 
 
 @Injectable({

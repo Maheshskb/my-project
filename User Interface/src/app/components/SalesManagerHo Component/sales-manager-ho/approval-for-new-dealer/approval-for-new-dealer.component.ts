@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm,} from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { DealerApprovalService } from '../../Shared/dealer-approval.service';
+import { DealerApprovalService } from '../../../../Business Services/dealer-approval.service';
 import { RegisterDealer } from '../../../../../../../Data Access Layer/models/DealerRegister.model';;
 import { from } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { observable} from 'rxjs';
-import { environment} from '../../../../environments/environment';
+import { environment} from '../../environments/environment';
 
 
-import { RegisterDealer } from '../../../../../../Data Access Layer/models/DealerRegister.model';
+import { RegisterDealer } from '../../../../Data Access Layer/models/DealerRegister.model';
 @Injectable({
   providedIn: 'root'
 })

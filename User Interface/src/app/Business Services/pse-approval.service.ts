@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { observable} from 'rxjs';
-import { environment} from '../../../../environments/environment';
+import { environment} from '../../environments/environment';
 
-// import { ProductDetails } from './product-details.model';
-import { PSEApproval } from './pse-approval.model';
+// import { PSEApproval } from './pse-approval.model';
+import { PSEregister } from '../../../../Data Access Layer/models/PSEregister.model';
 // import { RegisterPennarSalesEnginner } from '../../PennarSalesEngg Component/Shared/register-pennar-sales-enginner.model';
 @Injectable({
   providedIn: 'root'
 })
 export class PSEApprovalService {
 
-  selectedPSEApproval: PSEApproval;
-  PennarSalesEnggDetails: PSEApproval[];
+  // selectedPSEApproval: PSEApproval;
+  // PennarSalesEnggDetails: PSEApproval[];0
+  selectedPSEApproval: PSEregister;
+  PennarSalesEnggDetails: PSEregister[];
   readonly baseURL = 'http://localhost:3000/RegisterPennarSalesEngineer';
   // readonly dealerBaseURL = 'http://localhost:3000/RegisterDealer';
 

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm,} from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { PSEApprovalService} from '../../Shared/pse-approval.service';
-import { PSEApproval } from '../../Shared/pse-approval.model';
+import { PSEApprovalService} from '../../../../Business Services/pse-approval.service';
+// import { PSEApproval } from '../../Shared/pse-approval.model';
+import { PSEregister} from '../../../../../../../Data Access Layer/models/PSEregister.model'
 import { from } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
@@ -24,7 +25,8 @@ export class ApprovalForPennarSalesEngineerComponent implements OnInit {
   refreshPEnnarSalesEngneerList()
   {
     this._PSEApprovalService.getAllPennarSalesEngineer().subscribe((res)=>{
-      this._PSEApprovalService.PennarSalesEnggDetails = res as PSEApproval[];
+      // this._PSEApprovalService.PennarSalesEnggDetails = res as PSEApproval[];
+      this._PSEApprovalService.PennarSalesEnggDetails = res as PSEregister[];
     });
   }
 
