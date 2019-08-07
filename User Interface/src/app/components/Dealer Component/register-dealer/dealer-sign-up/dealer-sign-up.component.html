@@ -88,18 +88,7 @@
           <div *ngIf="DealerSignUpForm.submitted && !ContactKeyPerson.valid">
             <label class="validation-message">This field is required.</label>
           </div>  
-
-      <div class="row">
-        <div class="input-field col-md-5"><label>Contact Key PersonName :</label></div>
-        <div class="input-field col-md-7">
-        <input type="text" #ContactKeyPersonName="ngModel" [(ngModel)]="_RegisterDealerService.selectedRegisterDealer.ContactKeyPersonName" name="ContactKeyPerson"
-        required  [ngClass]="{'invalid-textbox' :DealerSignUpForm.submitted && !ContactKeyPersonName.valid }">
-        </div>
-        </div>
-        <!-- Validation Div -->
-          <div *ngIf="DealerSignUpForm.submitted && !ContactKeyPersonName.valid">
-            <label class="validation-message">This field is required.</label>
-          </div>     
+  
           
       <div class="row">
         <div class="input-field col-md-5"><label>Contact Key Person Mobile Number :</label></div>
