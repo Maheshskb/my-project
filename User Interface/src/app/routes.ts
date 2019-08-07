@@ -170,10 +170,14 @@ export const appRoutes: Routes = [
          path: 'Pennar-Sales-Engineer-Login', component: RegisterPennarSalesEnginnerComponent,
          children: [{ path: '', component: PseSignInComponent }]
      },
-     {
-         path: 'PennarSalesEnggDashboard', component: PennarSalesEnggDashboardComponent,canActivate:[AuthGuard],
+    //  {
+    //      path: 'PennarSalesEnggDashboard', component: PennarSalesEnggDashboardComponent,canActivate:[AuthGuard],
        
-    }
+    // }
+    {
+        path: 'PennarSalesEnggDashboard', component: PennarSalesEnggDashboardComponent
+      
+   }
 
 
 ];
