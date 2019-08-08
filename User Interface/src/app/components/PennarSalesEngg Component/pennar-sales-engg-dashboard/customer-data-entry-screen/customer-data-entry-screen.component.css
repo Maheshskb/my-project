@@ -1,0 +1,20 @@
+.model{width:80% !important;
+max-width: 80% !important;}
+h4{text-align: center;}
+.model-lg{
+    max-width: 80% !important;
+}
+.modal-header{
+    background-color: #337ab7;
+    padding: 16px 16px;
+    color: #fff;
+    text-align: center;
+}
+input[type="text"]{
+    line-height: 1.5;
+  padding: 5px 5px; 
+
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    width: 96%;
+}

@@ -87,6 +87,10 @@ import { DealerSignUpComponent } from './components/Dealer Component/register-de
 import { AdminLoginComponent } from './components/admin/admin-login/admin-login.component';
 import { AdminSignInComponent } from './components/admin/admin-login/admin-sign-in/admin-sign-in.component';
 import { AdminSignUpComponent } from './components/admin/admin-login/admin-sign-up/admin-sign-up.component';
+import { TowerDetailsComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/tower-details/tower-details.component';
+import { MakeupWaterDetailsComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/makeup-water-details/makeup-water-details.component';
+import { CirculatingWaterDetailsComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/circulating-water-details/circulating-water-details.component';
+import { CustomerDataEntryScreenComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/customer-data-entry-screen/customer-data-entry-screen.component';
 
 
 @NgModule({
@@ -143,6 +147,10 @@ import { AdminSignUpComponent } from './components/admin/admin-login/admin-sign-
     AdminLoginComponent,
     AdminSignInComponent,
     AdminSignUpComponent,
+    TowerDetailsComponent,
+    MakeupWaterDetailsComponent,
+    CirculatingWaterDetailsComponent,
+    CustomerDataEntryScreenComponent,
 
   ],
   imports: [
