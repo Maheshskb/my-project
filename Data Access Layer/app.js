@@ -7,12 +7,13 @@ const { mongoose } = require('./models/db');
 var productDetailsController = require('./controllers/ProductDetailsController');
 var priceDetailsController = require('./controllers/PriceDetailsController');
 //Customer Details Controller (Dealer Sales Engg)
-var customerDetailsController = require('./controllers/PSEregisterController');
+var customerDetailsController = require('./controllers/customerDetailsController');
 //Register Dealer Sales Enginee Controller
 var registerDealerSalesEnggController = require('./controllers/DSEregisterController');
 var registerPennarSalesEnggController = require('./controllers/PSEregisterController');
 var registerDealerController = require('./controllers/DealerRegisterController');
-
+//Pennar Sales Engineer Controller
+var transactinDataController = require('./controllers/TransactionScreenController');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -48,11 +49,12 @@ app.use('/productDetails', productDetailsController);
 //Price modification URL
 app.use('/priceDetails', priceDetailsController);
 //add customer Details
-app.use('/customerDetails', customerDetailsController);
+app.use('/CustomerDetails', customerDetailsController);
 //Register Dealer Sales Engg
 app.use('/RegisterDealerSalesEngineer', registerDealerSalesEnggController);
 //Pennar Sales Engineer
 app.use('/RegisterPennarSalesEngineer', registerPennarSalesEnggController);
+app.use('/TransactionDataScreen', transactinDataController );
 //Dealer
 app.use('/RegisterDealer', registerDealerController);
 

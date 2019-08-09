@@ -1,5 +1,4 @@
 
-//         required: 'This Field can\'t be empty'
 const mongoose = require('mongoose');
 
 var priceDetail = mongoose.model('priceDetail', {

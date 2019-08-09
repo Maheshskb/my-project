@@ -2,7 +2,9 @@
 //         required: 'This Field can\'t be empty'
 const mongoose = require('mongoose');
 
-var customerDetail = mongoose.model('customerDetail', {
+var CustomerDetail = mongoose.model('CustomerDetail', {
+
+    // _id: { type: String },
 
     CompanyName: { type: String },
 
@@ -40,8 +42,7 @@ var customerDetail = mongoose.model('customerDetail', {
 
     EnquireyNature: { type: String }
 
-});
+}, 'CustomerDetail');
 
 
-
-module.exports = { customerDetail };
+module.exports = { CustomerDetail };

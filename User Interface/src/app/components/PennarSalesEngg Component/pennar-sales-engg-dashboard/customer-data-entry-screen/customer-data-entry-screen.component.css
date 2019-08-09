@@ -18,3 +18,5 @@ input[type="text"]{
     background-color: #fff;
     width: 96%;
 }
+#my_centered_buttons{display: flex;
+justify-content: center;}

@@ -5,12 +5,12 @@ var router = express.Router();
 //Import ObjectId from mongoose to check is the entered id is available in mongodb or not
 var ObjectId = require('mongoose').Types.ObjectId;
 
-var {customerDetail} = require('../models/CustomerDetails.model');
+var {CustomerDetail} = require('../models/CustomerDetails.model');
 
 
-//base Url : localhost:3000/customerDetails
+//base Url : localhost:3000/CustomerDetails
 router.get('/', (req,res)=>{
-    customerDetail.find((err, docs) => {
+    CustomerDetail.find((err, docs) => {
 
         if (!err) { res.send(docs); }
 
@@ -20,13 +20,13 @@ router.get('/', (req,res)=>{
 });
 
 
-//get product Pice  by an ID
+//Get Customer Details by an ID
 router.get('/:id', (req,res)=>
 {
    if(!ObjectId.isValid(req.params.id))
    return res.status(400).send(`No Record with given id :  ${req.params.id}`);
 
-   customerDetail.findById(req.params.id,(err, doc)=>{
+   CustomerDetail.findById(req.params.id,(err, doc)=>{
     if (!err) { res.send(doc); }
     else { console.log('Error in Retriving Customer Details :' + JSON.stringify(err, undefined, 2)); }
    });
@@ -36,7 +36,7 @@ router.get('/:id', (req,res)=>
 router.post('/', (req, res)=>
 {
     //create an object of productDetail model class inside that we have field details of Product Details
-    var customer_detail = new customerDetail(
+    var customer_detail = new CustomerDetail(
         {
             CompanyName : req.body.CompanyName,
             CityName : req.body.CityName,
@@ -64,7 +64,7 @@ router.post('/', (req, res)=>
         });
 });
 
-//Update Product value with Put method
+//This Method will Update Customer Information 
 router.put("/:id",(req, res)=>
 {
   if(!ObjectId.isValid(req.params.id))
@@ -91,25 +91,12 @@ router.put("/:id",(req, res)=>
             ChooseProductPraposal : req.body.ChooseProductPraposal,
             EnquireyNature : req.body.EnquireyNature,
     };
-    customerDetail.findByIdAndUpdate(req.params.id, {$set:customer_detail},{new:true},(err,doc)=>
+    CustomerDetail.findByIdAndUpdate(req.params.id, {$set:customer_detail},{new:true},(err,doc)=>
     {
         if(!err){ res.send(doc);}
         else{ console.log("Error in Customer Detail Updation : " + JSON.stringify(err,undefined,2));}
     });
 });
 
-
-//delete product
-router.delete('/:id',(req,res)=>
-{
-    if(!ObjectId.isValid(req.params.id))
-   return res.status(400).send(`No Record with given id :  ${req.params.id}`);
-
-   customerDetail.findByIdAndRemove(req.params.id,(err,doc)=>
-   {
-    if(!err){ res.send(doc);}
-    else{ console.log("Error in Customer Dtails deletion : " + JSON.stringify(err,undefined,2));}
-   });
-});
 
 module.exports = router;
