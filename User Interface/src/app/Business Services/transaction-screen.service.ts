@@ -10,5 +10,10 @@ export class TransactionScreenService {
   selectedTransactionScreen: TransactionScreen;
   transactionScreen: TransactionScreen[];
   readonly baseURL = 'http://localhost:3000/TransactionDataScreen';
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  postTowerDetails(TSdata:TransactionScreen)
+  {
+ return this.http.post(this.baseURL, TSdata );
+  }
 }

@@ -26,4 +26,13 @@ export class CustomerDataEntryScreenComponent implements OnInit {
       TowerName: ""
     }
   }
+
+  onSubmit(form : NgForm)
+  {
+    
+    this._TransactionScreen.postTowerDetails(form.value).subscribe((_res)=>
+  {
+      this.resetForm(form);  
+    }); 
+  }
 }

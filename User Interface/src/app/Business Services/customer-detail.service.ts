@@ -11,8 +11,8 @@ export class CustomerDetailService {
   readonly baseURL = 'http://localhost:3000/CustomerDetails';
   constructor( private http:HttpClient) { }
 
-  postCustomerDetail(custInfo:CustomerDetails)
+  postCustomerDetail(customer_detail:CustomerDetails)
   {
- return this.http.post(this.baseURL, custInfo );
+ return this.http.post(this.baseURL, customer_detail );
   }
 }

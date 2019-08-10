@@ -17,40 +17,45 @@ export class PennarSalesEnggDashboardComponent implements OnInit {
   ngOnInit() {
     this.resetForm();
   }
-  // Onclick()
-  // {
-  //   this.router.navigateByUrl('/Customer-Data-Entry-Screen');
-  //   return true;
-  // }
+  Onclick()
+  {
+    this.router.navigateByUrl('/Customer-Data-Entry-Screen');
+    return true;
+  }
   resetForm(form?:NgForm)
   {
     if(form)
     form.reset();
     this._CustService.selectedCustomerDetails = {
-      _id :" ",
+      // _id :"",
       CompanyName: "",
       CityName : "",
       Address: "",
       Pincode: null,
       DealerCode: null,
       IndusrtyType: "",
-      CustOtherInfo:"", GSTno:"", ContactPersonName: "", Designation: "",
-      FisrtEmail: "", SecondEmail: "", OfficeNumber: null, MobileNumber: null,
-      MoreContacts: null, CustProdctPotential: "", ChooseProductPraposal: "",
+      CustOtherInfo:"", 
+      GSTno:"", 
+      ContactPersonName: "", 
+      Designation: "",
+      FisrtEmail: "", 
+      SecondEmail: "",
+       OfficeNumber: null,
+        MobileNumber: null,
+      MoreContacts: null, 
+      CustProdctPotential: "", 
+      ChooseProductPraposal: "",
       EnquireyNature:""
     }
   }
 
-  onSubmit(form : NgForm)
+ onSubmit(form : NgForm)
   {
     
     this._CustService.postCustomerDetail(form.value).subscribe((_res)=>
   {
-    // this._productDetailsService.productDetails = res as ProductDetails[];
       this.resetForm(form);  
-      // this.showAddToaster(); 
-      // this.refreshProductPriceList(); 
-    });
+    }); 
   }
   
 }

@@ -15,14 +15,14 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form >
+                    <form #TowerDetailsForm="ngForm" (ngSubmit)="onSubmit(TowerDetailsForm)">
                         <div class="row">
                             <div class="input-field col s5">
                                 <label>Number of Tower with This Customer :</label>
                             </div>
 
                             <div class="input-field col s7">
-                                <select class="slct" style="min-width: 490px; margin-left: 5px ">
+                                <select class="slct" style="min-width: 490px; margin-left: 5px " name="TowerNumbers" #name="ngModel" [(ngModel)]="_TransactionScreen.selectedTransactionScreen.TowerNumbers">
                                     <option value="0"> 0 </option>
                                     <option value="1"> 1 </option>
                                     <option value="2"> 2 </option>
@@ -44,13 +44,14 @@
                             </div>
 
                             <div class="input-field col s7">
-                                <input type="text">
+                                <input type="text" name="TowerName" #name="ngModel" [(ngModel)]="_TransactionScreen.selectedTransactionScreen.TowerName">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                                 <button class="btn btn-success right" type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
+                                <!-- <button class="btn btn-success right" style="width: 15%;" (click)="resetForm(TowerDetailsForm)">Reset</button>&nbsp;&nbsp;&nbsp; -->
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MakeupWaterDetails" data-dismiss="modal" style="margin-top: 5px;" style="width: 15%;">Next</button>
                             </div>
