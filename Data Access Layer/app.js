@@ -14,6 +14,7 @@ var registerPennarSalesEnggController = require('./controllers/PSEregisterContro
 var registerDealerController = require('./controllers/DealerRegisterController');
 //Pennar Sales Engineer Controller
 var transactinDataController = require('./controllers/TransactionScreenController');
+var proposalDataController =  require('./controllers/ProposalDetailsController');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -55,6 +56,8 @@ app.use('/RegisterDealerSalesEngineer', registerDealerSalesEnggController);
 //Pennar Sales Engineer
 app.use('/RegisterPennarSalesEngineer', registerPennarSalesEnggController);
 app.use('/TransactionDataScreen', transactinDataController );
+app.use('/ProposalDetails', proposalDataController );
+
 //Dealer
 app.use('/RegisterDealer', registerDealerController);
 
