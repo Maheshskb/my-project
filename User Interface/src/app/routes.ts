@@ -46,9 +46,6 @@ import { RegisterPennarSalesEnginnerComponent } from './components/PennarSalesEn
 import { PennarSalesEnggDashboardComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/pennar-sales-engg-dashboard.component';
 import { PseSignUpComponent } from './components/PennarSalesEngg Component/register-pennar-sales-enginner/pse-sign-up/pse-sign-up.component';
 import { PseSignInComponent } from './components/PennarSalesEngg Component/register-pennar-sales-enginner/pse-sign-in/pse-sign-in.component';
-import { TowerDetailsComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/tower-details/tower-details.component';
-import { MakeupWaterDetailsComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/makeup-water-details/makeup-water-details.component';
-import { CirculatingWaterDetailsComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/circulating-water-details/circulating-water-details.component';
 import { CustomerDataEntryScreenComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/customer-data-entry-screen/customer-data-entry-screen.component';
 
 export const appRoutes: Routes = [
@@ -180,12 +177,9 @@ export const appRoutes: Routes = [
     {
         path: 'PennarSalesEnggDashboard', component: PennarSalesEnggDashboardComponent,
         children: [
-            { path: 'red-pill', component: TowerDetailsComponent}]
+            { path: 'Generate Proposal', component: CustomerDataEntryScreenComponent}]
         // children: [{ path: 'PennarSalesEnggDashboard/Tower-Details', component: TowerDetailsComponent }]
    },
-   {path: 'Tower-Details', component:TowerDetailsComponent   },
-   {path:'Makeup-Water-Details', component:MakeupWaterDetailsComponent},
-   {path:'Circulating-Water-Details', component:CirculatingWaterDetailsComponent},
    {path:'Customer-Data-Entry-Screen', component:CustomerDataEntryScreenComponent}
 
 ];

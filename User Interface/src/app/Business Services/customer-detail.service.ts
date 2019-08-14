@@ -15,4 +15,9 @@ export class CustomerDetailService {
   {
  return this.http.post(this.baseURL, customer_detail );
   }
+
+  GetAllCustomerList()
+  {
+    return this.http.get(this.baseURL);
+  }
 }

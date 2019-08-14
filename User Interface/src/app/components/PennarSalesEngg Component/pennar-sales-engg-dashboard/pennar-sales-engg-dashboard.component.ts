@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm,} from '@angular/forms';
 import { CustomerDetailService } from '../../../Business Services/customer-detail.service';
-// import { CustomerDetails } from '../../../../../../Data Access Layer/models/CustomerDetails.model';
+import { ToastrService } from 'ngx-toastr';
+import { CustomerDetails } from '../../../../../../Data Access Layer/models/CustomerDetails.model';
 
 @Component({
   selector: 'app-pennar-sales-engg-dashboard',
@@ -12,10 +13,11 @@ import { CustomerDetailService } from '../../../Business Services/customer-detai
 })
 export class PennarSalesEnggDashboardComponent implements OnInit {
 
-  constructor(private _CustService:CustomerDetailService,private router:Router) { }
+  constructor(private _CustService:CustomerDetailService,private router:Router,private _toastr: ToastrService) { }
 
   ngOnInit() {
     this.resetForm();
+    this.RefreshCustomerInfoList();
   }
   Onclick()
   {
@@ -31,8 +33,8 @@ export class PennarSalesEnggDashboardComponent implements OnInit {
       CompanyName: "",
       CityName : "",
       Address: "",
-      Pincode: null,
-      DealerCode: null,
+      Pincode: "",
+      DealerCode: "",
       IndusrtyType: "",
       CustOtherInfo:"", 
       GSTno:"", 
@@ -40,22 +42,48 @@ export class PennarSalesEnggDashboardComponent implements OnInit {
       Designation: "",
       FisrtEmail: "", 
       SecondEmail: "",
-       OfficeNumber: null,
-        MobileNumber: null,
-      MoreContacts: null, 
+      OfficeNumber: "",
+      MobileNumber: "",
+      MoreContacts: "", 
       CustProdctPotential: "", 
       ChooseProductPraposal: "",
       EnquireyNature:""
     }
   }
 
- onSubmit(form : NgForm)
+  onCustomerInfoSubmit(form : NgForm)
   {
     
     this._CustService.postCustomerDetail(form.value).subscribe((_res)=>
   {
-      this.resetForm(form);  
+      this.resetForm(form); 
+      this.showAddToaster();  
     }); 
   }
+
+  //Refresh All Customer Details Info
+  RefreshCustomerInfoList()
+  {
+    this._CustService.GetAllCustomerList().subscribe((res)=>{
+      this._CustService.custDetails = res as CustomerDetails[];
+    });
+  }
   
+ 
+
+  // code to toast notification
+  showDeleteToaster(){
+    this._toastr.warning("Record is deleted successfully.")
+  }
+
+showAddToaster(){
+  this._toastr.success("Record is added successfully!")
 }
+ ShowEditToaster()
+ {
+   this._toastr.info("Record Updated Successfully");
+ }
+
+}
+  
+

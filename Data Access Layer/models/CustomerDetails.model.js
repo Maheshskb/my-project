@@ -12,9 +12,9 @@ var CustomerDetail = mongoose.model('CustomerDetail', {
 
     Address: { type: String },
 
-    Pincode: { type: Number },
+    Pincode: { type: String },
 
-    DealerCode: { type: Number },
+    DealerCode: { type: String },
 
     IndusrtyType: { type: String },
 
@@ -30,11 +30,11 @@ var CustomerDetail = mongoose.model('CustomerDetail', {
 
     SecondEmail: { type: String },
 
-    OfficeNumber: { type: Number },
+    OfficeNumber: { type: String },
 
-    MobileNumber: { type: Number },
+    MobileNumber: { type: String },
 
-    MoreContacts: { type: Number },
+    MoreContacts: { type: String },
 
     CustProdctPotential: { type: String },
 

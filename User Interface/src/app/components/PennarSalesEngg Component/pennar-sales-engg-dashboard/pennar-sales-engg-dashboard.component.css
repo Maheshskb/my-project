@@ -1,3 +1,26 @@
 table{text-align: center;}
-.mybtn{padding: 2px 5px;margin: 2px 5px;padding:5px 10px;}
+/* .mybtn{padding: 2px 5px;margin: 2px 5px;padding:5px 10px;} */
 th{background-color:dimgray;color:white;padding:10px 5px;text-align: center;}
+
+.model{width:80% !important;
+    max-width: 80% !important;}
+    h4{text-align: center;}
+    .model-lg{
+        max-width: 80% !important;
+    }
+    .modal-header{
+        background-color: #337ab7;
+        padding: 16px 16px;
+        color: #fff;
+        text-align: center;
+    }
+    input[type="text"]{
+        /* line-height: 1.5; */
+      padding: 0.5px 5px; 
+    
+        border: 1px solid #ced4da;
+        background-color: #fff;
+        width: 96%;
+    }
+    #my_centered_buttons{display: flex;
+        justify-content: center;}

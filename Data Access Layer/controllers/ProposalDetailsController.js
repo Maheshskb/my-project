@@ -26,7 +26,13 @@ router.put('/', function(req,res,next){
         if(!proposal){return res.sendStatus(401);}
         
             console.log("Error in Transaction Screen Data Saving");
- 
+           //Tower Details
+            CreatedDate = req.body.CreatedDate;
+            ModifiedDate = req.body.ModifiedDate;
+            IsActive = req.body.IsActive;
+            TowerNumbers = req.body.TowerNumbers;
+            TowerName  = req.body.TowerName;
+
             //Make up Water Details
             proposal.MakeUpWaterDetail.CreatedDate = req.body.MakeUpWaterDetail.CreatedDate;
             proposal.MakeUpWaterDetail.ModifiedDate = req.body.MakeUpWaterDetail.ModifiedDate;
@@ -120,8 +126,98 @@ router.put('/', function(req,res,next){
             proposal.CirculatingWaterDetail.ddlCirculatingWater= req.body.CirculatingWaterDetail.ddlCirculatingWater;
 
             // CoolingTowerDetail
-            proposal.CoolingTowerDetail.CirculatingWater= req.body.CoolingTowerDetail.CirculatingWater;
-            proposal.CoolingTowerDetail.ddlCirculatingWater= req.body.CoolingTowerDetail.ddlCirculatingWater;
+            proposal.CoolingTowerDetail.CreatedDate= req.body.CoolingTowerDetail.CreatedDate;
+            proposal.CoolingTowerDetail.ModifiedDate= req.body.CoolingTowerDetail.ModifiedDate;
+            proposal.CoolingTowerDetail.IsActive= req.body.CoolingTowerDetail.IsActive;
+
+            proposal.CoolingTowerDetail.WaterCirculationRate= req.body.CoolingTowerDetail.WaterCirculationRate;
+            proposal.CoolingTowerDetail.ddlWaterCirculationRate= req.body.CoolingTowerDetail.ddlWaterCirculationRate;
+
+            proposal.CoolingTowerDetail.TempOutlet= req.body.CoolingTowerDetail.TempOutlet;
+            proposal.CoolingTowerDetail.ddlTempOutlet= req.body.CoolingTowerDetail.ddlTempOutlet;
+
+            proposal.CoolingTowerDetail.DeltaT= req.body.CoolingTowerDetail.DeltaT;
+            proposal.CoolingTowerDetail.ddlDeltaT= req.body.CoolingTowerDetail.ddlDeltaT;
+            
+            proposal.CoolingTowerDetail.Evaporation= req.body.CoolingTowerDetail.Evaporation;
+            proposal.CoolingTowerDetail.ddlEvaporation= req.body.CoolingTowerDetail.ddlEvaporation;
+
+            proposal.CoolingTowerDetail.BlowDown= req.body.CoolingTowerDetail.BlowDown;
+            proposal.CoolingTowerDetail.ddlBlowDown= req.body.CoolingTowerDetail.ddlBlowDown;
+            
+            proposal.CoolingTowerDetail.COC= req.body.CoolingTowerDetail.COC;
+            proposal.CoolingTowerDetail.ddlCOC= req.body.CoolingTowerDetail.ddlCOC;
+
+            proposal.CoolingTowerDetail.MakeUpWater= req.body.CoolingTowerDetail.MakeUpWater;
+            proposal.CoolingTowerDetail.ddlMakeUpWater= req.body.CoolingTowerDetail.ddlMakeUpWater;
+            // .-------?
+            proposal.CoolingTowerDetail.OperatingHrsPerDay= req.body.CoolingTowerDetail.OperatingHrsPerDay;
+            proposal.CoolingTowerDetail.ddlOperatingHrsPerDay= req.body.CoolingTowerDetail.ddlOperatingHrsPerDay;
+
+            proposal.CoolingTowerDetail.SideStreamFilterFlow= req.body.CoolingTowerDetail.SideStreamFilterFlow;
+            proposal.CoolingTowerDetail.ddlSideStreamFilterFlow= req.body.CoolingTowerDetail.ddlSideStreamFilterFlow;
+            
+            proposal.CoolingTowerDetail.AcidUsedForPhControl= req.body.CoolingTowerDetail.AcidUsedForPhControl;
+            proposal.CoolingTowerDetail.ddlAcidUsedForPhControl= req.body.CoolingTowerDetail.ddlAcidUsedForPhControl;
+
+            proposal.CoolingTowerDetail.PercentagesAcidUsed= req.body.CoolingTowerDetail.PercentagesAcidUsed;
+            proposal.CoolingTowerDetail.ddlPercentagesAcidUsed= req.body.CoolingTowerDetail.ddlPercentagesAcidUsed;
+            
+            proposal.CoolingTowerDetail.CoolingTowerSumpVolume= req.body.CoolingTowerDetail.CoolingTowerSumpVolume;
+            proposal.CoolingTowerDetail.ddlCoolingTowerSumpVolume= req.body.CoolingTowerDetail.ddlCoolingTowerSumpVolume;
+
+            proposal.CoolingTowerDetail.CoolingTowerCapacityTR= req.body.CoolingTowerDetail.CoolingTowerCapacityTR;
+            proposal.CoolingTowerDetail.ddlCoolingTowerCapacityTR= req.body.CoolingTowerDetail.ddlCoolingTowerCapacityTR;
+            
+            proposal.CoolingTowerDetail.CoolingTowerOtherInfo= req.body.CoolingTowerDetail.CoolingTowerOtherInfo;
+            proposal.CoolingTowerDetail.ddlCoolingTowerOtherInfo= req.body.CoolingTowerDetail.ddlCoolingTowerOtherInfo;
+           
+           //CoolingTowerOperatingCondition
+           proposal.CoolingTowerOperatingCondition.CreatedDate= req.body.CoolingTowerOperatingCondition.CreatedDate;
+           proposal.CoolingTowerOperatingCondition.ModifiedDate= req.body.CoolingTowerOperatingCondition.ModifiedDate;
+           proposal.CoolingTowerOperatingCondition.IsActive= req.body.CoolingTowerOperatingCondition.IsActive;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition1= req.body.CoolingTowerOperatingCondition.TestCondition1;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition1= req.body.CoolingTowerOperatingCondition.ddlTestCondition1;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition2= req.body.CoolingTowerOperatingCondition.TestCondition2;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition2= req.body.CoolingTowerOperatingCondition.ddlTestCondition2;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition3= req.body.CoolingTowerOperatingCondition.TestCondition3;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition3= req.body.CoolingTowerOperatingCondition.ddlTestCondition3;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition4= req.body.CoolingTowerOperatingCondition.TestCondition4;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition4= req.body.CoolingTowerOperatingCondition.ddlTestCondition4;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition5= req.body.CoolingTowerOperatingCondition.TestCondition5;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition5= req.body.CoolingTowerOperatingCondition.ddlTestCondition5;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition6= req.body.CoolingTowerOperatingCondition.TestCondition6;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition6= req.body.CoolingTowerOperatingCondition.ddlTestCondition6;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition7= req.body.CoolingTowerOperatingCondition.TestCondition7;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition7= req.body.CoolingTowerOperatingCondition.ddlTestCondition7;
+
+           proposal.CoolingTowerOperatingCondition.TestCondition8= req.body.CoolingTowerOperatingCondition.TestCondition8;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition8= req.body.CoolingTowerOperatingCondition.ddlTestCondition8;
+
+           //WaterRequirementDetail
+           proposal.WaterRequirementDetail.CreatedDate= req.body.WaterRequirementDetail.CreatedDate;
+           proposal.WaterRequirementDetail.ModifiedDate= req.body.WaterRequirementDetail.ModifiedDate;
+           proposal.WaterRequirementDetail.IsActive= req.body.WaterRequirementDetail.IsActive;
+
+           proposal.WaterRequirementDetail.UsedMakeUpWater= req.body.WaterRequirementDetail.UsedMakeUpWater;
+           proposal.WaterRequirementDetail.ddlUsedMakeUpWater= req.body.WaterRequirementDetail.ddlUsedMakeUpWater;
+
+           proposal.WaterRequirementDetail.MakeUpDoneProcess= req.body.WaterRequirementDetail.MakeUpDoneProcess;
+           proposal.WaterRequirementDetail.ddlMakeUpDoneProcess= req.body.WaterRequirementDetail.ddlMakeUpDoneProcess;
+
+           proposal.WaterRequirementDetail.BlowDownQuantity= req.body.WaterRequirementDetail.BlowDownQuantity;
+           proposal.WaterRequirementDetail.ddlBlowDownQuantity= req.body.WaterRequirementDetail.ddlBlowDownQuantity;
+
+           proposal.WaterRequirementDetail.BlowDownFrequency= req.body.WaterRequirementDetail.BlowDownFrequency;
+           proposal.WaterRequirementDetail.ddlBlowDownFrequency= req.body.WaterRequirementDetail.ddlBlowDownFrequency;
+
             // proposal.CreatedDate = req.body.CreatedDate;
            // proposal.ModifiedDate = req.body.ModifiedDate;
             //proposal.IsActive = req.body.IsActive;
@@ -148,6 +244,11 @@ router.post('/', (req, res)=>
             // TowerName : req.body.TowerName,
             // id : req.body.id,
             CreatedDate : req.body.CreatedDate,
+            ModifiedDate : req.body.ModifiedDate,
+            IsActive : req.body.IsActive,
+            TowerNumbers : req.body.TowerNumbers,
+            TowerName : req.body.TowerName,
+
             CirculatingWaterDetail: {
                 CreatedDate: req.body.CirculatingWaterDetail.CreatedDate,
                 ModifiedDate: req.body.CirculatingWaterDetail.ModifiedDate,
@@ -245,6 +346,48 @@ router.post('/', (req, res)=>
                 CreatedDate: req.body.CoolingTowerDetail.CreatedDate,
                 ModifiedDate: req.body.CoolingTowerDetail.ModifiedDate,
                 IsActive: req.body.CoolingTowerDetail.IsActive,
+
+                WaterCirculationRate: req.body.CoolingTowerDetail.WaterCirculationRate,
+                ddlWaterCirculationRate: req.body.CoolingTowerDetail.ddlWaterCirculationRate,
+
+                TempOutlet: req.body.CoolingTowerDetail.TempOutlet,
+                ddlTempOutlet: req.body.CoolingTowerDetail.ddlTempOutlet,
+
+                DeltaT: req.body.CoolingTowerDetail.DeltaT,
+                ddlDeltaT: req.body.CoolingTowerDetail.ddlDeltaT,
+
+                Evaporation: req.body.CoolingTowerDetail.Evaporation,
+                ddlEvaporation: req.body.CoolingTowerDetail.ddlEvaporation,
+
+                BlowDown: req.body.CoolingTowerDetail.BlowDown,
+                ddlBlowDown: req.body.CoolingTowerDetail.ddlBlowDown,
+
+                COC: req.body.CoolingTowerDetail.COC,
+                ddlCOC: req.body.CoolingTowerDetail.ddlCOC,
+
+                MakeUpWater: req.body.CoolingTowerDetail.MakeUpWater,
+                ddlMakeUpWater: req.body.CoolingTowerDetail.ddlMakeUpWater,
+                
+                OperatingHrsPerDay: req.body.CoolingTowerDetail.OperatingHrsPerDay,
+                ddlOperatingHrsPerDay: req.body.CoolingTowerDetail.ddlOperatingHrsPerDay,
+
+                SideStreamFilterFlow: req.body.CoolingTowerDetail.SideStreamFilterFlow,
+                ddlSideStreamFilterFlow: req.body.CoolingTowerDetail.ddlSideStreamFilterFlow,
+
+                AcidUsedForPhControl: req.body.CoolingTowerDetail.AcidUsedForPhControl,
+                ddlAcidUsedForPhControl: req.body.CoolingTowerDetail.ddlAcidUsedForPhControl,
+
+                PercentagesAcidUsed: req.body.CoolingTowerDetail.PercentagesAcidUsed,
+                ddlPercentagesAcidUsed: req.body.CoolingTowerDetail.ddlPercentagesAcidUsed,
+
+                CoolingTowerSumpVolume: req.body.CoolingTowerDetail.CoolingTowerSumpVolume,
+                ddlCoolingTowerSumpVolume: req.body.CoolingTowerDetail.ddlCoolingTowerSumpVolume,
+
+                CoolingTowerCapacityTR: req.body.CoolingTowerDetail.CoolingTowerCapacityTR,
+                ddlCoolingTowerCapacityTR: req.body.CoolingTowerDetail.ddlCoolingTowerCapacityTR,
+
+                CoolingTowerOtherInfo: req.body.CoolingTowerDetail.CoolingTowerOtherInfo,
+                ddlCoolingTowerOtherInfo: req.body.CoolingTowerDetail.ddlCoolingTowerOtherInfo,
           
             },
 
@@ -253,6 +396,30 @@ router.post('/', (req, res)=>
                 CreatedDate: req.body.CoolingTowerOperatingCondition.CreatedDate,
                 ModifiedDate: req.body.CoolingTowerOperatingCondition.ModifiedDate,
                 IsActive: req.body.CoolingTowerOperatingCondition.IsActive,
+
+                TestCondition1: req.body.CoolingTowerOperatingCondition.TestCondition1,
+                ddlTestCondition1: req.body.CoolingTowerOperatingCondition.ddlTestCondition1,
+
+                TestCondition2: req.body.CoolingTowerOperatingCondition.TestCondition2,
+                ddlTestCondition2: req.body.CoolingTowerOperatingCondition.ddlTestCondition2,
+
+                TestCondition3: req.body.CoolingTowerOperatingCondition.TestCondition3,
+                ddlTestCondition3: req.body.CoolingTowerOperatingCondition.ddlTestCondition3,
+
+                TestCondition4: req.body.CoolingTowerOperatingCondition.TestCondition4,
+                ddlTestCondition4: req.body.CoolingTowerOperatingCondition.ddlTestCondition4,
+
+                TestCondition5: req.body.CoolingTowerOperatingCondition.TestCondition5,
+                ddlTestCondition5: req.body.CoolingTowerOperatingCondition.ddlTestCondition5,
+
+                TestCondition6: req.body.CoolingTowerOperatingCondition.TestCondition6,
+                ddlTestCondition6: req.body.CoolingTowerOperatingCondition.ddlTestCondition6,
+
+                TestCondition7: req.body.CoolingTowerOperatingCondition.TestCondition7,
+                ddlTestCondition7: req.body.CoolingTowerOperatingCondition.ddlTestCondition7,
+
+                TestCondition8: req.body.CoolingTowerOperatingCondition.TestCondition8,
+                ddlTestCondition8: req.body.CoolingTowerOperatingCondition.ddlTestCondition8,
           
             },
        
@@ -262,6 +429,18 @@ router.post('/', (req, res)=>
                 ModifiedDate: req.body.WaterRequirementDetail.ModifiedDate,
                 IsActive: req.body.WaterRequirementDetail.IsActive,
           
+                UsedMakeUpWater: req.body.WaterRequirementDetail.UsedMakeUpWater,
+                ddlUsedMakeUpWater: req.body.WaterRequirementDetail.ddlUsedMakeUpWater,
+
+                MakeUpDoneProcess: req.body.WaterRequirementDetail.MakeUpDoneProcess,
+                ddlMakeUpDoneProcess: req.body.WaterRequirementDetail.ddlMakeUpDoneProcess,
+
+                BlowDownQuantity: req.body.WaterRequirementDetail.BlowDownQuantity,
+                ddlBlowDownQuantity: req.body.WaterRequirementDetail.ddlBlowDownQuantity,
+
+                BlowDownFrequency: req.body.WaterRequirementDetail.BlowDownFrequency,
+                ddlBlowDownFrequency: req.body.WaterRequirementDetail.ddlBlowDownFrequency,
+
             },
 
             //PhotoFileUploadProvision

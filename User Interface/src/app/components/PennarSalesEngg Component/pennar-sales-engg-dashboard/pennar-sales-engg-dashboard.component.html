@@ -49,7 +49,7 @@
     
         <!-- The Modal -->
     <div class="modal" id="AddNewCustomerModel"  >
-    <div class="modal-dialog"  style="width:1000px;">
+    <div class="modal-dialog  model-lg">
     <div class="modal-content">
     
     <!-- Modal Header -->
@@ -60,7 +60,7 @@
     
     <!-- Modal body -->
     <div class="modal-body" >
-    <form #CustomerDetailsForm="ngForm" (ngSubmit)="onSubmit(CustomerDetailsForm)">
+    <form #CustomerDetailsForm="ngForm" (ngSubmit)="onCustomerInfoSubmit(CustomerDetailsForm)">
      <!-- <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_CustService.selectedCustomerDetail._id">  -->
       <div class="row">
     
@@ -301,7 +301,7 @@
     
          <div class="input-field col s12 ">
            <button class="btn btn-success mybtn" type="submit">Submit</button>&nbsp;&nbsp;&nbsp;
-           <button class="btn btn-warning right resetbtn btnGroup" type="button" (click)="resetForm(CustomerDetailsForm)">Reset</button>&nbsp;&nbsp;&nbsp;
+           <button class="btn btn-warning resetbtn btnGroup" type="button" (click)="resetForm(CustomerDetailsForm)">Reset</button>&nbsp;&nbsp;&nbsp;
            <button class="btn btn-warning mybtn" type="button" >Cancel</button>&nbsp;&nbsp;&nbsp;
            <button class="btn btn-info mybtn" >Edit</button>&nbsp;&nbsp;&nbsp;
            <button class="btn btn-secondary mybtn" data-dismiss="modal" (click)="Onclick();">Next</button>&nbsp;&nbsp;&nbsp;
@@ -329,28 +329,27 @@
          <!-- id="mydatatable" -->
          <thead>
            <tr>
-             <th>CompanyName</th>
-             <th>Product Choosen</th>
-             <th>EnquireyNature</th>
+             <th>Company Name</th>
+             <th>Choose Product Praposal</th>
+             <th>Enquirey Nature</th>
              <th>Actions</th> 
             </tr>
          </thead><!--End of table head-->
 
          <tbody>
-          <tr>
-          <!-- <td>{{cust_details.CompanyName}}</td> -->
-          <td>Defour</td>
-          <td>Benz</td>
-          <td>Hot</td>
-          
-           <td>
-            <!-- Button to Open the price entry form Modal -->
-            <button type="button" class="btn btn-primary btn-sm mybtn"  data-toggle="modal" data-target="#AddNewCustomerModel" (click)="onEdit(cust_details)">
-              View
-            </button>&nbsp;&nbsp;&nbsp;&nbsp;
-           <button type="button" class="btn btn-danger btn-sm mybtn">Generate Proposal</button>
-           </td>                     
-         </tr> 
+          <tr *ngFor="let CustInfo of _CustService.custDetails">
+            <td>{{CustInfo.CompanyName}}</td>
+            <td>{{CustInfo.ChooseProductPraposal}}</td>
+            <td>{{CustInfo.EnquireyNature}}</td>
+            <td>
+              <!-- Button to Open the price entry form Modal -->
+              <button type="button" class="btn btn-primary btn-sm mybtn"  data-toggle="modal" data-target="#AddNewCustomerModel" (click)="onEdit(cust_details)">
+                View
+              </button>&nbsp;&nbsp;&nbsp;&nbsp;
+             <button type="button" class="btn btn-danger btn-sm mybtn">Generate Proposal</button>
+             </td> 
+           </tr>
+        
        </tbody>
        
        </table>
