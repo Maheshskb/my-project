@@ -152,7 +152,7 @@ export const appRoutes: Routes = [
         children: [{ path: '', component: DealerSignInComponent }]
     },
     {
-        path: 'DealerComponent', component: DealerComponent
+        path: 'DealerDashboard', component: DealerComponent
     },
 
     {

@@ -57,7 +57,6 @@ app.use('/RegisterDealerSalesEngineer', registerDealerSalesEnggController);
 app.use('/RegisterPennarSalesEngineer', registerPennarSalesEnggController);
 app.use('/TransactionDataScreen', transactinDataController );
 app.use('/ProposalDetails', proposalDataController );
-
 //Dealer
 app.use('/RegisterDealer', registerDealerController);
 

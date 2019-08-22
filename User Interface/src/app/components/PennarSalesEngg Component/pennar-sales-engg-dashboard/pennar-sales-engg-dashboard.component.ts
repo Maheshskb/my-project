@@ -57,6 +57,7 @@ export class PennarSalesEnggDashboardComponent implements OnInit {
     this._CustService.postCustomerDetail(form.value).subscribe((_res)=>
   {
       this.resetForm(form); 
+      this.RefreshCustomerInfoList()
       this.showAddToaster();  
     }); 
   }

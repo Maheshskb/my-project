@@ -16,13 +16,14 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <form #TowerDetailsForm="ngForm" (ngSubmit)="onSubmit(TowerDetailsForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails._id"> 
                         <div class="row">
                             <div class="input-field col s5">
                                 <label>Number of Tower with This Customer :</label>
                             </div>
 
                             <div class="input-field col s7">
-                                <select class="slct" style="min-width: 490px; margin-left: 5px;" name="TowerNumbers" #name="ngModel" [(ngModel)]="_TransactionScreen.selectedTransactionScreen.TowerNumbers">
+                                <select class="slct" style="min-width: 490px; margin-left: 5px;" name="TowerNumbers" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.TowerNumbers">
                                     <option value="0"> 0 </option>
                                     <option value="1"> 1 </option>
                                     <option value="2"> 2 </option>
@@ -44,7 +45,7 @@
                             </div>
 
                             <div class="input-field col s7">
-                                <input type="text" name="TowerName" #name="ngModel" [(ngModel)]="_TransactionScreen.selectedTransactionScreen.TowerName">
+                                <input type="text" name="TowerName" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.TowerName">
                             </div>
                         </div>
 
@@ -80,16 +81,17 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
+                    <form #MakeupWaterDetailsForm="ngForm" (ngSubmit)="onSubmit(MakeupWaterDetailsForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails._id">
                         <div class="row">
                             <div class="input-field col s2">
                                 <label style="line-height:30px">Source Of Water :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="SourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.SourceOfWater">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlSourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlSourceOfWater">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -101,10 +103,10 @@
                                 <label style="line-height:30px">ph :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterPh">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterPh">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -116,10 +118,10 @@
                                 <label style="line-height:30px">Turbidity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTurbidity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTurbidity">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -131,10 +133,10 @@
                                 <label style="line-height:30px">TDS :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTDS">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTDS">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -146,10 +148,10 @@
                                 <label style="line-height:30px">Conductivity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterConductivity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterConductivity">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -161,10 +163,10 @@
                                 <label style="line-height:30px">Total Hardness :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalHardness">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalHardness">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -176,10 +178,10 @@
                                 <label style="line-height:30px">Calcium Hardness Info :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterCalHardness">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterCalHardness">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -191,10 +193,10 @@
                                 <label style="line-height:30px">Total Alkalinity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalAlkalinity">
                            </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalAlkalinity">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -206,10 +208,10 @@
                                 <label style="line-height:30px">Chloride :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterChloride">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterChloride">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -221,10 +223,10 @@
                                 <label style="line-height:30px">Sulphates :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSulphates">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSulphates">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -236,10 +238,10 @@
                                 <label style="line-height:30px">Silica :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSilica">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSilica">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -251,10 +253,10 @@
                                 <label style="line-height:30px">Any Other :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterOtherInfo">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterOtherInfo">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
@@ -262,7 +264,7 @@
                         </div>
                        <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TowerDteailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " style="width: 15%;" (click)="OnMakeupWaterSubmission(MakeupWaterDetails);">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CirculatingWaterDetailsModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
@@ -498,7 +500,7 @@
 
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MakeupWaterDetails" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerDetailsModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
@@ -749,7 +751,7 @@
 
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CirculatingWaterDetailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerOperatingModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
@@ -893,7 +895,7 @@
 
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerDetailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#WaterRequirementModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
@@ -983,7 +985,7 @@
 
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerOperatingModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#PhotoFileUploadModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
@@ -1078,7 +1080,7 @@
                         <hr>
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#WaterRequirementModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#PresentTreatmentModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
@@ -1324,8 +1326,7 @@
 
                             </div>
                         </div>
-<br><br>
-                        <table class="table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                     <table class="table-bordered" id="dataTable" width="100%" cellspacing="0" >
                             <thead>
                             <tr>
                             <th>Function</th>
@@ -1361,7 +1362,7 @@
                             <label style="font-weight: bold;">Do you Want to Modify?</label>&nbsp;&nbsp; 
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModifyCoolingSystemModel" data-dismiss="modal" style="width: 15%;">Yes</button>&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#GenerateProposalModel" data-dismiss="modal" style="width: 15%;">No</button>
-                            <br><br>
+                          
                         </div>
                     </form>
                 </div>
@@ -1514,7 +1515,7 @@
                             <div class="input-field col-md-2">
 
                             </div>
-                        </div><br><br>
+                        </div>
 
     
                         
@@ -1689,7 +1690,7 @@
                             </div>
                         </div>
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModifyCoolingSystemModel" data-dismiss="modal" style="width: 15%;">View Earlier Proposal</button>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ViewEarlierProposalModel" data-dismiss="modal" style="width: 15%;">View Earlier Proposal</button>&nbsp;&nbsp;&nbsp;
                             <button class="btn btn-success right " type="submit" style="width: 15%;">Generate Proposal</button>&nbsp;&nbsp;&nbsp;
                             <button class="btn btn-warning right " type="submit" style="width: 15%;">Export Proposal In Word Format</button>&nbsp;&nbsp;&nbsp;
                             <button class="btn btn-primary right " type="submit" style="width: 15%;">Print Proposal</button>&nbsp;&nbsp;&nbsp;
@@ -1706,7 +1707,53 @@
     </div>
     <!--End of modal-->
 
-    <!-- Code Should be edited -->
+    <div class="modal" id="ViewEarlierProposalModel">
+        <div class="modal-dialog model-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">View Earlier Proposal</h4>
+                    <button type="button" class="close" data-dismiss="modal" style="color: white;" >&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <table class=" table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <th>Id</th>
+                                <th>Customer Name</th>
+                                <th>Tower Number</th>
+                                <th>Action </th>
+                            </thead>
+                            <tbody>
+                                <td>1</td>
+                                <td>ABC</td>
+                                <td>Tower A</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-sm mybtn"  data-toggle="modal" data-target="#">
+                                        View
+                                      </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                     <button type="button" class="btn btn-danger btn-sm mybtn">Generate Proposal</button>
+                                </td>
+                                
+                            </tbody>
+                        </table>
+                        <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"  style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
+                       </div>
+                    </form>
+                </div>
+                <!-- End of Modal body -->
+            </div>
+            <!--End of modal-content-->
+        </div>
+        <!--End of modal-dialog-->
+    </div>
+    <!--End of modal-->
+
+    <!-- Code Should be edited (Sample model Code) -->
     <div class="modal" id="CoolingTowerDetailsModel">
         <div class="modal-dialog model-lg">
             <div class="modal-content">

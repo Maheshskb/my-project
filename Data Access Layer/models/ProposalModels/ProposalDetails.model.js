@@ -1,8 +1,10 @@
-
+constructor( )
+{}
 const mongoose = require('mongoose');
 
 var ProposalDetails = mongoose.model('ProposalDetails', {
 
+    //  Step:{type:string},
      id : { type : String },
 
      CreatedDate : { type : String },
@@ -11,22 +13,37 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
      
      IsActive : { type : String },
 
+     TowerDetail : {
+      // id : { type : string },
+
+      // CreatedDate : { type : string},
+ 
+      // ModifiedDate : { type : string},
+      
+      // IsActive : { type : string},
+ 
+      TowerNumbers : { type : String },
+ 
+      TowerName : { type : String }
+
+     },
+
      MakeUpWaterDetail :
       {
 
-        id : { type : String },
+        // id : { type : String },
    
-        CreatedDate : { type : String },
+        // CreatedDate : { type : String },
    
-        ModifiedDate : { type : String },
+        // ModifiedDate : { type : String },
    
-        IsActive : { type : String },
+        // IsActive : { type : String },
    
         SourceOfWater: { type: String },
         ddlSourceOfWater: { type: String },
    
         MakeUpWaterPh: { type: String },
-        dlMakeUpWaterPh: { type: String },
+        ddlMakeUpWaterPh: { type: String },
    
         MakeUpWaterTurbidity: { type: String },
         ddlMakeUpWaterTurbidity: { type: String },

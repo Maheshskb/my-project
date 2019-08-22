@@ -16,6 +16,7 @@ router.get('/', (req, res) => {
     });
 
 });
+
 router.put('/', function(req,res,next){
     console.log("Error in Transaction Screen Data dfdfgd");
  
@@ -25,15 +26,15 @@ router.put('/', function(req,res,next){
     ProposalDetails.findById(req.body.id).then(function(proposal){
         if(!proposal){return res.sendStatus(401);}
         
+        var step= req.body.StepNumber;
             console.log("Error in Transaction Screen Data Saving");
            //Tower Details
-            CreatedDate = req.body.CreatedDate;
-            ModifiedDate = req.body.ModifiedDate;
-            IsActive = req.body.IsActive;
-            TowerNumbers = req.body.TowerNumbers;
-            TowerName  = req.body.TowerName;
+           
 
             //Make up Water Details
+            // if(proposal.step=="1")
+            if(step=="1")
+            {
             proposal.MakeUpWaterDetail.CreatedDate = req.body.MakeUpWaterDetail.CreatedDate;
             proposal.MakeUpWaterDetail.ModifiedDate = req.body.MakeUpWaterDetail.ModifiedDate;
             proposal.MakeUpWaterDetail.IsActive = req.body.MakeUpWaterDetail.IsActive;
@@ -76,12 +77,14 @@ router.put('/', function(req,res,next){
 
             proposal.MakeUpWaterDetail.MakeUpWaterOtherInfo = req.body.MakeUpWaterDetail.MakeUpWaterOtherInfo;
             proposal.MakeUpWaterDetail.ddlMakeUpWaterOtherInfo = req.body.MakeUpWaterDetail.ddlMakeUpWaterOtherInfo;
+            }
 
-
+            if(step=="2")
+{
             //Circulating Water DEtails
             proposal.CirculatingWaterDetail.ModifiedDate= req.body.CirculatingWaterDetail.ModifiedDate;
             proposal.CirculatingWaterDetail.CreatedDate= req.body.CirculatingWaterDetail.CreatedDate;
-            proposal.CirculatingWaterDetail.IsActive= req.body.CirculatingWaterDetail.IsActive;
+            TSdata.CirculatingWaterDetail.IsActive= req.body.CirculatingWaterDetail.IsActive;
 
             proposal.CirculatingWaterDetail.CirculatingWaterPh= req.body.CirculatingWaterDetail.CirculatingWaterPh;
             proposal.CirculatingWaterDetail.ddlCirculatingWaterPh= req.body.CirculatingWaterDetail.ddlCirculatingWaterPh;
@@ -124,7 +127,9 @@ router.put('/', function(req,res,next){
 
             proposal.CirculatingWaterDetail.CirculatingWater= req.body.CirculatingWaterDetail.CirculatingWater;
             proposal.CirculatingWaterDetail.ddlCirculatingWater= req.body.CirculatingWaterDetail.ddlCirculatingWater;
-
+}
+            if(step=="3")
+{
             // CoolingTowerDetail
             proposal.CoolingTowerDetail.CreatedDate= req.body.CoolingTowerDetail.CreatedDate;
             proposal.CoolingTowerDetail.ModifiedDate= req.body.CoolingTowerDetail.ModifiedDate;
@@ -150,7 +155,7 @@ router.put('/', function(req,res,next){
 
             proposal.CoolingTowerDetail.MakeUpWater= req.body.CoolingTowerDetail.MakeUpWater;
             proposal.CoolingTowerDetail.ddlMakeUpWater= req.body.CoolingTowerDetail.ddlMakeUpWater;
-            // .-------?
+           
             proposal.CoolingTowerDetail.OperatingHrsPerDay= req.body.CoolingTowerDetail.OperatingHrsPerDay;
             proposal.CoolingTowerDetail.ddlOperatingHrsPerDay= req.body.CoolingTowerDetail.ddlOperatingHrsPerDay;
 
@@ -171,7 +176,11 @@ router.put('/', function(req,res,next){
             
             proposal.CoolingTowerDetail.CoolingTowerOtherInfo= req.body.CoolingTowerDetail.CoolingTowerOtherInfo;
             proposal.CoolingTowerDetail.ddlCoolingTowerOtherInfo= req.body.CoolingTowerDetail.ddlCoolingTowerOtherInfo;
-           
+}
+
+            if(step=="4")
+{
+
            //CoolingTowerOperatingCondition
            proposal.CoolingTowerOperatingCondition.CreatedDate= req.body.CoolingTowerOperatingCondition.CreatedDate;
            proposal.CoolingTowerOperatingCondition.ModifiedDate= req.body.CoolingTowerOperatingCondition.ModifiedDate;
@@ -200,6 +209,9 @@ router.put('/', function(req,res,next){
 
            proposal.CoolingTowerOperatingCondition.TestCondition8= req.body.CoolingTowerOperatingCondition.TestCondition8;
            proposal.CoolingTowerOperatingCondition.ddlTestCondition8= req.body.CoolingTowerOperatingCondition.ddlTestCondition8;
+}
+         if(step=="5")
+{
 
            //WaterRequirementDetail
            proposal.WaterRequirementDetail.CreatedDate= req.body.WaterRequirementDetail.CreatedDate;
@@ -223,11 +235,12 @@ router.put('/', function(req,res,next){
             //proposal.IsActive = req.body.IsActive;
            
             console.log(proposal.CreatedDate);
-            
+}
       
         return proposal.save().then(function(){
            // if(!err){ 
                 res.send(proposal);
+                
             //}
            // else{ console.log("Error in Transaction Screen Data Saving  : " + JSON.stringify(err,undefined,2));}
         });
@@ -240,221 +253,227 @@ router.post('/', (req, res)=>
     //create an object of productDetail model class inside that we have field details of Product Details
     var TSdata = new ProposalDetails(
         {
+            TowerDetail:{                
+             TowerNumbers : req.body.TowerNumbers,
+             TowerName : req.body.TowerName,
+             
+            //  CreatedDate : req.body.CreatedDate,
+            //  ModifiedDate : req.body.ModifiedDate,
+            //  IsActive : req.body.IsActive,
             // TowerNumbers : req.body.TowerNumbers,
             // TowerName : req.body.TowerName,
-            // id : req.body.id,
-            CreatedDate : req.body.CreatedDate,
-            ModifiedDate : req.body.ModifiedDate,
-            IsActive : req.body.IsActive,
-            TowerNumbers : req.body.TowerNumbers,
-            TowerName : req.body.TowerName,
+        },
 
             CirculatingWaterDetail: {
-                CreatedDate: req.body.CirculatingWaterDetail.CreatedDate,
-                ModifiedDate: req.body.CirculatingWaterDetail.ModifiedDate,
-                IsActive: req.body.CirculatingWaterDetail.IsActive,
+                // CreatedDate: req.body.CirculatingWaterDetail.CreatedDate,
+                // ModifiedDate: req.body.CirculatingWaterDetail.ModifiedDate,
+                 CreatedDate: "",
+                ModifiedDate: "",
+                IsActive: "",
 
-                CirculatingWaterPh: req.body.CirculatingWaterDetail.CirculatingWaterPh,
-                ddlCirculatingWaterPh: req.body.CirculatingWaterDetail.ddlCirculatingWaterPh,
+                CirculatingWaterPh: "",
+                ddlCirculatingWaterPh: "",
 
-                CirculatingWaterTurbidity: req.body.CirculatingWaterDetail.CirculatingWaterTurbidity,
-                ddlCirculatingWaterTurbidity: req.body.CirculatingWaterDetail.ddlCirculatingWaterTurbidity,
+                CirculatingWaterTurbidity: "",
+                ddlCirculatingWaterTurbidity: "",
                 
-                CirculatingWaterTDS: req.body.CirculatingWaterDetail.CirculatingWaterTDS,
-                ddlCirculatingWaterTDS: req.body.CirculatingWaterDetail.ddlCirculatingWaterTDS,
+                CirculatingWaterTDS: "",
+                ddlCirculatingWaterTDS: "",
                 
-                CirculatingWaterConductivity : req.body.CirculatingWaterDetail.CirculatingWaterConductivity,
-                ddlCirculatingWaterConductivity : req.body.CirculatingWaterDetail.ddlCirculatingWaterConductivity,
+                CirculatingWaterConductivity : "",
+                ddlCirculatingWaterConductivity : "",
 
-                CirculatingWaterTotalHardness : req.body.CirculatingWaterDetail.CirculatingWaterTotalHardness,
-                ddlCirculatingWaterTotalHardness : req.body.CirculatingWaterDetail.ddlCirculatingWaterTotalHardness,
+                CirculatingWaterTotalHardness : "",
+                ddlCirculatingWaterTotalHardness : "",
 
-                CirculatingWaterCalciumHardness : req.body.CirculatingWaterDetail.CirculatingWaterCalciumHardness,
-                ddlCirculatingWaterCalciumHardness : req.body.CirculatingWaterDetail.ddlCirculatingWaterCalciumHardness,
+                CirculatingWaterCalciumHardness : "",
+                ddlCirculatingWaterCalciumHardness : "",
 
-                CirculatingWaterTotalAlkalinity : req.body.CirculatingWaterDetail.CirculatingWaterTotalAlkalinity,
-                ddlCirculatingWaterTotalAlkalinity : req.body.CirculatingWaterDetail.ddlCirculatingWaterTotalAlkalinity,
+                CirculatingWaterTotalAlkalinity : "",
+                ddlCirculatingWaterTotalAlkalinity : "",
 
-                CirculatingWaterChloride : req.body.CirculatingWaterDetail.CirculatingWaterChloride,
-                ddlCirculatingWaterChloride : req.body.CirculatingWaterDetail.ddlCirculatingWaterChloride,
+                CirculatingWaterChloride : "",
+                ddlCirculatingWaterChloride : "",
 
-                CirculatingWaterSulphates : req.body.CirculatingWaterDetail.CirculatingWaterSulphates,
-                ddlCirculatingWaterSulphates : req.body.CirculatingWaterDetail.ddlCirculatingWaterSulphates,
+                CirculatingWaterSulphates : "",
+                ddlCirculatingWaterSulphates : "",
 
-                CirculatingWaterSilica : req.body.CirculatingWaterDetail.CirculatingWaterSilica,
-                ddlCirculatingWaterSilica : req.body.CirculatingWaterDetail.ddlCirculatingWaterSilica,
+                CirculatingWaterSilica : "",
+                ddlCirculatingWaterSilica : "",
 
-                CirculatingWaterPhosphate : req.body.CirculatingWaterDetail.CirculatingWaterPhosphate,
-                ddlCirculatingWaterPhosphate : req.body.CirculatingWaterDetail.ddlCirculatingWaterPhosphate,
+                CirculatingWaterPhosphate : "",
+                ddlCirculatingWaterPhosphate : "",
 
-                CirculatingWaterZinc : req.body.CirculatingWaterDetail.CirculatingWaterZinc,
-                ddlCirculatingWaterZinc : req.body.CirculatingWaterDetail.ddlCirculatingWaterZinc,
+                CirculatingWaterZinc : "",
+                ddlCirculatingWaterZinc : "",
 
-                CirculatingWaterOtherInfo : req.body.CirculatingWaterDetail.CirculatingWaterOtherInfo,
-                ddlCirculatingWaterOtherInfo : req.body.CirculatingWaterDetail.ddlCirculatingWaterOtherInfo,
+                CirculatingWaterOtherInfo : "",
+                ddlCirculatingWaterOtherInfo : "",
 
-                CirculatingWater : req.body.CirculatingWaterDetail.CirculatingWater,
-                ddlCirculatingWater : req.body.CirculatingWaterDetail.ddlCirculatingWater,
+                CirculatingWater : "",
+                ddlCirculatingWater : "",
 
             },
 
             //Make Up Water Details
             MakeUpWaterDetail: {
-                CreatedDate: req.body.MakeUpWaterDetail.CreatedDate,
-                ModifiedDate: req.body.MakeUpWaterDetail.ModifiedDate,
-                IsActive: req.body.MakeUpWaterDetail.IsActive,
+                CreatedDate: "",
+                ModifiedDate: "",
+                IsActive: "",
 
-                SourceOfWater: req.body.MakeUpWaterDetail.SourceOfWater,
-                ddlSourceOfWater: req.body.MakeUpWaterDetail.ddlSourceOfWater,
+                SourceOfWater: "",
+                ddlSourceOfWater: "",
 
-                MakeUpWaterPh: req.body.MakeUpWaterDetail.MakeUpWaterPh,
-                ddlMakeUpWaterPh: req.body.MakeUpWaterDetail.ddlMakeUpWaterPh,
+                MakeUpWaterPh: "",
+                ddlMakeUpWaterPh: "",
 
-                MakeUpWaterTurbidity: req.body.MakeUpWaterDetail.MakeUpWaterTurbidity,
-                ddlMakeUpWaterTurbidity: req.body.MakeUpWaterDetail.ddlMakeUpWaterTurbidity,
+                MakeUpWaterTurbidity: "",
+                ddlMakeUpWaterTurbidity: "",
 
-                MakeUpWaterTDS: req.body.MakeUpWaterDetail.MakeUpWaterTDS,
-                ddlMakeUpWaterTDS: req.body.MakeUpWaterDetail.ddlMakeUpWaterTDS,
+                MakeUpWaterTDS: "",
+                ddlMakeUpWaterTDS: "",
 
-                MakeUpWaterConductivity: req.body.MakeUpWaterDetail.MakeUpWaterConductivity,
-                ddlMakeUpWaterConductivity: req.body.MakeUpWaterDetail.ddlMakeUpWaterConductivity,
+                MakeUpWaterConductivity: "",
+                ddlMakeUpWaterConductivity: "",
 
-                MakeUpWaterTotalHardness: req.body.MakeUpWaterDetail.MakeUpWaterTotalHardness,
-                ddlMakeUpWaterTotalHardness: req.body.MakeUpWaterDetail.ddlMakeUpWaterTotalHardness,
+                MakeUpWaterTotalHardness: "",
+                ddlMakeUpWaterTotalHardness: "",
 
-                MakeUpWaterCalHardness: req.body.MakeUpWaterDetail.MakeUpWaterCalHardness,
-                ddlMakeUpWaterCalHardness: req.body.MakeUpWaterDetail.ddlMakeUpWaterCalHardness,
+                MakeUpWaterCalHardness: "",
+                ddlMakeUpWaterCalHardness: "",
 
-                MakeUpWaterTotalAlkalinity: req.body.MakeUpWaterDetail.MakeUpWaterTotalAlkalinity,
-                ddlMakeUpWaterTotalAlkalinity: req.body.MakeUpWaterDetail.ddlMakeUpWaterTotalAlkalinity,
+                MakeUpWaterTotalAlkalinity: "",
+                ddlMakeUpWaterTotalAlkalinity: "",
 
-                MakeUpWaterChloride: req.body.MakeUpWaterDetail.MakeUpWaterChloride,
-                ddlMakeUpWaterChloride: req.body.MakeUpWaterDetail.ddlMakeUpWaterChloride,
+                MakeUpWaterChloride: "",
+                ddlMakeUpWaterChloride: "",
           
-                MakeUpWaterSulphates: req.body.MakeUpWaterDetail.MakeUpWaterSulphates,
-                ddlMakeUpWaterSulphates: req.body.MakeUpWaterDetail.ddlMakeUpWaterSulphates,
+                MakeUpWaterSulphates: "",
+                ddlMakeUpWaterSulphates: "",
 
-                MakeUpWaterSilica: req.body.MakeUpWaterDetail.MakeUpWaterSilica,
-                ddlMakeUpWaterSilica: req.body.MakeUpWaterDetail.ddlMakeUpWaterSilica,
+                MakeUpWaterSilica: "",
+                ddlMakeUpWaterSilica: "",
 
-                MakeUpWaterOtherInfo: req.body.MakeUpWaterDetail.MakeUpWaterOtherInfo,
-                ddlMakeUpWaterOtherInfo: req.body.MakeUpWaterDetail.ddlMakeUpWaterOtherInfo,
+                MakeUpWaterOtherInfo: "",
+                ddlMakeUpWaterOtherInfo: "",
             },
 
             //Cooling Tower Details
             CoolingTowerDetail: {
-                CreatedDate: req.body.CoolingTowerDetail.CreatedDate,
-                ModifiedDate: req.body.CoolingTowerDetail.ModifiedDate,
-                IsActive: req.body.CoolingTowerDetail.IsActive,
+                CreatedDate: "",
+                ModifiedDate: "",
+                IsActive: "",
 
-                WaterCirculationRate: req.body.CoolingTowerDetail.WaterCirculationRate,
-                ddlWaterCirculationRate: req.body.CoolingTowerDetail.ddlWaterCirculationRate,
+                WaterCirculationRate: "",
+                ddlWaterCirculationRate: "",
 
-                TempOutlet: req.body.CoolingTowerDetail.TempOutlet,
-                ddlTempOutlet: req.body.CoolingTowerDetail.ddlTempOutlet,
+                TempOutlet: "",
+                ddlTempOutlet: "",
 
-                DeltaT: req.body.CoolingTowerDetail.DeltaT,
-                ddlDeltaT: req.body.CoolingTowerDetail.ddlDeltaT,
+                DeltaT: "",
+                ddlDeltaT: "",
 
-                Evaporation: req.body.CoolingTowerDetail.Evaporation,
-                ddlEvaporation: req.body.CoolingTowerDetail.ddlEvaporation,
+                Evaporation: "",
+                ddlEvaporation: "",
 
-                BlowDown: req.body.CoolingTowerDetail.BlowDown,
-                ddlBlowDown: req.body.CoolingTowerDetail.ddlBlowDown,
+                BlowDown: "",
+                ddlBlowDown: "",
 
-                COC: req.body.CoolingTowerDetail.COC,
-                ddlCOC: req.body.CoolingTowerDetail.ddlCOC,
+                COC: "",
+                ddlCOC: "",
 
-                MakeUpWater: req.body.CoolingTowerDetail.MakeUpWater,
-                ddlMakeUpWater: req.body.CoolingTowerDetail.ddlMakeUpWater,
+                MakeUpWater: "",
+                ddlMakeUpWater: "",
                 
-                OperatingHrsPerDay: req.body.CoolingTowerDetail.OperatingHrsPerDay,
-                ddlOperatingHrsPerDay: req.body.CoolingTowerDetail.ddlOperatingHrsPerDay,
+                OperatingHrsPerDay: "",
+                ddlOperatingHrsPerDay: "",
 
-                SideStreamFilterFlow: req.body.CoolingTowerDetail.SideStreamFilterFlow,
-                ddlSideStreamFilterFlow: req.body.CoolingTowerDetail.ddlSideStreamFilterFlow,
+                SideStreamFilterFlow: "",
+                ddlSideStreamFilterFlow: "",
 
-                AcidUsedForPhControl: req.body.CoolingTowerDetail.AcidUsedForPhControl,
-                ddlAcidUsedForPhControl: req.body.CoolingTowerDetail.ddlAcidUsedForPhControl,
+                AcidUsedForPhControl: "",
+                ddlAcidUsedForPhControl: "",
 
-                PercentagesAcidUsed: req.body.CoolingTowerDetail.PercentagesAcidUsed,
-                ddlPercentagesAcidUsed: req.body.CoolingTowerDetail.ddlPercentagesAcidUsed,
+                PercentagesAcidUsed: "",
+                ddlPercentagesAcidUsed: "",
 
-                CoolingTowerSumpVolume: req.body.CoolingTowerDetail.CoolingTowerSumpVolume,
-                ddlCoolingTowerSumpVolume: req.body.CoolingTowerDetail.ddlCoolingTowerSumpVolume,
+                CoolingTowerSumpVolume: "",
+                ddlCoolingTowerSumpVolume: "",
 
-                CoolingTowerCapacityTR: req.body.CoolingTowerDetail.CoolingTowerCapacityTR,
-                ddlCoolingTowerCapacityTR: req.body.CoolingTowerDetail.ddlCoolingTowerCapacityTR,
+                CoolingTowerCapacityTR: "",
+                ddlCoolingTowerCapacityTR: "",
 
-                CoolingTowerOtherInfo: req.body.CoolingTowerDetail.CoolingTowerOtherInfo,
-                ddlCoolingTowerOtherInfo: req.body.CoolingTowerDetail.ddlCoolingTowerOtherInfo,
+                CoolingTowerOtherInfo: "",
+                ddlCoolingTowerOtherInfo: "",
           
             },
 
             //Cooling Tower Operating Condition
             CoolingTowerOperatingCondition: {
-                CreatedDate: req.body.CoolingTowerOperatingCondition.CreatedDate,
-                ModifiedDate: req.body.CoolingTowerOperatingCondition.ModifiedDate,
-                IsActive: req.body.CoolingTowerOperatingCondition.IsActive,
+                CreatedDate: "",
+                ModifiedDate: "",
+                IsActive: "",
 
-                TestCondition1: req.body.CoolingTowerOperatingCondition.TestCondition1,
-                ddlTestCondition1: req.body.CoolingTowerOperatingCondition.ddlTestCondition1,
+                TestCondition1: "",
+                ddlTestCondition1: "",
 
-                TestCondition2: req.body.CoolingTowerOperatingCondition.TestCondition2,
-                ddlTestCondition2: req.body.CoolingTowerOperatingCondition.ddlTestCondition2,
+                TestCondition2: "",
+                ddlTestCondition2: "",
 
-                TestCondition3: req.body.CoolingTowerOperatingCondition.TestCondition3,
-                ddlTestCondition3: req.body.CoolingTowerOperatingCondition.ddlTestCondition3,
+                TestCondition3: "",
+                ddlTestCondition3: "",
 
-                TestCondition4: req.body.CoolingTowerOperatingCondition.TestCondition4,
-                ddlTestCondition4: req.body.CoolingTowerOperatingCondition.ddlTestCondition4,
+                TestCondition4: "",
+                ddlTestCondition4: "",
 
-                TestCondition5: req.body.CoolingTowerOperatingCondition.TestCondition5,
-                ddlTestCondition5: req.body.CoolingTowerOperatingCondition.ddlTestCondition5,
+                TestCondition5: "",
+                ddlTestCondition5: "",
 
-                TestCondition6: req.body.CoolingTowerOperatingCondition.TestCondition6,
-                ddlTestCondition6: req.body.CoolingTowerOperatingCondition.ddlTestCondition6,
+                TestCondition6: "",
+                ddlTestCondition6: "",
 
-                TestCondition7: req.body.CoolingTowerOperatingCondition.TestCondition7,
-                ddlTestCondition7: req.body.CoolingTowerOperatingCondition.ddlTestCondition7,
+                TestCondition7: "",
+                ddlTestCondition7: "",
 
-                TestCondition8: req.body.CoolingTowerOperatingCondition.TestCondition8,
-                ddlTestCondition8: req.body.CoolingTowerOperatingCondition.ddlTestCondition8,
+                TestCondition8: "",
+                ddlTestCondition8: "",
           
             },
        
             //Water Requirement Detail
             WaterRequirementDetail: {
-                CreatedDate: req.body.WaterRequirementDetail.CreatedDate,
-                ModifiedDate: req.body.WaterRequirementDetail.ModifiedDate,
-                IsActive: req.body.WaterRequirementDetail.IsActive,
+                CreatedDate: "",
+                ModifiedDate: "",
+                IsActive: "",
           
-                UsedMakeUpWater: req.body.WaterRequirementDetail.UsedMakeUpWater,
-                ddlUsedMakeUpWater: req.body.WaterRequirementDetail.ddlUsedMakeUpWater,
+                UsedMakeUpWater: "",
+                ddlUsedMakeUpWater: "",
 
-                MakeUpDoneProcess: req.body.WaterRequirementDetail.MakeUpDoneProcess,
-                ddlMakeUpDoneProcess: req.body.WaterRequirementDetail.ddlMakeUpDoneProcess,
+                MakeUpDoneProcess: "",
+                ddlMakeUpDoneProcess: "",
 
-                BlowDownQuantity: req.body.WaterRequirementDetail.BlowDownQuantity,
-                ddlBlowDownQuantity: req.body.WaterRequirementDetail.ddlBlowDownQuantity,
+                BlowDownQuantity: "",
+                ddlBlowDownQuantity: "",
 
-                BlowDownFrequency: req.body.WaterRequirementDetail.BlowDownFrequency,
-                ddlBlowDownFrequency: req.body.WaterRequirementDetail.ddlBlowDownFrequency,
+                BlowDownFrequency: "",
+                ddlBlowDownFrequency: ""
 
             },
 
             //PhotoFileUploadProvision
-            PhotoFileUploadProvision: {
-                CreatedDate: req.body.PhotoFileUploadProvision.CreatedDate,
-                ModifiedDate: req.body.PhotoFileUploadProvision.ModifiedDate,
-                IsActive: req.body.PhotoFileUploadProvision.IsActive,
+            // PhotoFileUploadProvision: {
+            //     CreatedDate: req.body.PhotoFileUploadProvision.CreatedDate,
+            //     ModifiedDate: req.body.PhotoFileUploadProvision.ModifiedDate,
+            //     IsActive: req.body.PhotoFileUploadProvision.IsActive,
           
-            },
+            // },
             
         });
         //insert data into mongoDB , after saving the record it will callback the function if there is any error it will sent to 'err' parameter , if condition is true then it will send parameters which is newly inserted 
         TSdata.save((err, doc)=>{
-             if(!err){ res.send(doc);}
+             if(!err){ res.send(doc);
+            console.log(doc);
+            }
              else{ console.log("Error in Transaction Screen Data Saving  : " + JSON.stringify(err,undefined,2));}
         });
 });
