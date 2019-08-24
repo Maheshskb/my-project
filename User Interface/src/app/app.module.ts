@@ -90,6 +90,7 @@ import { AdminSignUpComponent } from './components/admin/admin-login/admin-sign-
 import { CustomerDataEntryScreenComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/customer-data-entry-screen/customer-data-entry-screen.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -144,7 +145,7 @@ import { CustomerDataEntryScreenComponent } from './components/PennarSalesEngg C
     AdminLoginComponent,
     AdminSignInComponent,
     AdminSignUpComponent,
-    CustomerDataEntryScreenComponent,
+    CustomerDataEntryScreenComponent
 
   ],
   imports: [

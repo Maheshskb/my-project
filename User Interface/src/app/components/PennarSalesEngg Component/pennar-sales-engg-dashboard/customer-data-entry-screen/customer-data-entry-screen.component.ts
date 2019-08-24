@@ -71,6 +71,9 @@ export class CustomerDataEntryScreenComponent implements OnInit {
                 CirculatingWaterZinc : "",
                 ddlCirculatingWaterZinc : "",
 
+                CirculatingWaterFreeChlorine : "",
+                ddlCirculatingWaterFreeChlorine : "",
+
                 CirculatingWaterOtherInfo : "",
                 ddlCirculatingWaterOtherInfo : "",
 
@@ -133,6 +136,9 @@ export class CustomerDataEntryScreenComponent implements OnInit {
 
                 TempOutlet: "",
                 ddlTempOutlet: "",
+
+                TempInlet : "",
+                ddlTempInlet : "",
 
                 DeltaT: "",
                 ddlDeltaT: "",

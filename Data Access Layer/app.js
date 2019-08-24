@@ -16,6 +16,10 @@ var registerDealerController = require('./controllers/DealerRegisterController')
 var transactinDataController = require('./controllers/TransactionScreenController');
 var proposalDataController =  require('./controllers/ProposalDetailsController');
 
+//Dealer Controller 
+var dealerCustomerDetailsController = require('./controllers/DealersCustomerDetailController');
+var dealerSalesEnggController = require('./controllers/DealerSalesEnggController');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -49,7 +53,7 @@ app.use((err, req, res, next) => {
 app.use('/productDetails', productDetailsController);
 //Price modification URL
 app.use('/priceDetails', priceDetailsController);
-//add customer Details
+//add customer Details of PSE 
 app.use('/CustomerDetails', customerDetailsController);
 //Register Dealer Sales Engg
 app.use('/RegisterDealerSalesEngineer', registerDealerSalesEnggController);
@@ -57,9 +61,13 @@ app.use('/RegisterDealerSalesEngineer', registerDealerSalesEnggController);
 app.use('/RegisterPennarSalesEngineer', registerPennarSalesEnggController);
 app.use('/TransactionDataScreen', transactinDataController );
 app.use('/ProposalDetails', proposalDataController );
+
 //Dealer
 app.use('/RegisterDealer', registerDealerController);
-
+//add customer Details of Dealer 
+app.use('/DealersCustomerDetails', dealerCustomerDetailsController);
+//add new dealers sales Engg
+app.use('/AddDealersSalesEngg', dealerSalesEnggController);
 
 // start server
 app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));

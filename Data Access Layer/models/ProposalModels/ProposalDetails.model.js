@@ -122,6 +122,9 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
        
             CirculatingWaterZinc: { type: String },
             ddlCirculatingWaterZinc: { type: String },
+
+            CirculatingWaterFreeChlorine: { type : String },
+            ddlCirculatingWaterFreeChlorine: { type : String},
        
             CirculatingWaterOtherInfo: { type: String },
             ddlCirculatingWaterOtherInfo: { type: String },
@@ -146,6 +149,9 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
        
             TempOutlet: { type: String },
             ddlTempOutlet: { type: String },
+
+            TempInlet: { type: String },
+            ddlTempInlet: { type: String },
        
             DeltaT: { type: String },
             ddlDeltaT: { type: String },

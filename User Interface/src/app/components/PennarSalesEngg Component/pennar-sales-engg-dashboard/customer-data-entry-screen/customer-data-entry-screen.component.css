@@ -26,6 +26,7 @@ select, option {
     width: 250px;
     height: 29px;
     margin-top: 5px;
+    padding-top: 0px;
 }
 #my_centered_buttons{display: flex;
 justify-content: center;}

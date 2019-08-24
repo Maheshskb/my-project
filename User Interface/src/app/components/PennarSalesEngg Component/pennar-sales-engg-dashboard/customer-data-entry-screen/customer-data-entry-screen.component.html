@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" id="addBtn" data-toggle="modal" data-target="#TowerDteailsModel" style="margin-top: 5px;">
+<button type="button" class="btn btn-primary" id="addBtn" data-toggle="modal" data-target="#TowerDteailsModel" style="margin-top: 5px;margin-left: 514px;margin-top: 240px;">
     <i class="fa fa-calculator"></i>&nbsp; Customer Data Entry Screen
 </button>
 <div class="container">
@@ -54,455 +54,8 @@
                                 <button class="btn btn-success right" type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
                                 <!-- <button class="btn btn-success right" style="width: 15%;" (click)="resetForm(TowerDetailsForm)">Reset</button>&nbsp;&nbsp;&nbsp; -->
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MakeupWaterDetails" data-dismiss="modal" style="margin-top: 5px;" style="width: 15%;">Next</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerDetailsModel" data-dismiss="modal" style="margin-top: 5px;" style="width: 15%;">Next</button>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <!-- End of Modal body -->
-            </div>
-            <!--End of modal-content-->
-        </div>
-        <!--End of modal-dialog-->
-    </div>
-    <!--End of modal-->
-
-    <!-- MAKE UP WATER DETAILS -->
-    <!-- The Modal -->
-    <div class="modal" id="MakeupWaterDetails">
-        <div class="modal-dialog model-lg">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Make Up Water Details</h4>
-                    <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form #MakeupWaterDetailsForm="ngForm" (ngSubmit)="onSubmit(MakeupWaterDetailsForm)">
-                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails._id">
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Source Of Water :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="SourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.SourceOfWater">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlSourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlSourceOfWater">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">ph :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterPh">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterPh">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Turbidity :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTurbidity">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTurbidity">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">TDS :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTDS">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTDS">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Conductivity :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterConductivity">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterConductivity">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Total Hardness :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalHardness">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalHardness">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Calcium Hardness Info :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterCalHardness">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterCalHardness">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Total Alkalinity :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalAlkalinity">
-                           </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalAlkalinity">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Chloride :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterChloride">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterChloride">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Sulphates :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSulphates">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSulphates">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Silica :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSilica">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSilica">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Any Other :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterOtherInfo">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterOtherInfo">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-                       <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TowerDteailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " style="width: 15%;" (click)="OnMakeupWaterSubmission(MakeupWaterDetails);">Save As Draft</button>&nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CirculatingWaterDetailsModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
-                        </div>
-                    </form>
-                </div>
-                <!-- End of Modal body -->
-            </div>
-            <!--End of modal-content-->
-        </div>
-        <!--End of modal-dialog-->
-    </div>
-    <!--End of modal-->
-
-    <!-- CIRCULATING WATER DETAILS -->
-    <!-- The Modal -->
-    <div class="modal" id="CirculatingWaterDetailsModel">
-        <div class="modal-dialog model-lg">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Circulating Water Details</h4>
-                    <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px ">PH</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                               </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Turbidity :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">TDS :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Conductivity :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Total Hardness :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Calcium Hardness :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Total Alkalinity :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Chloride :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> Unit </option>
-                                    <option value="1"> Unit</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Sulphates:</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Silica :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Phosphate :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> % </option>
-                                    <option value="1"> % </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Zinc :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Any Other :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <label style="line-height:30px">Any Other :</label>
-                            </div>
-                            <div class="input-field col s8">
-                                <input type="text">
-                            </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MakeupWaterDetails" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
-                            <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerDetailsModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
                     </form>
                 </div>
@@ -537,8 +90,10 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> CuM/hr </option>
+                                    <option value="1"> L/H </option>
+                                    <option value="2"> L/M </option>
+                                    <option value="2"> L/S </option>
                                 </select>
                             </div>
                         </div>
@@ -552,8 +107,21 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> Deg C  </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Cooling Tower Temp Inlet :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> Deg C  </option>
                                 </select>
                             </div>
                         </div>
@@ -567,8 +135,7 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> Deg C  </option>
                                 </select>
                             </div>
                         </div>
@@ -582,8 +149,10 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> CuM/hr </option>
+                                    <option value="1"> L/H </option>
+                                    <option value="2"> L/M </option>
+                                    <option value="2"> L/S </option>
                                 </select>
                             </div>
                         </div>
@@ -597,8 +166,10 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> CuM/Hr </option>
+                                    <option value="1"> L/H </option>
+                                    <option value="2"> L/M </option>
+                                    <option value="2"> L/S </option>
                                 </select>
                             </div>
                         </div>
@@ -611,10 +182,10 @@
                                 <input type="text">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <!-- <select class="form-control" style="width: 96%;">
                                     <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
+                                    <option value="1"> u2 </option> 
+                                </select> -->
                             </div>
                         </div>
 
@@ -627,8 +198,10 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> CuM/Hr </option>
+                                    <option value="1"> L/H </option>
+                                    <option value="2"> L/M </option>
+                                    <option value="2"> L/S </option>
                                 </select>
                             </div>
                         </div>
@@ -655,6 +228,18 @@
                                     <option value="1"> 10 Hrs</option>
                                     <option value="1"> 11 Hrs</option>
                                     <option value="1"> 12 Hrs</option>
+                                    <option value="0"> 13 Hrs </option>
+                                    <option value="1"> 14 Hrs</option>
+                                    <option value="1"> 15 Hrs</option>
+                                    <option value="1"> 16 Hrs</option>
+                                    <option value="1"> 17 Hrs</option>
+                                    <option value="1"> 18 Hrs</option>
+                                    <option value="1"> 19 Hrs</option>
+                                    <option value="1"> 20 Hrs</option>
+                                    <option value="1"> 21 Hrs</option>
+                                    <option value="1"> 22 Hrs</option>
+                                    <option value="1"> 23 Hrs</option>
+                                    <option value="1"> 24 Hrs</option>
                                 </select>
                             </div>
                         </div>
@@ -668,8 +253,7 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> CuM/Hr </option>
                                 </select>
                             </div>
                         </div>
@@ -683,8 +267,7 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> Kgs/day </option>
                                 </select>
                             </div>
                         </div>
@@ -699,7 +282,6 @@
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
                                     <option value="0"> % </option>
-                                    <option value="1"> % </option>
                                 </select>
                             </div>
                         </div>
@@ -713,8 +295,7 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> CuM/Litre </option>
                                 </select>
                             </div>
                         </div>
@@ -728,8 +309,7 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
+                                    <option value="0"> TR </option>
                                 </select>
                             </div>
                         </div>
@@ -742,15 +322,451 @@
                                 <input type="text">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                            </div>
+                        </div>
+
+                        <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TowerDteailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MakeupWaterDetails" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </form>
+                </div>
+                <!-- End of Modal body -->
+            </div>
+            <!--End of modal-content-->
+        </div>
+        <!--End of modal-dialog-->
+    </div>
+    <!--End of modal-->
+
+
+    <!-- MAKE UP WATER DETAILS -->
+    <!-- The Modal -->
+    <div class="modal" id="MakeupWaterDetails">
+        <div class="modal-dialog model-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Make Up Water Details</h4>
+                    <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form #MakeupWaterDetailsForm="ngForm" (ngSubmit)="onSubmit(MakeupWaterDetailsForm)">
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails._id">
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Source Of Water :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="SourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.SourceOfWater">
+                            </div>
+                            <div class="input-field col s2">
+                                <!-- <select class="form-control" style="width: 96%;" name="ddlSourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlSourceOfWater">
+                                    <option value="0"> u1 </option>
+                                    <option value="1"> u2 </option>
+                                </select> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">pH :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterPh">
+                            </div>
+                            <div class="input-field col s2">
+                               <!-- <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterPh">
+                                    <option value="0">  </option>
+                                </select> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Turbidity :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTurbidity">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTurbidity">
+                                    <option value="0"> NTU/ppm/ml/ltr </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">TDS :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTDS">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTDS">
+                                    <option value="0"> ppm </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Conductivity :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterConductivity">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterConductivity">
+                                    <option value="0"> MicroS/CM </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Total Hardness :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalHardness">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalHardness">
+                                    <option value="0"> ppm CaCo3 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Calcium Hardness Info :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterCalHardness">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterCalHardness">
+                                    <option value="0"> ppm CaCo3 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Total Alkalinity :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalAlkalinity">
+                           </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalAlkalinity">
+                                    <option value="0"> ppm CaCo3 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Chloride :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterChloride">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterChloride">
+                                    <option value="0"> ppm CaCo3 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Sulphates :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSulphates">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSulphates">
+                                    <option value="0"> ppm CaCo3 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Silica :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSilica">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSilica">
+                                    <option value="0"> ppm SiO2 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Any Other :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text" name="MakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterOtherInfo">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterOtherInfo">
                                     <option value="0"> u1 </option>
                                     <option value="1"> u2 </option>
                                 </select>
                             </div>
                         </div>
+                       <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerDetailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn-success right " style="width: 15%;" (click)="OnMakeupWaterSubmission(MakeupWaterDetails);">Save As Draft</button>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CirculatingWaterDetailsModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </form>
+                </div>
+                <!-- End of Modal body -->
+            </div>
+            <!--End of modal-content-->
+        </div>
+        <!--End of modal-dialog-->
+    </div>
+    <!--End of modal-->
+
+    <!-- CIRCULATING WATER ANALYSIS -->
+    <!-- The Modal -->
+    <div class="modal" id="CirculatingWaterDetailsModel">
+        <div class="modal-dialog model-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Circulating Water Analysis</h4>
+                    <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px ">PH</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <!-- <select class="form-control" style="width: 96%;">
+                                    <option value="0"> u1 </option>
+                                    <option value="1"> u2 </option>
+                               </select> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Turbidity :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> NTU/ppm/ml/ltr </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">TDS :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                   <option value="0"> ppm </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Conductivity :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> MicroS/CM </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Total Hardness :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm CaCo3 </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Calcium Hardness :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm CaCo3 </option>
+                                    <option value="1"> ppm Ca/CaCO3 </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Total Alkalinity :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm CaCo3 </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Chloride :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm CaCo3 </option>
+                                    <option value="1"> ppm Cl </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Sulphates:</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm CaCo3 </option>
+                                    <option value="1"> ppm SO4 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Silica :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm SiO2 </option>
+                                    <option value="1"> ppm CaCO3 </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Phosphate :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm PO4 </option>
+                                    <option value="1"> ppm P2O5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Zinc :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm Zn </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Free Chlorine :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                                <select class="form-control" style="width: 96%;">
+                                    <option value="0"> ppm Cl </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Any Other :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                               
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s2">
+                                <label style="line-height:30px">Any Other :</label>
+                            </div>
+                            <div class="input-field col s8">
+                                <input type="text">
+                            </div>
+                            <div class="input-field col s2">
+                               
+                            </div>
+                        </div>
 
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CirculatingWaterDetailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#MakeupWaterDetails" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
                             <button class="btn btn-success right " type="submit" style="width: 15%;">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerOperatingModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
@@ -765,6 +781,7 @@
     </div>
     <!--End of modal-->
 
+    
     <!-- Cooling Tower Operating Condition Model -->
     <div class="modal" id="CoolingTowerOperatingModel">
         <div class="modal-dialog model-lg">
@@ -796,7 +813,7 @@
 
                         <div class="row">
                             <div class="input-field col s2">
-                                <label style="line-height:30px">Is Algae Seen On Water?:</label>
+                                <label style="line-height:30px">Is Algae Seen On Tower?:</label>
                             </div>
                             <div class="input-field col s8">
                                 <input type="text">
@@ -877,7 +894,6 @@
                                 <input type="text">
                             </div>
                             <div class="input-field col s2">
-                                <input type="text">
                             </div>
                         </div>
 
@@ -889,7 +905,6 @@
                                 <input type="text">
                             </div>
                             <div class="input-field col s2">
-                                <input type="text">
                             </div>
                         </div>
 
@@ -932,8 +947,11 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> Unit 1 </option>
-                                    <option value="1"> Unit 2 </option>
+                                    <option value="0"> CuM/Hr</option>
+                                    <option value="1"> L/H </option>
+                                    <option value="2"> L/M </option>
+                                    <option value="3"> L/S </option>
+                                    
                                 </select>
                             </div>
                         </div>
@@ -947,8 +965,10 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> Unit 1 </option>
-                                    <option value="1"> Unit 2 </option>
+                                    <option value="0"> Automatic </option>
+                                    <option value="1"> Every Shift </option>
+                                    <option value="2"> Daily </option>
+
                                 </select>
                             </div>
                         </div>
@@ -962,8 +982,10 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> Unit 1 </option>
-                                    <option value="1"> Unit 2 </option>
+                                    <option value="0"> CuM/Hr</option>
+                                    <option value="1"> L/H </option>
+                                    <option value="2"> L/M </option>
+                                    <option value="3"> L/S </option>
                                 </select>
                             </div>
                         </div>
@@ -977,8 +999,10 @@
                             </div>
                             <div class="input-field col s2">
                                 <select class="form-control" style="width: 96%;">
-                                    <option value="0"> Unit 1 </option>
-                                    <option value="1"> Unit 2 </option>
+                                    <option value="0"> Continous </option>
+                                    <option value="1"> Every Shift </option>
+                                    <option value="2"> Daily </option>
+                                    <option value="3"> Not Done </option>
                                 </select>
                             </div>
                         </div>
@@ -1040,7 +1064,7 @@
 
                         <hr>
                         <div class="row">
-                            <div class="col-md-4">
+                           <div class="col-md-4">
                                 <label>Bio-Growth Alage Photo File :</label>
                             </div>
                             <div class="col-md-4">
@@ -1434,7 +1458,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="input-field col-md-2">
+                           <div class="input-field col-md-2">
                                 <label style="line-height:30px">Hold Up :</label>
                             </div>
                             <div class="input-field col-md-8">
@@ -1463,7 +1487,7 @@
 
                         <div class="row">
                             <div class="input-field col-md-4">
-                                <label style="line-height:30px;font-weight: bold;">System Details :</label>
+                               <label style="line-height:30px;font-weight: bold;">System Details :</label>
                             </div>
                             
                         </div>
@@ -1480,7 +1504,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                       <div class="row">
                             <div class="input-field col-md-4">
                                 <label style="line-height:30px">Acid Required :</label>
                             </div>
@@ -1522,8 +1546,8 @@
                     <table class="table-bordered" id="dataTable" width="100%" cellspacing="0" >
                         <thead>
                         <tr>
-						<th>Function</th>
-						<th>Product</th>
+                                                                                                <th>Function</th>
+                                                                                                <th>Product</th>
                         <th>Dosage</th>
                         <th>Method</th>
                         <th>Basis</th>
@@ -1547,7 +1571,7 @@
                                 <td>108800</td>
                             </tr>
                         </tbody>
-						</table>
+                                                                                                </table>
 
                         <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ProductRecommendationModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;

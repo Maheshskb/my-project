@@ -6,7 +6,7 @@
     <button type="button" class="btn btn-primary button btn-sm" data-toggle="modal" data-target="#AddNewSalesEngineerModel"><i class="fa fa-check-square-o"></i>&nbsp;Add New Sales Engineer</button>
     <button type="button" class="btn btn-success button1 btn-sm" style="margin-left: 20px;" id="addCustBtn" data-toggle="modal" data-target="#AddNewCustomerModel"> <i class="fa fa-plus"></i>&nbsp;Add new Customer </button>
     <button routerLink="/ListofsalesengineerComponent" type="button" class="btn btn-info button1 btn-sm" style="margin-left: 20px;" > <i class="fa fa-list"></i>&nbsp;List Of Sales Engineer</button>
-    <button routerLink="" type="button" class="btn btn-warning button1 btn-sm" style="margin-left: 20px;"  title="Under Progress"><i class="fa fa-list"></i> &nbsp;Approval Pending For Sales Engineer </button>
+    <button routerLink="/Dealer/SalesEngineerApproval" type="button" class="btn btn-warning button1 btn-sm" style="margin-left: 20px;"  title="Under Progress"><i class="fa fa-list"></i> &nbsp;Approval Pending For Sales Engineer </button>
     <!-- <button (click)="onLogout()" type="button" class="btn btn-primary button btn-sm btn-dark" style="float: right;border-radius: 50px 50px 50px 50px; padding: 5px 20px;margin-right: -80px; "><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp;Logout</button>
   </div> -->
   </div>
@@ -40,7 +40,7 @@
         </div>
     
         <div class="input-field col s7">
-          <input type="text" name="CompanyName" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.CompanyName">
+          <input type="text" name="CompanyName" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.CompanyName">
         </div>
     
        </div>
@@ -52,7 +52,7 @@
         </div>
      
         <div class="input-field col s7">
-          <input type="text" name="CityName" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.CityName">
+          <input type="text" name="CityName" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.CityName">
         </div>
      
         </div>
@@ -64,7 +64,7 @@
          </div>
        
          <div class="input-field col s7">
-            <input type="text" name="Address" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.Address">
+            <input type="text" name="Address" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.Address">
          </div>
        
           </div>
@@ -76,7 +76,7 @@
             </div>
          
             <div class="input-field col s7">
-              <input type="text" name="Pincode" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.Pincode">
+              <input type="text" name="Pincode" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.Pincode">
             </div>
          
             </div>
@@ -88,7 +88,7 @@
               </div>
            
               <div class="input-field col s7">
-                <input type="text" name="DealerCode" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.DealerCode">
+                <input type="text" name="DealerCode" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.DealerCode">
               </div>
            
               </div>
@@ -100,7 +100,7 @@
                 </div>
              
                 <div class="input-field col s7">
-                  <input type="text" name="IndusrtyType" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.IndusrtyType">
+                  <input type="text" name="IndusrtyType" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.IndusrtyType">
                   <!-- <select name="IndusrtyType" #name="ngModel" [(ngModel)]="_CustomerDetailsService.selectedCustomerDetail.IndusrtyType">
                       <option value="IT">IT</option>
                       <option value="Healthcare">Healthcare</option>
@@ -118,7 +118,7 @@
                 </div>
                
                 <div class="input-field col s7">
-                    <input type="text" name="CustOtherInfo" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.CustOtherInfo">
+                    <input type="text" name="CustOtherInfo" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.CustOtherInfo">
                 </div>
                
               </div>
@@ -130,7 +130,7 @@
                 </div>
                  
                 <div class="input-field col s7">
-                      <input type="text" name="GSTno" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.GSTno">
+                      <input type="text" name="GSTno" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.GSTno">
                 </div>
                  
               </div>
@@ -142,7 +142,7 @@
                 </div>
                    
                 <div class="input-field col s7">
-                        <input type="text" name="ContactPersonName" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.ContactPersonName">
+                        <input type="text" name="ContactPersonName" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.ContactPersonName">
                 </div>
                    
                </div>
@@ -154,7 +154,7 @@
                   </div>
                      
                   <div class="input-field col s7">
-                    <input type="text" name="Designation" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.Designation">
+                    <input type="text" name="Designation" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.Designation">
                   </div>
                      
                  </div>
@@ -166,7 +166,7 @@
                   </div>
                        
                   <div class="input-field col s7">
-                    <input type="text" name="FisrtEmail" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.FisrtEmail">
+                    <input type="text" name="FisrtEmail" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.FisrtEmail">
                   </div>
                        
                 </div>
@@ -178,7 +178,7 @@
                   </div>
                          
                   <div class="input-field col s7">
-                    <input type="text" name="SecondEmail" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.SecondEmail">
+                    <input type="text" name="SecondEmail" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.SecondEmail">
                   </div>
                          
                   </div>
@@ -190,7 +190,7 @@
                     </div>
                            
                     <div class="input-field col s7">
-                      <input type="text" name="OfficeNumber" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.OfficeNumber">
+                      <input type="text" name="OfficeNumber" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.OfficeNumber">
                     </div>
                            
                   </div>
@@ -202,7 +202,7 @@
                     </div>
                              
                    <div class="input-field col s7">
-                      <input type="text" name="MobileNumber" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.MobileNumber">
+                      <input type="text" name="MobileNumber" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.MobileNumber">
                     </div>
                              
                   </div>
@@ -214,7 +214,7 @@
                     </div>
                                
                     <div class="input-field col s7">
-                      <input type="text" name="MoreContacts" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.MoreContacts">
+                      <input type="text" name="MoreContacts" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.MoreContacts">
                       <!-- <input type="radio"  name="MoreContacts" #name="ngModel" [(ngModel)]="_CustomerDetailsService.selectedCustomerDetail.MoreContacts" value="Yes" >Yes &nbsp;&nbsp;
                       <input type="radio"  name="MoreContacts" #name="ngModel" [(ngModel)]="_CustomerDetailsService.selectedCustomerDetail.MoreContacts"  value="No" checked>No<br> -->
                     </div>
@@ -228,7 +228,7 @@
                     </div>
                                  
                     <div class="input-field col s7">
-                      <input type="text" name="CustProdctPotential" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.CustProdctPotential">
+                      <input type="text" name="CustProdctPotential" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.CustProdctPotential">
                       <!-- <select name="CustProdctPotential" #name="ngModel" [(ngModel)]="_CustomerDetailsService.selectedCustomerDetail.CustProdctPotential">
                           <option value="aa">aa</option>
                           <option value="bb">bb</option>
@@ -246,7 +246,7 @@
                     </div>
                                    
                     <div class="input-field col s7">
-                    <input type="text" name="ChooseProductPraposal" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.ChooseProductPraposal" >
+                    <input type="text" name="ChooseProductPraposal" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.ChooseProductPraposal" >
                     </div>
                                    
                   </div>
@@ -258,7 +258,7 @@
                     </div>
                                    
                     <div class="input-field col s7">
-                    <input type="text" name="EnquireyNature" #name="ngModel" [(ngModel)]="_CustService.selectedCustomerDetails.EnquireyNature">
+                    <input type="text" name="EnquireyNature" #name="ngModel" [(ngModel)]="_DealerCustomerDetailService.selectedDealerCustomerDetail.EnquireyNature">
                     <!-- <select name="EnquireyNature" #name="ngModel" [(ngModel)]="_CustomerDetailsService.selectedCustomerDetail.EnquireyNature">
                         <option value="hot">hot</option>
                         <option value="cold">cold</option>
@@ -288,6 +288,43 @@
     </div> <!--End of modal-->
     </div><!--End Of Col-->
     </div><!--End Of Row-->
+
+     <!-- CUSTOMER DETAILS TABLE  -->
+ <div class="row">  
+  <div class="col s12 col-md-12" style="overflow-x:auto;">
+    <h4><b>List Of Customer</b></h4>
+     <table class=" table-bordered" id="dataTable" width="100%" cellspacing="0">
+         <!-- id="mydatatable" -->
+         <thead>
+           <tr>
+             <th>Company Name</th>
+             <th>Choose Product Praposal</th>
+             <th>Enquirey Nature</th>
+             <th>Actions</th> 
+            </tr>
+         </thead><!--End of table head-->
+
+         <tbody>
+          <tr *ngFor="let CustomerInfo of _DealerCustomerDetailService.DealerCustDetails">
+            <td>{{CustomerInfo.CompanyName}}</td>
+            <td>{{CustomerInfo.ChooseProductPraposal}}</td>
+            <td>{{CustomerInfo.EnquireyNature}}</td>
+            <td>
+              <!-- Button to Open the price entry form Modal -->
+              <button type="button" class="btn btn-primary btn-sm mybtn"  data-toggle="modal" data-target="#A" >
+                View
+              </button>&nbsp;&nbsp;&nbsp;&nbsp;
+             <button type="button" class="btn btn-danger btn-sm mybtn">Generate Proposal</button>
+             </td> 
+           </tr>
+        
+       </tbody>
+       
+       </table>
+   
+ </div><!--End of Table Div-->
+ </div>
+
 
  <!-- ADD NEW SALES ENGINEER -->
   <!-- CUSTOMER DETAILS POP UP MODEL -->
@@ -406,7 +443,7 @@
   </div><!--End Of Container-->
 
 
- 
+ <br>
 <button onclick="history.go(-1);" class="btn btn-outline-success " data-toggle="modal" style="margin-left: 44%"><i class="fa fa-dashboard"></i>&nbsp;Back to Dashboard</button>
 
 

@@ -14,6 +14,9 @@ var CoolingTowerDetail = {
      TempOutlet: { type: String },
      ddlTempOutlet: { type: String },
 
+     TempInlet: { type: String },
+     ddlTempInlet: { type: String },
+
      DeltaT: { type: String },
      ddlDeltaT: { type: String },
 

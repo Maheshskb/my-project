@@ -1,3 +1,6 @@
+table{text-align: center;}
+/* .mybtn{padding: 2px 5px;margin: 2px 5px;padding:5px 10px;} */
+th{background-color:dimgray;color:white;padding:10px 5px;text-align: center;}
 .model{width:80% !important;
     max-width: 80% !important;}
     h4{text-align: center;}

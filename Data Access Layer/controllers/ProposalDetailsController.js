@@ -19,11 +19,27 @@ router.get('/', (req, res) => {
 
 router.put('/', function(req,res,next){
     console.log("Error in Transaction Screen Data dfdfgd");
- 
+    var currentProposal=null;
+    ProposalDetails.find().then(function(proposals){
+        if(!proposals){return res.sendStatus(401);}
+      var maxValue="0";
+        proposals.forEach(element => {
+            if(maxValue< element.proposalId)
+            {
+                maxValue =element.proposalId;
+            }  
+            else{
+                //console.log("payload"+req.body.id);
+              currentProposal=element;
+            }
+
+      });
+      proposalId= maxValue;
+    })
    console.log("payload"+req.body.id);
   //var v= ProposalDetails.find({id:ObjectId("5d4ea8911a187c055473b753")});
  //  console.log(v);
-    ProposalDetails.findById(req.body.id).then(function(proposal){
+    ProposalDetails.findById(proposalId).then(function(proposal){
         if(!proposal){return res.sendStatus(401);}
         
         var step= req.body.StepNumber;
@@ -122,6 +138,9 @@ router.put('/', function(req,res,next){
             proposal.CirculatingWaterDetail.CirculatingWaterZinc= req.body.CirculatingWaterDetail.CirculatingWaterZinc;
             proposal.CirculatingWaterDetail.ddlCirculatingWaterZinc= req.body.CirculatingWaterDetail.ddlCirculatingWaterZinc;
 
+            proposal.CirculatingWaterDetail.CirculatingWaterFreeChlorine= req.body.CirculatingWaterDetail.CirculatingWaterFreeChlorine;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterFreeChlorine= req.body.CirculatingWaterDetail.ddlCirculatingWaterFreeChlorine;
+
             proposal.CirculatingWaterDetail.CirculatingWaterOtherInfo= req.body.CirculatingWaterDetail.CirculatingWaterOtherInfo;
             proposal.CirculatingWaterDetail.ddlCirculatingWaterOtherInfo= req.body.CirculatingWaterDetail.ddlCirculatingWaterOtherInfo;
 
@@ -137,6 +156,9 @@ router.put('/', function(req,res,next){
 
             proposal.CoolingTowerDetail.WaterCirculationRate= req.body.CoolingTowerDetail.WaterCirculationRate;
             proposal.CoolingTowerDetail.ddlWaterCirculationRate= req.body.CoolingTowerDetail.ddlWaterCirculationRate;
+
+            proposal.CoolingTowerDetail.TempInlet= req.body.CoolingTowerDetail.TempInlet;
+            proposal.CoolingTowerDetail.ddlTempInlet= req.body.CoolingTowerDetail.ddlTempInlet;
 
             proposal.CoolingTowerDetail.TempOutlet= req.body.CoolingTowerDetail.TempOutlet;
             proposal.CoolingTowerDetail.ddlTempOutlet= req.body.CoolingTowerDetail.ddlTempOutlet;
@@ -250,9 +272,23 @@ router.put('/', function(req,res,next){
 // //This will post the prouct price data to the url
 router.post('/', (req, res)=>
 {
+    var proposalId=1;
+    ProposalDetails.find().then(function(proposals){
+        if(!proposals){return res.sendStatus(401);}
+      var maxValue="0";
+        proposals.forEach(element => {
+            if(maxValue< element.proposalId)
+            {
+                maxValue =element.proposalId;
+            }          
+      });
+      proposalId= maxValue+1;
+    })
+
     //create an object of productDetail model class inside that we have field details of Product Details
     var TSdata = new ProposalDetails(
         {
+            proposalId:proposalId,
             TowerDetail:{                
              TowerNumbers : req.body.TowerNumbers,
              TowerName : req.body.TowerName,
@@ -306,6 +342,9 @@ router.post('/', (req, res)=>
 
                 CirculatingWaterZinc : "",
                 ddlCirculatingWaterZinc : "",
+
+                CirculatingWaterFreeChlorine : "",
+                ddlCirculatingWaterFreeChlorine : "",
 
                 CirculatingWaterOtherInfo : "",
                 ddlCirculatingWaterOtherInfo : "",
@@ -369,6 +408,9 @@ router.post('/', (req, res)=>
 
                 TempOutlet: "",
                 ddlTempOutlet: "",
+
+                TempInlet : "", 
+                ddlTempInlet : "",
 
                 DeltaT: "",
                 ddlDeltaT: "",

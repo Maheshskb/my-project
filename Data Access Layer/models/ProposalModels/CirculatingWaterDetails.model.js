@@ -44,6 +44,9 @@ var CirculatingWaterDetail = {
      CirculatingWaterZinc: { type: String },
      ddlCirculatingWaterZinc: { type: String },
 
+     CirculatingWaterFreeChlorine: { type: String },
+     ddlCirculatingWaterFreeChlorine: { type: String },
+
      CirculatingWaterOtherInfo: { type: String },
      ddlCirculatingWaterOtherInfo: { type: String },
 
