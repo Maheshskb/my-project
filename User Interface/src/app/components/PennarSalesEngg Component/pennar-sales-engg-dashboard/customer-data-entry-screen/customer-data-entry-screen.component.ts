@@ -260,6 +260,15 @@ export class CustomerDataEntryScreenComponent implements OnInit {
     });
   }
 
+  OnProductRecommendation( form : NgForm)
+  {
+
+    this._GenerateProposal.GetRecommendedProducts(form.value).subscribe((res)=>{
+    this.showAddToaster();
+    this.resetForm(form);
+    });
+  }
+
 
   
   // code to toast notification

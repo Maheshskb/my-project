@@ -213,29 +213,29 @@ router.put('/', function(req,res,next){
         //    proposal.CoolingTowerOperatingCondition.ModifiedDate= req.body.ModifiedDate;
         //    proposal.CoolingTowerOperatingCondition.IsActive= req.body.IsActive;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition1= req.body.TestCondition1;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition1= req.body.ddlTestCondition1;
+           proposal.CoolingTowerOperatingCondition.IsTowerMaintenanceProper= req.body.IsTowerMaintenanceProper;
+           proposal.CoolingTowerOperatingCondition.ddlIsTowerMaintenanceProper= req.body.ddlIsTowerMaintenanceProper;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition2= req.body.TestCondition2;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition2= req.body.ddlTestCondition2;
+           proposal.CoolingTowerOperatingCondition.IsAlgaeSeenOnTower= req.body.IsAlgaeSeenOnTower;
+           proposal.CoolingTowerOperatingCondition.ddlIsAlgaeSeenOnTower= req.body.ddlIsAlgaeSeenOnTower;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition3= req.body.TestCondition3;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition3= req.body.ddlTestCondition3;
+           proposal.CoolingTowerOperatingCondition.IsSlimeInTower= req.body.IsSlimeInTower;
+           proposal.CoolingTowerOperatingCondition.ddlIsSlimeInTower= req.body.ddlIsSlimeInTower;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition4= req.body.TestCondition4;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition4= req.body.ddlTestCondition4;
+           proposal.CoolingTowerOperatingCondition.IsSumpWaterTurbidity= req.body.IsSumpWaterTurbidity;
+           proposal.CoolingTowerOperatingCondition.ddlIsSumpWaterTurbidity= req.body.ddlIsSumpWaterTurbidity;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition5= req.body.TestCondition5;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition5= req.body.ddlTestCondition5;
+           proposal.CoolingTowerOperatingCondition.IsThereAnyContamination= req.body.IsThereAnyContamination;
+           proposal.CoolingTowerOperatingCondition.ddlIsThereAnyContamination= req.body.ddlIsThereAnyContamination;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition6= req.body.TestCondition6;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition6= req.body.ddlTestCondition6;
+           proposal.CoolingTowerOperatingCondition.IsCopperCorrosionControlRequired= req.body.IsCopperCorrosionControlRequired;
+           proposal.CoolingTowerOperatingCondition.ddlIsCopperCorrosionControlRequired= req.body.ddlIsCopperCorrosionControlRequired;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition7= req.body.TestCondition7;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition7= req.body.ddlTestCondition7;
+           proposal.CoolingTowerOperatingCondition.OtherObservation= req.body.OtherObservation;
+           proposal.CoolingTowerOperatingCondition.txtOtherObservation= req.body.txtOtherObservation;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition8= req.body.TestCondition8;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition8= req.body.ddlTestCondition8;
+           proposal.CoolingTowerOperatingCondition.Comment= req.body.Comment;
+           proposal.CoolingTowerOperatingCondition.txtComment= req.body.txtComment;
 }
          if(step5=="5")
 {
@@ -326,7 +326,7 @@ router.post('/', (req, res)=>
                 ModifiedDate: "",
                 IsActive: "",
 
-                CirculatingWaterPh: "",
+                CirculatingWaterPh: req.body.CirculatingWaterPh,
                 ddlCirculatingWaterPh: "",
 
                 CirculatingWaterTurbidity: "",
@@ -475,29 +475,29 @@ router.post('/', (req, res)=>
                 ModifiedDate: "",
                 IsActive: "",
 
-                TestCondition1: "",
-                ddlTestCondition1: "",
+                IsTowerMaintenanceProper: "",
+                ddlIsTowerMaintenanceProper: "",
 
-                TestCondition2: "",
-                ddlTestCondition2: "",
+                IsAlgaeSeenOnTower: "",
+                ddlIsAlgaeSeenOnTower: "",
 
-                TestCondition3: "",
-                ddlTestCondition3: "",
+                IsSlimeInTower: "",
+                ddlIsSlimeInTower: "",
 
-                TestCondition4: "",
-                ddlTestCondition4: "",
+                IsSumpWaterTurbidity: "",
+                ddlIsSumpWaterTurbidity: "",
 
-                TestCondition5: "",
-                ddlTestCondition5: "",
+                IsThereAnyContamination: "",
+                ddlIsThereAnyContamination: "",
 
-                TestCondition6: "",
-                ddlTestCondition6: "",
+                IsCopperCorrosionControlRequired: "",
+                ddlIsCopperCorrosionControlRequired: "",
 
-                TestCondition7: "",
-                ddlTestCondition7: "",
+                OtherObservation: "",
+                txtOtherObservation: "",
 
-                TestCondition8: "",
-                ddlTestCondition8: "",
+                Comment: "",
+                txtComment: "",
           
             },
        

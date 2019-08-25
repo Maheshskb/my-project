@@ -194,29 +194,29 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
         
         IsActive : { type : String },
    
-        TestCondition1: { type: String },
-        ddlTestCondition1: { type: String },
+        IsTowerMaintenanceProper: { type: String },
+        ddlIsTowerMaintenanceProper: { type: String },
    
-        TestCondition2: { type: String },
-        ddlTestCondition2: { type: String },
+        IsAlgaeSeenOnTower: { type: String },
+        ddlIsAlgaeSeenOnTower: { type: String },
    
-        TestCondition3: { type: String },
-        ddlTestCondition3: { type: String },
+        IsSlimeInTower: { type: String },
+        ddlIsSlimeInTower: { type: String },
    
-        TestCondition4: { type: String },
-        ddlTestCondition4: { type: String },
+        IsSumpWaterTurbidity: { type: String },
+        ddlIsSumpWaterTurbidity: { type: String },
    
-        TestCondition5: { type: String },
-        ddlTestCondition5: { type: String },
+        IsThereAnyContamination: { type: String },
+        ddlIsThereAnyContamination: { type: String },
    
-        TestCondition6: { type: String },
-        ddlTestCondition6: { type: String },
+        IsCopperCorrosionControlRequired: { type: String },
+        ddlIsCopperCorrosionControlRequired: { type: String },
    
-        TestCondition7: { type: String },
-        ddlTestCondition7: { type: String },
+        OtherObservation: { type: String },
+        txtOtherObservation: { type: String },
    
-        TestCondition8: { type: String },
-        ddlTestCondition8: { type: String },
+        Comment: { type: String },
+        txtComment: { type: String },
     
    },
     
