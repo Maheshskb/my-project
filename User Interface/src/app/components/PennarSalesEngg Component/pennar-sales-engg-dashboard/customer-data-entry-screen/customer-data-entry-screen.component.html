@@ -86,10 +86,10 @@
                                 <label style="line-height:30px">Water Circulation Rate</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="WaterCirculationRate" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.WaterCirculationRate">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlWaterCirculationRate" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlWaterCirculationRate">
                                     <option value="0"> CuM/hr </option>
                                     <option value="1"> L/H </option>
                                     <option value="2"> L/M </option>
@@ -103,10 +103,10 @@
                                 <label style="line-height:30px">Cooling Tower Temp Outlet :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TempOutlet" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.TempOutlet">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTempOutlet" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlTempOutlet">
                                     <option value="0"> Deg C  </option>
                                 </select>
                             </div>
@@ -117,10 +117,10 @@
                                 <label style="line-height:30px">Cooling Tower Temp Inlet :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TempInlet" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.TempInlet">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTempInlet" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlTempInlet">
                                     <option value="0"> Deg C  </option>
                                 </select>
                             </div>
@@ -131,10 +131,10 @@
                                 <label style="line-height:30px">Delta T :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="DeltaT" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.DeltaT">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlDeltaT" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlDeltaT">
                                     <option value="0"> Deg C  </option>
                                 </select>
                             </div>
@@ -145,10 +145,10 @@
                                 <label style="line-height:30px">Evaporation :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="Evaporation" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.Evaporation">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlEvaporation" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlEvaporation">
                                     <option value="0"> CuM/hr </option>
                                     <option value="1"> L/H </option>
                                     <option value="2"> L/M </option>
@@ -162,10 +162,10 @@
                                 <label style="line-height:30px">Blow Down :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="BlowDown" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.BlowDown">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlBlowDown" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlBlowDown">
                                     <option value="0"> CuM/Hr </option>
                                     <option value="1"> L/H </option>
                                     <option value="2"> L/M </option>
@@ -179,7 +179,7 @@
                                 <label style="line-height:30px">COC :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="COC" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.COC">
                             </div>
                             <div class="input-field col s2">
                                 <!-- <select class="form-control" style="width: 96%;">
@@ -194,10 +194,10 @@
                                 <label style="line-height:30px">Make Up Water :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.MakeUpWater">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlMakeUpWater">
                                     <option value="0"> CuM/Hr </option>
                                     <option value="1"> L/H </option>
                                     <option value="2"> L/M </option>
@@ -211,10 +211,10 @@
                                 <label style="line-height:30px">Operating Hours Per Day :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="OperatingHrsPerDay" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.OperatingHrsPerDay">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlOperatingHrsPerDay" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlOperatingHrsPerDay">
                                     <option value="0"> 1 Hrs </option>
                                     <option value="1"> 1 Hrs</option>
                                     <option value="1"> 2 Hrs</option>
@@ -249,10 +249,10 @@
                                 <label style="line-height:30px">Side Stream Filter Flow :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="SideStreamFilterFlow" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.SideStreamFilterFlow">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlSideStreamFilterFlow" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlSideStreamFilterFlow">
                                     <option value="0"> CuM/Hr </option>
                                 </select>
                             </div>
@@ -263,10 +263,10 @@
                                 <label style="line-height:30px">Acid used For PH Control :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="AcidUsedForPhControl" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.AcidUsedForPhControl">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlAcidUsedForPhControl" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlAcidUsedForPhControl">
                                     <option value="0"> Kgs/day </option>
                                 </select>
                             </div>
@@ -277,10 +277,10 @@
                                 <label style="line-height:30px">Acid % Used :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="PercentagesAcidUsed" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.PercentagesAcidUsed">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlPercentagesAcidUsed" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlPercentagesAcidUsed">
                                     <option value="0"> % </option>
                                 </select>
                             </div>
@@ -291,10 +291,10 @@
                                 <label style="line-height:30px">Cooling Tower Sump Volume :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CoolingTowerSumpVolume" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.CoolingTowerSumpVolume">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCoolingTowerSumpVolume" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlCoolingTowerSumpVolume">
                                     <option value="0"> CuM/Litre </option>
                                 </select>
                             </div>
@@ -305,10 +305,10 @@
                                 <label style="line-height:30px">Cooling Tower Capacity TR :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CoolingTowerCapacityTR" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.CoolingTowerCapacityTR">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCoolingTowerCapacityTR" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.ddlCoolingTowerCapacityTR">
                                     <option value="0"> TR </option>
                                 </select>
                             </div>
@@ -319,7 +319,7 @@
                                 <label style="line-height:30px">Any Other :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CoolingTowerOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerDetail.CoolingTowerOtherInfo">
                             </div>
                             <div class="input-field col s2">
                             </div>
@@ -363,7 +363,7 @@
                                 <label style="line-height:30px">Source Of Water :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="SourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.SourceOfWater">
+                                <input type="text" name="SourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.SourceOfWater">
                             </div>
                             <div class="input-field col s2">
                                 <!-- <select class="form-control" style="width: 96%;" name="ddlSourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlSourceOfWater">
@@ -378,7 +378,7 @@
                                 <label style="line-height:30px">pH :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterPh">
+                                <input type="text" name="MakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterPh">
                             </div>
                             <div class="input-field col s2">
                                <!-- <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterPh">
@@ -392,10 +392,10 @@
                                 <label style="line-height:30px">Turbidity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTurbidity">
+                                <input type="text" name="MakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterTurbidity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTurbidity">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterTurbidity">
                                     <option value="0"> NTU/ppm/ml/ltr </option>
                                 </select>
                             </div>
@@ -406,10 +406,10 @@
                                 <label style="line-height:30px">TDS :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTDS">
+                                <input type="text" name="MakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterTDS">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTDS">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterTDS">
                                     <option value="0"> ppm </option>
                                 </select>
                             </div>
@@ -420,10 +420,10 @@
                                 <label style="line-height:30px">Conductivity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterConductivity">
+                                <input type="text" name="MakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterConductivity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterConductivity">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterConductivity">
                                     <option value="0"> MicroS/CM </option>
                                 </select>
                             </div>
@@ -434,10 +434,10 @@
                                 <label style="line-height:30px">Total Hardness :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalHardness">
+                                <input type="text" name="MakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterTotalHardness">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalHardness">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterTotalHardness">
                                     <option value="0"> ppm CaCo3 </option>
                                 </select>
                             </div>
@@ -448,10 +448,10 @@
                                 <label style="line-height:30px">Calcium Hardness Info :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterCalHardness">
+                                <input type="text" name="MakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterCalHardness">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterCalHardness">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterCalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterCalHardness">
                                     <option value="0"> ppm CaCo3 </option>
                                 </select>
                             </div>
@@ -462,10 +462,10 @@
                                 <label style="line-height:30px">Total Alkalinity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterTotalAlkalinity">
+                                <input type="text" name="MakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterTotalAlkalinity">
                            </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterTotalAlkalinity">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterTotalAlkalinity">
                                     <option value="0"> ppm CaCo3 </option>
                                 </select>
                             </div>
@@ -476,10 +476,10 @@
                                 <label style="line-height:30px">Chloride :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterChloride">
+                                <input type="text" name="MakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterChloride">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterChloride">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterChloride">
                                     <option value="0"> ppm CaCo3 </option>
                                 </select>
                             </div>
@@ -490,10 +490,10 @@
                                 <label style="line-height:30px">Sulphates :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSulphates">
+                                <input type="text" name="MakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterSulphates">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSulphates">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterSulphates">
                                     <option value="0"> ppm CaCo3 </option>
                                 </select>
                             </div>
@@ -504,10 +504,10 @@
                                 <label style="line-height:30px">Silica :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterSilica">
+                                <input type="text" name="MakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterSilica">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterSilica">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.ddlMakeUpWaterSilica">
                                     <option value="0"> ppm SiO2 </option>
                                 </select>
                             </div>
@@ -518,20 +518,15 @@
                                 <label style="line-height:30px">Any Other :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text" name="MakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterOtherInfo">
+                                <input type="text" name="MakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpWaterDetail.MakeUpWaterOtherInfo">
                             </div>
-                            <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;" name="ddlMakeUpWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpWaterOtherInfo">
-                                    <option value="0"> u1 </option>
-                                    <option value="1"> u2 </option>
-                                </select>
-                            </div>
+                            
                         </div>
                        <div class="input-field col s12 " id="my_centered_buttons" style="margin-top: 28px;margin-bottom: 20px;">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CoolingTowerDetailsModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
                             <button class="btn btn-success right " style="width: 15%;" (click)="OnMakeupWaterSubmission(MakeupWaterDetails);">Save As Draft</button>&nbsp;&nbsp;&nbsp;
                             <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CirculatingWaterDetailsModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CirculatingWaterDetailsModel" data-dismiss="modal" style="width: 15%;" (click)="OnMakeupWaterSubmission(MakeupWaterDetails);">Next</button>&nbsp;&nbsp;&nbsp;
                         </div>
                     </form>
                 </div>
@@ -563,7 +558,7 @@
                                 <label style="line-height:30px ">PH</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterPh" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterPh">
                             </div>
                             <div class="input-field col s2">
                                 <!-- <select class="form-control" style="width: 96%;">
@@ -578,10 +573,10 @@
                                 <label style="line-height:30px">Turbidity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterTurbidity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterTurbidity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterTurbidity">
                                     <option value="0"> NTU/ppm/ml/ltr </option>
                                 </select>
                             </div>
@@ -592,10 +587,10 @@
                                 <label style="line-height:30px">TDS :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterTDS">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterTDS" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterTDS">
                                    <option value="0"> ppm </option>
                                 </select>
                             </div>
@@ -605,10 +600,10 @@
                                 <label style="line-height:30px">Conductivity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterConductivity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterConductivity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterConductivity">
                                     <option value="0"> MicroS/CM </option>
                                 </select>
                             </div>
@@ -618,10 +613,10 @@
                                 <label style="line-height:30px">Total Hardness :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterTotalHardness">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterTotalHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterTotalHardness">
                                     <option value="0"> ppm CaCo3 </option>
                                 </select>
                             </div>
@@ -631,10 +626,10 @@
                                 <label style="line-height:30px">Calcium Hardness :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterCalciumHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterCalciumHardness">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterCalciumHardness" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterCalciumHardness">
                                     <option value="0"> ppm CaCo3 </option>
                                     <option value="1"> ppm Ca/CaCO3 </option>
                                 </select>
@@ -645,10 +640,10 @@
                                 <label style="line-height:30px">Total Alkalinity :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterTotalAlkalinity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterTotalAlkalinity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterTotalAlkalinity">
                                     <option value="0"> ppm CaCo3 </option>
                                 </select>
                             </div>
@@ -658,10 +653,10 @@
                                 <label style="line-height:30px">Chloride :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterChloride">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterChloride" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterChloride">
                                     <option value="0"> ppm CaCo3 </option>
                                     <option value="1"> ppm Cl </option>
                                 </select>
@@ -673,10 +668,10 @@
                                 <label style="line-height:30px">Sulphates:</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterSulphates">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterSulphates" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterSulphates">
                                     <option value="0"> ppm CaCo3 </option>
                                     <option value="1"> ppm SO4 </option>
                                 </select>
@@ -688,10 +683,10 @@
                                 <label style="line-height:30px">Silica :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterSilica">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterSilica" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterSilica">
                                     <option value="0"> ppm SiO2 </option>
                                     <option value="1"> ppm CaCO3 </option>
                                 </select>
@@ -703,10 +698,10 @@
                                 <label style="line-height:30px">Phosphate :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterPhosphate" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterPhosphate">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterPhosphate" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterPhosphate">
                                     <option value="0"> ppm PO4 </option>
                                     <option value="1"> ppm P2O5</option>
                                 </select>
@@ -718,10 +713,10 @@
                                 <label style="line-height:30px">Zinc :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterZinc" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterZinc">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterZinc" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterZinc">
                                     <option value="0"> ppm Zn </option>
                                 </select>
                             </div>
@@ -732,10 +727,10 @@
                                 <label style="line-height:30px">Free Chlorine :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterFreeChlorine" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterFreeChlorine">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlCirculatingWaterFreeChlorine" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.ddlCirculatingWaterFreeChlorine">
                                     <option value="0"> ppm Cl </option>
                                 </select>
                             </div>
@@ -746,7 +741,7 @@
                                 <label style="line-height:30px">Any Other :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWaterOtherInfo" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWaterOtherInfo">
                             </div>
                             <div class="input-field col s2">
                                
@@ -758,7 +753,7 @@
                                 <label style="line-height:30px">Any Other :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="CirculatingWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CirculatingWaterDetail.CirculatingWater">
                             </div>
                             <div class="input-field col s2">
                                
@@ -801,10 +796,10 @@
                                 <label style="line-height:30px">Is Tower maintenance Proper</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition1" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition1">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTestCondition1" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.ddlTestCondition1">
                                     <option value="0"> Yes </option>
                                     <option value="1"> No </option>
                                 </select>
@@ -816,10 +811,10 @@
                                 <label style="line-height:30px">Is Algae Seen On Tower?:</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition2" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition2">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTestCondition2" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.ddlTestCondition2">
                                     <option value="0"> Yes </option>
                                     <option value="1"> No </option>
                                 </select>
@@ -831,10 +826,10 @@
                                 <label style="line-height:30px">Is Slime In Tower? :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition3" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition3">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTestCondition3" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.ddlTestCondition3">
                                     <option value="0"> Yes </option>
                                     <option value="1"> No </option>
                                 </select>
@@ -846,10 +841,10 @@
                                 <label style="line-height:30px">Is Sump Water Turbidity? :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition4" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition4">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTestCondition4" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.ddlTestCondition4">
                                     <option value="0"> Yes </option>
                                     <option value="1"> No </option>
                                 </select>
@@ -861,10 +856,10 @@
                                 <label style="line-height:30px">Is There Any Contamination? :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition5" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition5">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTestCondition5" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.ddlTestCondition5">
                                     <option value="0"> Yes </option>
                                     <option value="1"> No </option>
                                 </select>
@@ -876,10 +871,10 @@
                                 <label style="line-height:30px">Is Copper Corrosion Control Required? :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition6" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition6">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlTestCondition6" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.ddlTestCondition6">
                                     <option value="0"> Yes </option>
                                     <option value="1"> No </option>
                                 </select>
@@ -891,7 +886,7 @@
                                 <label style="line-height:30px">Any Other Observations:</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition7" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition7">
                             </div>
                             <div class="input-field col s2">
                             </div>
@@ -902,7 +897,7 @@
                                 <label style="line-height:30px">Any Other Comments :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="TestCondition8" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.CoolingTowerOperatingCondition.TestCondition8">
                             </div>
                             <div class="input-field col s2">
                             </div>
@@ -943,10 +938,10 @@
                                 <label style="line-height:30px">Make Up Water Used :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="UsedMakeUpWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.TestCondition8">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlUsedMakeUpWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlUsedMakeUpWater">
                                     <option value="0"> CuM/Hr</option>
                                     <option value="1"> L/H </option>
                                     <option value="2"> L/M </option>
@@ -961,10 +956,10 @@
                                 <label style="line-height:30px">How Make Up Done? :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="MakeUpDoneProcess" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpDoneProcess">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlMakeUpDoneProcess" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpDoneProcess">
                                     <option value="0"> Automatic </option>
                                     <option value="1"> Every Shift </option>
                                     <option value="2"> Daily </option>
@@ -978,10 +973,10 @@
                                 <label style="line-height:30px">Blow Down Quantity? :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="BlowDownQuantity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.BlowDownQuantity">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlBlowDownQuantity" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlBlowDownQuantity">
                                     <option value="0"> CuM/Hr</option>
                                     <option value="1"> L/H </option>
                                     <option value="2"> L/M </option>
@@ -995,10 +990,10 @@
                                 <label style="line-height:30px">Blow Down Frequency? :</label>
                             </div>
                             <div class="input-field col s8">
-                                <input type="text">
+                                <input type="text" name="BlowDownFrequency" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.BlowDownFrequency">
                             </div>
                             <div class="input-field col s2">
-                                <select class="form-control" style="width: 96%;">
+                                <select class="form-control" style="width: 96%;" name="ddlBlowDownFrequency" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.TestCondition8">
                                     <option value="0"> Continous </option>
                                     <option value="1"> Every Shift </option>
                                     <option value="2"> Daily </option>

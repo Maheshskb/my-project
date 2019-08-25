@@ -19,84 +19,83 @@ router.get('/', (req, res) => {
 
 router.put('/', function(req,res,next){
     console.log("Error in Transaction Screen Data dfdfgd");
-    var currentProposal=null;
+    var currentProposalId=null;
+    var proposalItem=null;
     ProposalDetails.find().then(function(proposals){
+        console.log("Find Call")
         if(!proposals){return res.sendStatus(401);}
-      var maxValue="0";
+        var maxValue=0;
         proposals.forEach(element => {
-            if(maxValue< element.proposalId)
+            console.log("Find Call- element.proposalId:"+element.ProposalId);
+            console.log("Find Call- element.ObjectId:"+element._id);
+            var proposalId1= parseInt(element.ProposalId);
+           if(element.ProposalId!=null)
+           {
+            if(maxValue< proposalId1)
             {
-                maxValue =element.proposalId;
-            }  
-            else{
-                //console.log("payload"+req.body.id);
-              currentProposal=element;
-            }
-
+                proposalItem= element;
+            }    
+        }  
       });
-      proposalId= maxValue;
-    })
-   console.log("payload"+req.body.id);
-  //var v= ProposalDetails.find({id:ObjectId("5d4ea8911a187c055473b753")});
- //  console.log(v);
-    ProposalDetails.findById(proposalId).then(function(proposal){
-        if(!proposal){return res.sendStatus(401);}
-        
-        var step= req.body.StepNumber;
-            console.log("Error in Transaction Screen Data Saving");
-           //Tower Details
-           
-
-            //Make up Water Details
-            // if(proposal.step=="1")
+      
+      if(proposalItem!=null)
+      {
+            var proposal =proposalItem;
+            console.log("Data PUT Call3");
+            var step= req.body.StepNumber;
+            console.log("Data PUT Step:"+req.body.StepNumber);
+               
             if(step=="1")
             {
-            proposal.MakeUpWaterDetail.CreatedDate = req.body.MakeUpWaterDetail.CreatedDate;
-            proposal.MakeUpWaterDetail.ModifiedDate = req.body.MakeUpWaterDetail.ModifiedDate;
-            proposal.MakeUpWaterDetail.IsActive = req.body.MakeUpWaterDetail.IsActive;
+                console.log("Data PUT Step1");
+            proposal.MakeUpWaterDetail.CreatedDate = req.body.CreatedDate;
+            proposal.MakeUpWaterDetail.ModifiedDate = req.body.ModifiedDate;
+            proposal.MakeUpWaterDetail.IsActive = req.body.IsActive;
 
-            proposal.MakeUpWaterDetail.SourceOfWater = req.body.MakeUpWaterDetail.SourceOfWater;
-            proposal.MakeUpWaterDetail.ddlSourceOfWater = req.body.MakeUpWaterDetail.ddlSourceOfWater;
+            proposal.MakeUpWaterDetail.SourceOfWater = req.body.SourceOfWater;
+            proposal.MakeUpWaterDetail.ddlSourceOfWater = req.body.ddlSourceOfWater;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterPh = req.body.MakeUpWaterDetail.MakeUpWaterPh;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterPh = req.body.MakeUpWaterDetail.ddlMakeUpWaterPh;
+            proposal.MakeUpWaterDetail.MakeUpWaterPh = req.body.MakeUpWaterPh;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterPh = req.body.ddlMakeUpWaterPh;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterTurbidity = req.body.MakeUpWaterDetail.MakeUpWaterTurbidity;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterTurbidity = req.body.MakeUpWaterDetail.ddlMakeUpWaterTurbidity;
+            proposal.MakeUpWaterDetail.MakeUpWaterTurbidity = req.body.MakeUpWaterTurbidity;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterTurbidity = req.body.ddlMakeUpWaterTurbidity;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterTDS = req.body.MakeUpWaterDetail.MakeUpWaterTDS;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterTDS = req.body.MakeUpWaterDetail.ddlMakeUpWaterTDS;
+            proposal.MakeUpWaterDetail.MakeUpWaterTDS = req.body.MakeUpWaterTDS;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterTDS = req.body.ddlMakeUpWaterTDS;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterConductivity = req.body.MakeUpWaterDetail.MakeUpWaterConductivity;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterConductivity = req.body.MakeUpWaterDetail.ddlMakeUpWaterConductivity;
+            proposal.MakeUpWaterDetail.MakeUpWaterConductivity = req.body.MakeUpWaterConductivity;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterConductivity = req.body.ddlMakeUpWaterConductivity;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterTotalHardness = req.body.MakeUpWaterDetail.MakeUpWaterTotalHardness;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterTotalHardness = req.body.MakeUpWaterDetail.ddlMakeUpWaterTotalHardness;
+            proposal.MakeUpWaterDetail.MakeUpWaterTotalHardness = req.body.MakeUpWaterTotalHardness;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterTotalHardness = req.body.ddlMakeUpWaterTotalHardness;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterCalHardness = req.body.MakeUpWaterDetail.MakeUpWaterCalHardness;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterCalHardness = req.body.MakeUpWaterDetail.ddlMakeUpWaterCalHardness;
+            proposal.MakeUpWaterDetail.MakeUpWaterCalHardness = req.body.MakeUpWaterCalHardness;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterCalHardness = req.body.ddlMakeUpWaterCalHardness;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterTotalAlkalinity = req.body.MakeUpWaterDetail.MakeUpWaterTotalAlkalinity;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterTotalAlkalinity = req.body.MakeUpWaterDetail.ddlMakeUpWaterTotalAlkalinity;
+            proposal.MakeUpWaterDetail.MakeUpWaterTotalAlkalinity = req.body.MakeUpWaterTotalAlkalinity;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterTotalAlkalinity = req.body.ddlMakeUpWaterTotalAlkalinity;
 
-            proposal.MakeUpWaterDetail.ModifiedDate = req.body.MakeUpWaterDetail.ModifiedDate;
-            proposal.MakeUpWaterDetail.IsActive = req.body.MakeUpWaterDetail.IsActive;
+            proposal.MakeUpWaterDetail.ModifiedDate = req.body.ModifiedDate;
+            proposal.MakeUpWaterDetail.IsActive = req.body.IsActive;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterChloride = req.body.MakeUpWaterDetail.MakeUpWaterChloride;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterChloride = req.body.MakeUpWaterDetail.ddlMakeUpWaterChloride;
+            proposal.MakeUpWaterDetail.MakeUpWaterChloride = req.body.MakeUpWaterChloride;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterChloride = req.body.ddlMakeUpWaterChloride;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterSulphates = req.body.MakeUpWaterDetail.MakeUpWaterSulphates;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterSulphates = req.body.MakeUpWaterDetail.ddlMakeUpWaterSulphates;
+            proposal.MakeUpWaterDetail.MakeUpWaterSulphates = req.body.MakeUpWaterSulphates;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterSulphates = req.body.ddlMakeUpWaterSulphates;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterSilica = req.body.MakeUpWaterDetail.MakeUpWaterSilica;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterSilica = req.body.MakeUpWaterDetail.ddlMakeUpWaterSilica;
+            proposal.MakeUpWaterDetail.MakeUpWaterSilica = req.body.MakeUpWaterSilica;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterSilica = req.body.ddlMakeUpWaterSilica;
 
-            proposal.MakeUpWaterDetail.MakeUpWaterOtherInfo = req.body.MakeUpWaterDetail.MakeUpWaterOtherInfo;
-            proposal.MakeUpWaterDetail.ddlMakeUpWaterOtherInfo = req.body.MakeUpWaterDetail.ddlMakeUpWaterOtherInfo;
-            }
+            proposal.MakeUpWaterDetail.MakeUpWaterOtherInfo = req.body.MakeUpWaterOtherInfo;
+            proposal.MakeUpWaterDetail.ddlMakeUpWaterOtherInfo = req.body.ddlMakeUpWaterOtherInfo;
+            console.log("Data PUT Step1 END");    
+        }
 
             if(step=="2")
 {
+    console.log("Data PUT STEP 2");  
             //Circulating Water DEtails
             proposal.CirculatingWaterDetail.ModifiedDate= req.body.CirculatingWaterDetail.ModifiedDate;
             proposal.CirculatingWaterDetail.CreatedDate= req.body.CirculatingWaterDetail.CreatedDate;
@@ -149,6 +148,7 @@ router.put('/', function(req,res,next){
 }
             if(step=="3")
 {
+    console.log("Data PUT STEP 3");  
             // CoolingTowerDetail
             proposal.CoolingTowerDetail.CreatedDate= req.body.CoolingTowerDetail.CreatedDate;
             proposal.CoolingTowerDetail.ModifiedDate= req.body.CoolingTowerDetail.ModifiedDate;
@@ -202,7 +202,7 @@ router.put('/', function(req,res,next){
 
             if(step=="4")
 {
-
+    console.log("Data PUT STEP 4");  
            //CoolingTowerOperatingCondition
            proposal.CoolingTowerOperatingCondition.CreatedDate= req.body.CoolingTowerOperatingCondition.CreatedDate;
            proposal.CoolingTowerOperatingCondition.ModifiedDate= req.body.CoolingTowerOperatingCondition.ModifiedDate;
@@ -234,7 +234,7 @@ router.put('/', function(req,res,next){
 }
          if(step=="5")
 {
-
+    console.log("Data PUT STEP 5");  
            //WaterRequirementDetail
            proposal.WaterRequirementDetail.CreatedDate= req.body.WaterRequirementDetail.CreatedDate;
            proposal.WaterRequirementDetail.ModifiedDate= req.body.WaterRequirementDetail.ModifiedDate;
@@ -258,13 +258,14 @@ router.put('/', function(req,res,next){
            
             console.log(proposal.CreatedDate);
 }
-      
+console.log("Data PUT STEP END");  
+}
+
         return proposal.save().then(function(){
-           // if(!err){ 
+            //if(!err){ 
                 res.send(proposal);
-                
-            //}
-           // else{ console.log("Error in Transaction Screen Data Saving  : " + JSON.stringify(err,undefined,2));}
+                     //   }
+         //  else{ console.log("Error in Transaction Screen Data Saving  : " + JSON.stringify(err,undefined,2));}
         });
     }).catch(next);
 });
@@ -272,37 +273,50 @@ router.put('/', function(req,res,next){
 // //This will post the prouct price data to the url
 router.post('/', (req, res)=>
 {
+    console.log("PostCall")
     var proposalId=1;
-    ProposalDetails.find().then(function(proposals){
-        if(!proposals){return res.sendStatus(401);}
-      var maxValue="0";
-        proposals.forEach(element => {
-            if(maxValue< element.proposalId)
-            {
-                maxValue =element.proposalId;
-            }          
-      });
-      proposalId= maxValue+1;
-    })
+    var proposalIdNext="1";
+   
+    //console.log("Find Call- P"+proposalId.toString());
+   // console.log("Find Call- P"+(maxValue + 1).toString());
+   ProposalDetails.find().then(function(proposals){
+    console.log("Find Call")
+    if(!proposals){return res.sendStatus(401);}
+  var maxValue=0;
+    proposals.forEach(element => {
+        console.log("Find Call- element.proposalId");
+        var proposalId1= parseInt(element.ProposalId);
+       
+        if(maxValue< proposalId1)
+        {
+            maxValue =proposalId1;
+        }          
+  });
+  proposalId= maxValue + 1;
+ 
+  if(proposalId!=null)
+  {
+    proposalIdNext=proposalId.toString();
+  
+  }
 
     //create an object of productDetail model class inside that we have field details of Product Details
     var TSdata = new ProposalDetails(
         {
-            proposalId:proposalId,
+            ProposalId:proposalIdNext,
+            CreatedDate: "",
+            ModifiedDate: "",
+            IsActive: "",
             TowerDetail:{                
              TowerNumbers : req.body.TowerNumbers,
-             TowerName : req.body.TowerName,
-             
-            //  CreatedDate : req.body.CreatedDate,
-            //  ModifiedDate : req.body.ModifiedDate,
-            //  IsActive : req.body.IsActive,
+             TowerName : req.body.TowerName
             // TowerNumbers : req.body.TowerNumbers,
-            // TowerName : req.body.TowerName,
+            // TowerName : req.body.TowerName
+            
         },
 
             CirculatingWaterDetail: {
-                // CreatedDate: req.body.CirculatingWaterDetail.CreatedDate,
-                // ModifiedDate: req.body.CirculatingWaterDetail.ModifiedDate,
+                
                  CreatedDate: "",
                 ModifiedDate: "",
                 IsActive: "",
@@ -511,6 +525,7 @@ router.post('/', (req, res)=>
             // },
             
         });
+       
         //insert data into mongoDB , after saving the record it will callback the function if there is any error it will sent to 'err' parameter , if condition is true then it will send parameters which is newly inserted 
         TSdata.save((err, doc)=>{
              if(!err){ res.send(doc);
@@ -518,6 +533,7 @@ router.post('/', (req, res)=>
             }
              else{ console.log("Error in Transaction Screen Data Saving  : " + JSON.stringify(err,undefined,2));}
         });
+    });
 });
 
 module.exports = router;

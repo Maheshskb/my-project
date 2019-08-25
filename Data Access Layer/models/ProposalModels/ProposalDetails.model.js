@@ -6,6 +6,8 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
 
     //  Step:{type:string},
      id : { type : String },
+     ProposalId:{type:String},
+     StepNumber:{type:String},
 
      CreatedDate : { type : String },
 
@@ -13,19 +15,9 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
      
      IsActive : { type : String },
 
-     TowerDetail : {
-      // id : { type : string },
-
-      // CreatedDate : { type : string},
- 
-      // ModifiedDate : { type : string},
-      
-      // IsActive : { type : string},
- 
-      TowerNumbers : { type : String },
- 
+     TowerDetail : { 
+      TowerNumbers : { type : String }, 
       TowerName : { type : String }
-
      },
 
      MakeUpWaterDetail :

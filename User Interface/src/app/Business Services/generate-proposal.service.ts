@@ -12,7 +12,7 @@ export class GenerateProposalService {
   readonly baseURL = 'http://localhost:3000/ProposalDetails';
   constructor(private http:HttpClient) { }
 
-  PostTowerDetails(TSdata : ProposalDetails)
+  PostTowerDetail(TSdata : ProposalDetails)
   {
     // return this.http.post(this.baseURL, TSdata);
     return this.http.post(environment.apiBaseUrl+'/ProposalDetails',TSdata);
@@ -21,9 +21,9 @@ export class GenerateProposalService {
   {
     
     // TSdata.Step="1";
-    TSdata.step="1";
+    TSdata.StepNumber="1";
     // return this.http.put(this.baseURL, TSdata);
-    return this.http.put(environment.apiBaseUrl+'/ProposalDetails' + `/${TSdata._id}`,TSdata);
+    return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
 
  

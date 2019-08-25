@@ -24,12 +24,14 @@ export class CustomerDataEntryScreenComponent implements OnInit {
     if(form)
     form.reset();
     this._GenerateProposal.selectedProposalDetails = {
-      TowerNumbers : "",
-             TowerName : "",
+    
              CreatedDate : "",
              ModifiedDate : "",
              IsActive : "",
-           
+             TowerDetail : { 
+              TowerNumbers : { type : String }, 
+              TowerName : { type : String }
+             },
             CirculatingWaterDetail: {
                 CreatedDate: "",
                 ModifiedDate: "",
@@ -242,8 +244,9 @@ export class CustomerDataEntryScreenComponent implements OnInit {
   //   }); 
   // }
 
-  this._GenerateProposal.PostTowerDetails(form.value).subscribe((_res)=>
+  this._GenerateProposal.PostTowerDetail(form.value).subscribe((_res)=>
  {
+ //  console.log(form.value);
      this.resetForm(form); 
      this.showAddToaster(); 
     }); 

@@ -1,22 +1,10 @@
 
 
+var TowerDetail ={
 
-class TowerDetail
- {
-     constructor()
-     {}
-     id =string;
+    TowerNumbers : { type : String },
 
-     CreatedDate =string;
-
-     ModifiedDate =string;
-     
-     IsActive =string;
-
-     TowerNumbers=string;
-
-     TowerName=string;
- 
+    TowerName : { type : String }
 };
 
 
