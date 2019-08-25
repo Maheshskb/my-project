@@ -26,5 +26,14 @@ export class GenerateProposalService {
     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
 
+  PutCirculatingWaterDetails(TSdata : ProposalDetails)
+  {
+    
+    // TSdata.Step="1";
+    TSdata.StepNumberCirculatingWater = "1";
+    // return this.http.put(this.baseURL, TSdata);
+    return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
+  }
+
  
 }

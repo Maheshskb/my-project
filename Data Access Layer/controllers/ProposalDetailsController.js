@@ -42,10 +42,15 @@ router.put('/', function(req,res,next){
       {
             var proposal =proposalItem;
             console.log("Data PUT Call3");
-            var step= req.body.StepNumber;
+            var step1= req.body.StepNumber1;
+            var step2= req.body.StepNumber2;
+            var step= req.body.StepNumber3;
+            var step4= req.body.StepNumber4;
+            var step5= req.body.StepNumber5;
+            // var step6= req.body.StepNumbe6;
             console.log("Data PUT Step:"+req.body.StepNumber);
                
-            if(step=="1")
+            if(step1=="1")
             {
                 console.log("Data PUT Step1");
             proposal.MakeUpWaterDetail.CreatedDate = req.body.CreatedDate;
@@ -93,164 +98,164 @@ router.put('/', function(req,res,next){
             console.log("Data PUT Step1 END");    
         }
 
-            if(step=="2")
+            if(step2=="2")
 {
     console.log("Data PUT STEP 2");  
             //Circulating Water DEtails
-            proposal.CirculatingWaterDetail.ModifiedDate= req.body.CirculatingWaterDetail.ModifiedDate;
-            proposal.CirculatingWaterDetail.CreatedDate= req.body.CirculatingWaterDetail.CreatedDate;
-            TSdata.CirculatingWaterDetail.IsActive= req.body.CirculatingWaterDetail.IsActive;
+            proposal.CirculatingWaterDetail.ModifiedDate= req.body.ModifiedDate;
+            proposal.CirculatingWaterDetail.CreatedDate= req.body.CreatedDate;
+            proposal.CirculatingWaterDetail.IsActive= req.body.IsActive;
 
-            proposal.CirculatingWaterDetail.CirculatingWaterPh= req.body.CirculatingWaterDetail.CirculatingWaterPh;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterPh= req.body.CirculatingWaterDetail.ddlCirculatingWaterPh;
+            proposal.CirculatingWaterDetail.CirculatingWaterPh= req.body.CirculatingWaterPh;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterPh= req.body.ddlCirculatingWaterPh;
 
-            proposal.CirculatingWaterDetail.CirculatingWaterTurbidity= req.body.CirculatingWaterDetail.CirculatingWaterTurbidity;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterTurbidity= req.body.CirculatingWaterDetail.ddlCirculatingWaterTurbidity;
+            proposal.CirculatingWaterDetail.CirculatingWaterTurbidity= req.body.CirculatingWaterTurbidity;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterTurbidity= req.body.ddlCirculatingWaterTurbidity;
            
-            proposal.CirculatingWaterDetail.CirculatingWaterTDS= req.body.CirculatingWaterDetail.CirculatingWaterTDS;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterTDS= req.body.CirculatingWaterDetail.ddlCirculatingWaterTDS;
+            proposal.CirculatingWaterDetail.CirculatingWaterTDS= req.body.CirculatingWaterTDS;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterTDS= req.body.ddlCirculatingWaterTDS;
             
-            proposal.CirculatingWaterDetail.CirculatingWaterConductivity= req.body.CirculatingWaterDetail.CirculatingWaterConductivity;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterConductivity= req.body.CirculatingWaterDetail.ddlCirculatingWaterConductivity;
+            proposal.CirculatingWaterDetail.CirculatingWaterConductivity= req.body.CirculatingWaterConductivity;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterConductivity= req.body.ddlCirculatingWaterConductivity;
 
-            proposal.CirculatingWaterDetail.CirculatingWaterTotalHardness= req.body.CirculatingWaterDetail.CirculatingWaterTotalHardness;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterTotalHardness= req.body.CirculatingWaterDetail.ddlCirculatingWaterTotalHardness;
+            proposal.CirculatingWaterDetail.CirculatingWaterTotalHardness= req.body.CirculatingWaterTotalHardness;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterTotalHardness= req.body.ddlCirculatingWaterTotalHardness;
 
-            proposal.CirculatingWaterDetail.CirculatingWaterCalciumHardness= req.body.CirculatingWaterDetail.CirculatingWaterCalciumHardness;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterCalciumHardness= req.body.CirculatingWaterDetail.ddlCirculatingWaterCalciumHardness;
+            proposal.CirculatingWaterDetail.CirculatingWaterCalciumHardness= req.body.CirculatingWaterCalciumHardness;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterCalciumHardness= req.body.ddlCirculatingWaterCalciumHardness;
 
-            proposal.CirculatingWaterDetail.CirculatingWaterTotalAlkalinity= req.body.CirculatingWaterDetail.CirculatingWaterTotalAlkalinity;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterTotalAlkalinity= req.body.CirculatingWaterDetail.ddlCirculatingWaterTotalAlkalinity;
+            proposal.CirculatingWaterDetail.CirculatingWaterTotalAlkalinity= req.body.CirculatingWaterTotalAlkalinity;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterTotalAlkalinity= req.body.ddlCirculatingWaterTotalAlkalinity;
  
-            proposal.CirculatingWaterDetail.CirculatingWaterChloride= req.body.CirculatingWaterDetail.CirculatingWaterChloride;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterChloride= req.body.CirculatingWaterDetail.ddlCirculatingWaterChloride;
+            proposal.CirculatingWaterDetail.CirculatingWaterChloride= req.body.CirculatingWaterChloride;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterChloride= req.body.ddlCirculatingWaterChloride;
  
-            proposal.CirculatingWaterDetail.CirculatingWaterSulphates= req.body.CirculatingWaterDetail.CirculatingWaterSulphates;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterSulphates= req.body.CirculatingWaterDetail.ddlCirculatingWaterSulphates;
+            proposal.CirculatingWaterDetail.CirculatingWaterSulphates= req.body.CirculatingWaterSulphates;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterSulphates= req.body.ddlCirculatingWaterSulphates;
  
-            proposal.CirculatingWaterDetail.CirculatingWaterSilica= req.body.CirculatingWaterDetail.CirculatingWaterSilica;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterSilica= req.body.CirculatingWaterDetail.ddlCirculatingWaterSilica;
+            proposal.CirculatingWaterDetail.CirculatingWaterSilica= req.body.CirculatingWaterSilica;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterSilica= req.body.ddlCirculatingWaterSilica;
  
-            proposal.CirculatingWaterDetail.CirculatingWaterPhosphate= req.body.CirculatingWaterDetail.CirculatingWaterPhosphate;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterPhosphate= req.body.CirculatingWaterDetail.ddlCirculatingWaterPhosphate;
+            proposal.CirculatingWaterDetail.CirculatingWaterPhosphate= req.body.CirculatingWaterPhosphate;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterPhosphate= req.body.ddlCirculatingWaterPhosphate;
  
-            proposal.CirculatingWaterDetail.CirculatingWaterZinc= req.body.CirculatingWaterDetail.CirculatingWaterZinc;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterZinc= req.body.CirculatingWaterDetail.ddlCirculatingWaterZinc;
+            proposal.CirculatingWaterDetail.CirculatingWaterZinc= req.body.CirculatingWaterZinc;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterZinc= req.body.ddlCirculatingWaterZinc;
 
-            proposal.CirculatingWaterDetail.CirculatingWaterFreeChlorine= req.body.CirculatingWaterDetail.CirculatingWaterFreeChlorine;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterFreeChlorine= req.body.CirculatingWaterDetail.ddlCirculatingWaterFreeChlorine;
+            proposal.CirculatingWaterDetail.CirculatingWaterFreeChlorine= req.body.CirculatingWaterFreeChlorine;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterFreeChlorine= req.body.ddlCirculatingWaterFreeChlorine;
 
-            proposal.CirculatingWaterDetail.CirculatingWaterOtherInfo= req.body.CirculatingWaterDetail.CirculatingWaterOtherInfo;
-            proposal.CirculatingWaterDetail.ddlCirculatingWaterOtherInfo= req.body.CirculatingWaterDetail.ddlCirculatingWaterOtherInfo;
+            proposal.CirculatingWaterDetail.CirculatingWaterOtherInfo= req.body.CirculatingWaterOtherInfo;
+            proposal.CirculatingWaterDetail.ddlCirculatingWaterOtherInfo= req.body.ddlCirculatingWaterOtherInfo;
 
-            proposal.CirculatingWaterDetail.CirculatingWater= req.body.CirculatingWaterDetail.CirculatingWater;
-            proposal.CirculatingWaterDetail.ddlCirculatingWater= req.body.CirculatingWaterDetail.ddlCirculatingWater;
+            proposal.CirculatingWaterDetail.CirculatingWater= req.body.CirculatingWater;
+            proposal.CirculatingWaterDetail.ddlCirculatingWater= req.body.ddlCirculatingWater;
 }
             if(step=="3")
 {
     console.log("Data PUT STEP 3");  
             // CoolingTowerDetail
-            proposal.CoolingTowerDetail.CreatedDate= req.body.CoolingTowerDetail.CreatedDate;
-            proposal.CoolingTowerDetail.ModifiedDate= req.body.CoolingTowerDetail.ModifiedDate;
-            proposal.CoolingTowerDetail.IsActive= req.body.CoolingTowerDetail.IsActive;
+            // proposal.CoolingTowerDetail.CreatedDate= req.body.CreatedDate;
+            // proposal.CoolingTowerDetail.ModifiedDate= req.body.ModifiedDate;
+            // proposal.CoolingTowerDetail.IsActive= req.body.IsActive;
 
-            proposal.CoolingTowerDetail.WaterCirculationRate= req.body.CoolingTowerDetail.WaterCirculationRate;
-            proposal.CoolingTowerDetail.ddlWaterCirculationRate= req.body.CoolingTowerDetail.ddlWaterCirculationRate;
+            proposal.CoolingTowerDetail.WaterCirculationRate= req.body.WaterCirculationRate;
+            proposal.CoolingTowerDetail.ddlWaterCirculationRate= req.body.ddlWaterCirculationRate;
 
-            proposal.CoolingTowerDetail.TempInlet= req.body.CoolingTowerDetail.TempInlet;
-            proposal.CoolingTowerDetail.ddlTempInlet= req.body.CoolingTowerDetail.ddlTempInlet;
+            proposal.CoolingTowerDetail.TempInlet= req.body.TempInlet;
+            proposal.CoolingTowerDetail.ddlTempInlet= req.body.ddlTempInlet;
 
-            proposal.CoolingTowerDetail.TempOutlet= req.body.CoolingTowerDetail.TempOutlet;
-            proposal.CoolingTowerDetail.ddlTempOutlet= req.body.CoolingTowerDetail.ddlTempOutlet;
+            proposal.CoolingTowerDetail.TempOutlet= req.body.TempOutlet;
+            proposal.CoolingTowerDetail.ddlTempOutlet= req.body.ddlTempOutlet;
 
-            proposal.CoolingTowerDetail.DeltaT= req.body.CoolingTowerDetail.DeltaT;
-            proposal.CoolingTowerDetail.ddlDeltaT= req.body.CoolingTowerDetail.ddlDeltaT;
+            proposal.CoolingTowerDetail.DeltaT= req.body.DeltaT;
+            proposal.CoolingTowerDetail.ddlDeltaT= req.body.ddlDeltaT;
             
-            proposal.CoolingTowerDetail.Evaporation= req.body.CoolingTowerDetail.Evaporation;
-            proposal.CoolingTowerDetail.ddlEvaporation= req.body.CoolingTowerDetail.ddlEvaporation;
+            proposal.CoolingTowerDetail.Evaporation= req.body.Evaporation;
+            proposal.CoolingTowerDetail.ddlEvaporation= req.body.ddlEvaporation;
 
-            proposal.CoolingTowerDetail.BlowDown= req.body.CoolingTowerDetail.BlowDown;
-            proposal.CoolingTowerDetail.ddlBlowDown= req.body.CoolingTowerDetail.ddlBlowDown;
+            proposal.CoolingTowerDetail.BlowDown= req.body.BlowDown;
+            proposal.CoolingTowerDetail.ddlBlowDown= req.body.ddlBlowDown;
             
-            proposal.CoolingTowerDetail.COC= req.body.CoolingTowerDetail.COC;
-            proposal.CoolingTowerDetail.ddlCOC= req.body.CoolingTowerDetail.ddlCOC;
+            proposal.CoolingTowerDetail.COC= req.body.COC;
+            proposal.CoolingTowerDetail.ddlCOC= req.body.ddlCOC;
 
-            proposal.CoolingTowerDetail.MakeUpWater= req.body.CoolingTowerDetail.MakeUpWater;
-            proposal.CoolingTowerDetail.ddlMakeUpWater= req.body.CoolingTowerDetail.ddlMakeUpWater;
+            proposal.CoolingTowerDetail.MakeUpWater= req.body.MakeUpWater;
+            proposal.CoolingTowerDetail.ddlMakeUpWater= req.body.ddlMakeUpWater;
            
-            proposal.CoolingTowerDetail.OperatingHrsPerDay= req.body.CoolingTowerDetail.OperatingHrsPerDay;
-            proposal.CoolingTowerDetail.ddlOperatingHrsPerDay= req.body.CoolingTowerDetail.ddlOperatingHrsPerDay;
+            proposal.CoolingTowerDetail.OperatingHrsPerDay= req.body.OperatingHrsPerDay;
+            proposal.CoolingTowerDetail.ddlOperatingHrsPerDay= req.body.ddlOperatingHrsPerDay;
 
-            proposal.CoolingTowerDetail.SideStreamFilterFlow= req.body.CoolingTowerDetail.SideStreamFilterFlow;
-            proposal.CoolingTowerDetail.ddlSideStreamFilterFlow= req.body.CoolingTowerDetail.ddlSideStreamFilterFlow;
+            proposal.CoolingTowerDetail.SideStreamFilterFlow= req.body.SideStreamFilterFlow;
+            proposal.CoolingTowerDetail.ddlSideStreamFilterFlow= req.body.ddlSideStreamFilterFlow;
             
-            proposal.CoolingTowerDetail.AcidUsedForPhControl= req.body.CoolingTowerDetail.AcidUsedForPhControl;
-            proposal.CoolingTowerDetail.ddlAcidUsedForPhControl= req.body.CoolingTowerDetail.ddlAcidUsedForPhControl;
+            proposal.CoolingTowerDetail.AcidUsedForPhControl= req.body.AcidUsedForPhControl;
+            proposal.CoolingTowerDetail.ddlAcidUsedForPhControl= req.body.ddlAcidUsedForPhControl;
 
-            proposal.CoolingTowerDetail.PercentagesAcidUsed= req.body.CoolingTowerDetail.PercentagesAcidUsed;
-            proposal.CoolingTowerDetail.ddlPercentagesAcidUsed= req.body.CoolingTowerDetail.ddlPercentagesAcidUsed;
+            proposal.CoolingTowerDetail.PercentagesAcidUsed= req.body.PercentagesAcidUsed;
+            proposal.CoolingTowerDetail.ddlPercentagesAcidUsed= req.body.ddlPercentagesAcidUsed;
             
-            proposal.CoolingTowerDetail.CoolingTowerSumpVolume= req.body.CoolingTowerDetail.CoolingTowerSumpVolume;
-            proposal.CoolingTowerDetail.ddlCoolingTowerSumpVolume= req.body.CoolingTowerDetail.ddlCoolingTowerSumpVolume;
+            proposal.CoolingTowerDetail.CoolingTowerSumpVolume= req.body.CoolingTowerSumpVolume;
+            proposal.CoolingTowerDetail.ddlCoolingTowerSumpVolume= req.body.ddlCoolingTowerSumpVolume;
 
-            proposal.CoolingTowerDetail.CoolingTowerCapacityTR= req.body.CoolingTowerDetail.CoolingTowerCapacityTR;
-            proposal.CoolingTowerDetail.ddlCoolingTowerCapacityTR= req.body.CoolingTowerDetail.ddlCoolingTowerCapacityTR;
+            proposal.CoolingTowerDetail.CoolingTowerCapacityTR= req.body.CoolingTowerCapacityTR;
+            proposal.CoolingTowerDetail.ddlCoolingTowerCapacityTR= req.body.ddlCoolingTowerCapacityTR;
             
-            proposal.CoolingTowerDetail.CoolingTowerOtherInfo= req.body.CoolingTowerDetail.CoolingTowerOtherInfo;
-            proposal.CoolingTowerDetail.ddlCoolingTowerOtherInfo= req.body.CoolingTowerDetail.ddlCoolingTowerOtherInfo;
+            proposal.CoolingTowerDetail.CoolingTowerOtherInfo= req.body.CoolingTowerOtherInfo;
+            proposal.CoolingTowerDetail.ddlCoolingTowerOtherInfo= req.body.ddlCoolingTowerOtherInfo;
 }
 
-            if(step=="4")
+            if(step4=="4")
 {
     console.log("Data PUT STEP 4");  
            //CoolingTowerOperatingCondition
-           proposal.CoolingTowerOperatingCondition.CreatedDate= req.body.CoolingTowerOperatingCondition.CreatedDate;
-           proposal.CoolingTowerOperatingCondition.ModifiedDate= req.body.CoolingTowerOperatingCondition.ModifiedDate;
-           proposal.CoolingTowerOperatingCondition.IsActive= req.body.CoolingTowerOperatingCondition.IsActive;
+        //    proposal.CoolingTowerOperatingCondition.CreatedDate= req.body.CreatedDate;
+        //    proposal.CoolingTowerOperatingCondition.ModifiedDate= req.body.ModifiedDate;
+        //    proposal.CoolingTowerOperatingCondition.IsActive= req.body.IsActive;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition1= req.body.CoolingTowerOperatingCondition.TestCondition1;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition1= req.body.CoolingTowerOperatingCondition.ddlTestCondition1;
+           proposal.CoolingTowerOperatingCondition.TestCondition1= req.body.TestCondition1;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition1= req.body.ddlTestCondition1;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition2= req.body.CoolingTowerOperatingCondition.TestCondition2;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition2= req.body.CoolingTowerOperatingCondition.ddlTestCondition2;
+           proposal.CoolingTowerOperatingCondition.TestCondition2= req.body.TestCondition2;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition2= req.body.ddlTestCondition2;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition3= req.body.CoolingTowerOperatingCondition.TestCondition3;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition3= req.body.CoolingTowerOperatingCondition.ddlTestCondition3;
+           proposal.CoolingTowerOperatingCondition.TestCondition3= req.body.TestCondition3;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition3= req.body.ddlTestCondition3;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition4= req.body.CoolingTowerOperatingCondition.TestCondition4;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition4= req.body.CoolingTowerOperatingCondition.ddlTestCondition4;
+           proposal.CoolingTowerOperatingCondition.TestCondition4= req.body.TestCondition4;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition4= req.body.ddlTestCondition4;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition5= req.body.CoolingTowerOperatingCondition.TestCondition5;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition5= req.body.CoolingTowerOperatingCondition.ddlTestCondition5;
+           proposal.CoolingTowerOperatingCondition.TestCondition5= req.body.TestCondition5;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition5= req.body.ddlTestCondition5;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition6= req.body.CoolingTowerOperatingCondition.TestCondition6;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition6= req.body.CoolingTowerOperatingCondition.ddlTestCondition6;
+           proposal.CoolingTowerOperatingCondition.TestCondition6= req.body.TestCondition6;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition6= req.body.ddlTestCondition6;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition7= req.body.CoolingTowerOperatingCondition.TestCondition7;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition7= req.body.CoolingTowerOperatingCondition.ddlTestCondition7;
+           proposal.CoolingTowerOperatingCondition.TestCondition7= req.body.TestCondition7;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition7= req.body.ddlTestCondition7;
 
-           proposal.CoolingTowerOperatingCondition.TestCondition8= req.body.CoolingTowerOperatingCondition.TestCondition8;
-           proposal.CoolingTowerOperatingCondition.ddlTestCondition8= req.body.CoolingTowerOperatingCondition.ddlTestCondition8;
+           proposal.CoolingTowerOperatingCondition.TestCondition8= req.body.TestCondition8;
+           proposal.CoolingTowerOperatingCondition.ddlTestCondition8= req.body.ddlTestCondition8;
 }
-         if(step=="5")
+         if(step5=="5")
 {
     console.log("Data PUT STEP 5");  
            //WaterRequirementDetail
-           proposal.WaterRequirementDetail.CreatedDate= req.body.WaterRequirementDetail.CreatedDate;
-           proposal.WaterRequirementDetail.ModifiedDate= req.body.WaterRequirementDetail.ModifiedDate;
-           proposal.WaterRequirementDetail.IsActive= req.body.WaterRequirementDetail.IsActive;
+        //    proposal.WaterRequirementDetail.CreatedDate= req.body.CreatedDate;
+        //    proposal.WaterRequirementDetail.ModifiedDate= req.body.ModifiedDate;
+        //    proposal.WaterRequirementDetail.IsActive= req.body.IsActive;
 
-           proposal.WaterRequirementDetail.UsedMakeUpWater= req.body.WaterRequirementDetail.UsedMakeUpWater;
-           proposal.WaterRequirementDetail.ddlUsedMakeUpWater= req.body.WaterRequirementDetail.ddlUsedMakeUpWater;
+           proposal.WaterRequirementDetail.UsedMakeUpWater= req.body.UsedMakeUpWater;
+           proposal.WaterRequirementDetail.ddlUsedMakeUpWater= req.body.ddlUsedMakeUpWater;
 
-           proposal.WaterRequirementDetail.MakeUpDoneProcess= req.body.WaterRequirementDetail.MakeUpDoneProcess;
-           proposal.WaterRequirementDetail.ddlMakeUpDoneProcess= req.body.WaterRequirementDetail.ddlMakeUpDoneProcess;
+           proposal.WaterRequirementDetail.MakeUpDoneProcess= req.body.MakeUpDoneProcess;
+           proposal.WaterRequirementDetail.ddlMakeUpDoneProcess= req.body.ddlMakeUpDoneProcess;
 
-           proposal.WaterRequirementDetail.BlowDownQuantity= req.body.WaterRequirementDetail.BlowDownQuantity;
-           proposal.WaterRequirementDetail.ddlBlowDownQuantity= req.body.WaterRequirementDetail.ddlBlowDownQuantity;
+           proposal.WaterRequirementDetail.BlowDownQuantity= req.body.BlowDownQuantity;
+           proposal.WaterRequirementDetail.ddlBlowDownQuantity= req.body.ddlBlowDownQuantity;
 
-           proposal.WaterRequirementDetail.BlowDownFrequency= req.body.WaterRequirementDetail.BlowDownFrequency;
-           proposal.WaterRequirementDetail.ddlBlowDownFrequency= req.body.WaterRequirementDetail.ddlBlowDownFrequency;
+           proposal.WaterRequirementDetail.BlowDownFrequency= req.body.BlowDownFrequency;
+           proposal.WaterRequirementDetail.ddlBlowDownFrequency= req.body.ddlBlowDownFrequency;
 
             // proposal.CreatedDate = req.body.CreatedDate;
            // proposal.ModifiedDate = req.body.ModifiedDate;
