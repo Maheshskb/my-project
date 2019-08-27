@@ -27,8 +27,7 @@ var CoolingTowerDetail = {
      ddlBlowDown: { type: String },
 
      COC: { type: String },
-     ddlCOC: { type: String },
-
+    
      MakeUpWater: { type: String },
      ddlMakeUpWater: { type: String },
 

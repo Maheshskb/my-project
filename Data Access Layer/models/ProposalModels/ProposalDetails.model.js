@@ -155,8 +155,7 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
             ddlBlowDown: { type: String },
        
             COC: { type: String },
-            ddlCOC: { type: String },
-       
+                  
             MakeUpWater: { type: String },
             ddlMakeUpWater: { type: String },
        
@@ -212,10 +211,8 @@ var ProposalDetails = mongoose.model('ProposalDetails', {
         IsCopperCorrosionControlRequired: { type: String },
         ddlIsCopperCorrosionControlRequired: { type: String },
    
-        OtherObservation: { type: String },
         txtOtherObservation: { type: String },
    
-        Comment: { type: String },
         txtComment: { type: String },
     
    },

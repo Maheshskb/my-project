@@ -12,7 +12,8 @@ import { GenerateProposalService } from '../../../../Business Services/generate-
   providers: [GenerateProposalService, TransactionScreenService]
 })
 export class CustomerDataEntryScreenComponent implements OnInit {
-
+  display='none'; 
+  buttonType='Next';
   constructor( private _TransactionScreen:TransactionScreenService, private _GenerateProposal:GenerateProposalService, private router:Router,
     private _toastr: ToastrService) { }
 
@@ -236,30 +237,70 @@ export class CustomerDataEntryScreenComponent implements OnInit {
 
   onSubmit(form : NgForm)
   {
-    
-  //   this._TransactionScreen.postTowerDetails(form.value).subscribe((_res)=>
-  // {
-  //     this.resetForm(form);  
-  //     this.showAddToaster();
-  //   }); 
-  // }
-
-  this._GenerateProposal.PostTowerDetail(form.value).subscribe((_res)=>
- {
- //  console.log(form.value);
-     this.resetForm(form); 
-     this.showAddToaster(); 
-    }); 
+    if(this.buttonType=="SaveMakeWater") {
+     //Call Water PUT
+     this.OnMakeupWaterSubmission(form);
+     }else {
+      this._GenerateProposal.PostTowerDetail(form.value).subscribe((_res)=>
+      {
+      //  console.log(form.value);
+          this.resetForm(form); 
+          this.showAddToaster(); 
+         }); 
+      
+     }
+    console.log("TS File Call Submit");
+ 
   }
 
   OnMakeupWaterSubmission( form : NgForm)
   {
+    console.log("TS File Call for Make Up Water Submission");
     this._GenerateProposal.PutMakeUpWaterDetail(form.value).subscribe((res)=>{
     this.showAddToaster();
     this.resetForm(form);
     });
   }
 
+  
+  OnCoolingTowerDetailSubmission( form : NgForm)
+  {
+    console.log("ts file call for Cooling Tower Details Fill Call");
+    this._GenerateProposal.PutCoolingToerDetail(form.value).subscribe((res)=>{
+    this.showAddToaster();
+    this.resetForm(form);
+    });
+  }
+
+  //Circulating Water Submission form
+  OnCirculatingWaterAnalysisSubmission ( form : NgForm )
+  {
+    console.log("ts file call for Cooling Tower Details Fill Call");
+    this._GenerateProposal.PutCirculatingWaterDetails(form.value).subscribe((res)=>{
+    this.showAddToaster();
+    this.resetForm(form);
+    });
+  }
+
+  // Cooling Tower Operating Condition Detail Submission
+  OnCoolingTowerOperatingConditionDetailSubmission( form : NgForm )
+  {
+    console.log("ts file call for Cooling Tower Details Fill Call");
+    this._GenerateProposal.PutCoolingTowerOperatingConditionDetail(form.value).subscribe((res)=>{
+    this.showAddToaster();
+    this.resetForm(form);
+    });
+  }
+
+  //Water Requirement DetailS ubmission
+  OnWaterRequirementDetailSubmission ( form : NgForm )
+  {
+    console.log("ts file call for Cooling Tower Details Fill Call");
+    this._GenerateProposal.PutWaterRequirementDetail(form.value).subscribe((res)=>{
+    this.showAddToaster();
+    this.resetForm(form);
+    });
+  }
   OnProductRecommendation( form : NgForm)
   {
 
@@ -269,8 +310,38 @@ export class CustomerDataEntryScreenComponent implements OnInit {
     });
   }
 
+  OnNextClick(selectedName){
+    console.log("On Next File Call");
+    this.display='block'; //Set block css
+    if(selectedName=='MakeUpWater')
+    {
+      this.buttonType='SaveMakeWater';
+    }
+ }
 
-  
+ OnBackClick(selectedName){
+  console.log("On Back File Call");
+  this.display='none'; //set none css after close dialog
+  if(selectedName=='MakeUpWater')
+    {
+      
+    }
+ }
+
+ShowForm1(){document.getElementById('Form1').style.display = "block";}
+
+ShowForm2(){  document.getElementById('Form2').style.display = "block";}
+HideForm2() {document.getElementById('Form2').style.display = "none";}
+
+ShowForm3() {document.getElementById('Form3').style.display = "block";}
+HideForm3(){ document.getElementById('Form3').style.display = "none"; }
+
+ShowForm4(){ document.getElementById('Form4').style.display = "block";}
+HideForm4(){ document.getElementById('Form4').style.display = "none"; }
+
+ShowForm5(){ document.getElementById('Form5').style.display = "block"; }
+HideForm5(){ document.getElementById('Form5').style.display = "none";}
+
   // code to toast notification
   showDeleteToaster(){
     this._toastr.warning("Record is deleted successfully.")

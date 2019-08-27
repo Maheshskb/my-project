@@ -18,16 +18,15 @@ router.get('/', (req, res) => {
 });
 
 router.put('/', function(req,res,next){
-    console.log("Error in Transaction Screen Data dfdfgd");
+    console.log('Put Call' + req.header);
     var currentProposalId=null;
     var proposalItem=null;
     ProposalDetails.find().then(function(proposals){
-        console.log("Find Call")
+      
         if(!proposals){return res.sendStatus(401);}
         var maxValue=0;
         proposals.forEach(element => {
-            console.log("Find Call- element.proposalId:"+element.ProposalId);
-            console.log("Find Call- element.ObjectId:"+element._id);
+          
             var proposalId1= parseInt(element.ProposalId);
            if(element.ProposalId!=null)
            {
@@ -41,18 +40,75 @@ router.put('/', function(req,res,next){
       if(proposalItem!=null)
       {
             var proposal =proposalItem;
-            console.log("Data PUT Call3");
+         
             var step1= req.body.StepNumber1;
             var step2= req.body.StepNumber2;
-            var step= req.body.StepNumber3;
+            var step3= req.body.StepNumber3;
             var step4= req.body.StepNumber4;
             var step5= req.body.StepNumber5;
             // var step6= req.body.StepNumbe6;
-            console.log("Data PUT Step:"+req.body.StepNumber);
+           
+            // COOLING TowerDetail
                
             if(step1=="1")
             {
-                console.log("Data PUT Step1");
+                console.log("Data PUT STEP 1");  
+                        // CoolingTowerDetail
+                        proposal.CoolingTowerDetail.CreatedDate= req.body.CreatedDate;
+                        proposal.CoolingTowerDetail.ModifiedDate= req.body.ModifiedDate;
+                        proposal.CoolingTowerDetail.IsActive= req.body.IsActive;
+            
+                        proposal.CoolingTowerDetail.WaterCirculationRate= req.body.WaterCirculationRate;
+                        proposal.CoolingTowerDetail.ddlWaterCirculationRate= req.body.ddlWaterCirculationRate;
+            
+                        proposal.CoolingTowerDetail.TempInlet= req.body.TempInlet;
+                        proposal.CoolingTowerDetail.ddlTempInlet= req.body.ddlTempInlet;
+            
+                        proposal.CoolingTowerDetail.TempOutlet= req.body.TempOutlet;
+                        proposal.CoolingTowerDetail.ddlTempOutlet= req.body.ddlTempOutlet;
+            
+                        proposal.CoolingTowerDetail.DeltaT= req.body.DeltaT;
+                        proposal.CoolingTowerDetail.ddlDeltaT= req.body.ddlDeltaT;
+                        
+                        proposal.CoolingTowerDetail.Evaporation= req.body.Evaporation;
+                        proposal.CoolingTowerDetail.ddlEvaporation= req.body.ddlEvaporation;
+            
+                        proposal.CoolingTowerDetail.BlowDown= req.body.BlowDown;
+                        proposal.CoolingTowerDetail.ddlBlowDown= req.body.ddlBlowDown;
+                        
+                        proposal.CoolingTowerDetail.COC= req.body.COC;
+                        proposal.CoolingTowerDetail.ddlCOC= req.body.ddlCOC;
+            
+                        proposal.CoolingTowerDetail.MakeUpWater= req.body.MakeUpWater;
+                        proposal.CoolingTowerDetail.ddlMakeUpWater= req.body.ddlMakeUpWater;
+                       
+                        proposal.CoolingTowerDetail.OperatingHrsPerDay= req.body.OperatingHrsPerDay;
+                        proposal.CoolingTowerDetail.ddlOperatingHrsPerDay= req.body.ddlOperatingHrsPerDay;
+            
+                        proposal.CoolingTowerDetail.SideStreamFilterFlow= req.body.SideStreamFilterFlow;
+                        proposal.CoolingTowerDetail.ddlSideStreamFilterFlow= req.body.ddlSideStreamFilterFlow;
+                        
+                        proposal.CoolingTowerDetail.AcidUsedForPhControl= req.body.AcidUsedForPhControl;
+                        proposal.CoolingTowerDetail.ddlAcidUsedForPhControl= req.body.ddlAcidUsedForPhControl;
+            
+                        proposal.CoolingTowerDetail.PercentagesAcidUsed= req.body.PercentagesAcidUsed;
+                        proposal.CoolingTowerDetail.ddlPercentagesAcidUsed= req.body.ddlPercentagesAcidUsed;
+                        
+                        proposal.CoolingTowerDetail.CoolingTowerSumpVolume= req.body.CoolingTowerSumpVolume;
+                        proposal.CoolingTowerDetail.ddlCoolingTowerSumpVolume= req.body.ddlCoolingTowerSumpVolume;
+            
+                        proposal.CoolingTowerDetail.CoolingTowerCapacityTR= req.body.CoolingTowerCapacityTR;
+                        proposal.CoolingTowerDetail.ddlCoolingTowerCapacityTR= req.body.ddlCoolingTowerCapacityTR;
+                        
+                        proposal.CoolingTowerDetail.CoolingTowerOtherInfo= req.body.CoolingTowerOtherInfo;
+                        proposal.CoolingTowerDetail.ddlCoolingTowerOtherInfo= req.body.ddlCoolingTowerOtherInfo;
+                        
+                        console.log('Cooling Tower data Completed..');
+            }
+            
+            if(step2=="2")
+            {
+               
             proposal.MakeUpWaterDetail.CreatedDate = req.body.CreatedDate;
             proposal.MakeUpWaterDetail.ModifiedDate = req.body.ModifiedDate;
             proposal.MakeUpWaterDetail.IsActive = req.body.IsActive;
@@ -95,12 +151,13 @@ router.put('/', function(req,res,next){
 
             proposal.MakeUpWaterDetail.MakeUpWaterOtherInfo = req.body.MakeUpWaterOtherInfo;
             proposal.MakeUpWaterDetail.ddlMakeUpWaterOtherInfo = req.body.ddlMakeUpWaterOtherInfo;
-            console.log("Data PUT Step1 END");    
+           
+            console.log('Make up water Completed..');
         }
 
-            if(step2=="2")
+            if(step3=="3")
 {
-    console.log("Data PUT STEP 2");  
+  
             //Circulating Water DEtails
             proposal.CirculatingWaterDetail.ModifiedDate= req.body.ModifiedDate;
             proposal.CirculatingWaterDetail.CreatedDate= req.body.CreatedDate;
@@ -151,60 +208,7 @@ router.put('/', function(req,res,next){
             proposal.CirculatingWaterDetail.CirculatingWater= req.body.CirculatingWater;
             proposal.CirculatingWaterDetail.ddlCirculatingWater= req.body.ddlCirculatingWater;
 }
-            if(step=="3")
-{
-    console.log("Data PUT STEP 3");  
-            // CoolingTowerDetail
-            // proposal.CoolingTowerDetail.CreatedDate= req.body.CreatedDate;
-            // proposal.CoolingTowerDetail.ModifiedDate= req.body.ModifiedDate;
-            // proposal.CoolingTowerDetail.IsActive= req.body.IsActive;
-
-            proposal.CoolingTowerDetail.WaterCirculationRate= req.body.WaterCirculationRate;
-            proposal.CoolingTowerDetail.ddlWaterCirculationRate= req.body.ddlWaterCirculationRate;
-
-            proposal.CoolingTowerDetail.TempInlet= req.body.TempInlet;
-            proposal.CoolingTowerDetail.ddlTempInlet= req.body.ddlTempInlet;
-
-            proposal.CoolingTowerDetail.TempOutlet= req.body.TempOutlet;
-            proposal.CoolingTowerDetail.ddlTempOutlet= req.body.ddlTempOutlet;
-
-            proposal.CoolingTowerDetail.DeltaT= req.body.DeltaT;
-            proposal.CoolingTowerDetail.ddlDeltaT= req.body.ddlDeltaT;
-            
-            proposal.CoolingTowerDetail.Evaporation= req.body.Evaporation;
-            proposal.CoolingTowerDetail.ddlEvaporation= req.body.ddlEvaporation;
-
-            proposal.CoolingTowerDetail.BlowDown= req.body.BlowDown;
-            proposal.CoolingTowerDetail.ddlBlowDown= req.body.ddlBlowDown;
-            
-            proposal.CoolingTowerDetail.COC= req.body.COC;
-            proposal.CoolingTowerDetail.ddlCOC= req.body.ddlCOC;
-
-            proposal.CoolingTowerDetail.MakeUpWater= req.body.MakeUpWater;
-            proposal.CoolingTowerDetail.ddlMakeUpWater= req.body.ddlMakeUpWater;
            
-            proposal.CoolingTowerDetail.OperatingHrsPerDay= req.body.OperatingHrsPerDay;
-            proposal.CoolingTowerDetail.ddlOperatingHrsPerDay= req.body.ddlOperatingHrsPerDay;
-
-            proposal.CoolingTowerDetail.SideStreamFilterFlow= req.body.SideStreamFilterFlow;
-            proposal.CoolingTowerDetail.ddlSideStreamFilterFlow= req.body.ddlSideStreamFilterFlow;
-            
-            proposal.CoolingTowerDetail.AcidUsedForPhControl= req.body.AcidUsedForPhControl;
-            proposal.CoolingTowerDetail.ddlAcidUsedForPhControl= req.body.ddlAcidUsedForPhControl;
-
-            proposal.CoolingTowerDetail.PercentagesAcidUsed= req.body.PercentagesAcidUsed;
-            proposal.CoolingTowerDetail.ddlPercentagesAcidUsed= req.body.ddlPercentagesAcidUsed;
-            
-            proposal.CoolingTowerDetail.CoolingTowerSumpVolume= req.body.CoolingTowerSumpVolume;
-            proposal.CoolingTowerDetail.ddlCoolingTowerSumpVolume= req.body.ddlCoolingTowerSumpVolume;
-
-            proposal.CoolingTowerDetail.CoolingTowerCapacityTR= req.body.CoolingTowerCapacityTR;
-            proposal.CoolingTowerDetail.ddlCoolingTowerCapacityTR= req.body.ddlCoolingTowerCapacityTR;
-            
-            proposal.CoolingTowerDetail.CoolingTowerOtherInfo= req.body.CoolingTowerOtherInfo;
-            proposal.CoolingTowerDetail.ddlCoolingTowerOtherInfo= req.body.ddlCoolingTowerOtherInfo;
-}
-
             if(step4=="4")
 {
     console.log("Data PUT STEP 4");  
@@ -269,6 +273,7 @@ console.log("Data PUT STEP END");
         return proposal.save().then(function(){
             //if(!err){ 
                 res.send(proposal);
+                console.log(proposal);
                      //   }
          //  else{ console.log("Error in Transaction Screen Data Saving  : " + JSON.stringify(err,undefined,2));}
         });
@@ -278,6 +283,7 @@ console.log("Data PUT STEP END");
 // //This will post the prouct price data to the url
 router.post('/', (req, res)=>
 {
+
     console.log("PostCall")
     var proposalId=1;
     var proposalIdNext="1";
@@ -285,11 +291,11 @@ router.post('/', (req, res)=>
     //console.log("Find Call- P"+proposalId.toString());
    // console.log("Find Call- P"+(maxValue + 1).toString());
    ProposalDetails.find().then(function(proposals){
-    console.log("Find Call")
+    
     if(!proposals){return res.sendStatus(401);}
   var maxValue=0;
     proposals.forEach(element => {
-        console.log("Find Call- element.proposalId");
+       
         var proposalId1= parseInt(element.ProposalId);
        
         if(maxValue< proposalId1)
@@ -521,13 +527,7 @@ router.post('/', (req, res)=>
 
             },
 
-            //PhotoFileUploadProvision
-            // PhotoFileUploadProvision: {
-            //     CreatedDate: req.body.PhotoFileUploadProvision.CreatedDate,
-            //     ModifiedDate: req.body.PhotoFileUploadProvision.ModifiedDate,
-            //     IsActive: req.body.PhotoFileUploadProvision.IsActive,
-          
-            // },
+           
             
         });
        

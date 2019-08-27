@@ -26,10 +26,8 @@ var CoolingTowerOperatingCondition = {
      IsCopperCorrosionControlRequired: { type: String },
      ddlIsCopperCorrosionControlRequired: { type: String },
 
-     OtherObservation: { type: String },
      txtOtherObservation: { type: String },
 
-     Comment: { type: String },
      txtComment: { type: String },
  
 };

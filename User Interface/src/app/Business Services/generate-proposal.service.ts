@@ -18,21 +18,45 @@ export class GenerateProposalService {
     // return this.http.post(this.baseURL, TSdata);
     return this.http.post(environment.apiBaseUrl+'/ProposalDetails',TSdata);
   }
+
  PutMakeUpWaterDetail(TSdata : ProposalDetails)
   {
-    
-    // TSdata.Step="1";
+    TSdata.StepNumber2="2";
+    TSdata.StepNumber="2";
+    console.log("ServiCe Call :"+TSdata.StepNumber);
+    return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
+  }
+
+  //Cooling Tower Details Put Method call
+  PutCoolingToerDetail(TSdata : ProposalDetails)
+  {
+    TSdata.StepNumber1="1";
     TSdata.StepNumber="1";
-    // return this.http.put(this.baseURL, TSdata);
+    console.log("ServiCe Call :"+TSdata.StepNumber);
+    return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
+  }
+
+  PutCoolingTowerOperatingConditionDetail(TSdata : ProposalDetails)
+  {
+    TSdata.StepNumber4="4";
+    // TSdata.StepNumber="1";
+    console.log("ServiCe Call :"+TSdata.StepNumber);
     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
 
   PutCirculatingWaterDetails(TSdata : ProposalDetails)
   {
-    
-    // TSdata.Step="1";
-    TSdata.StepNumberCirculatingWater = "1";
-    // return this.http.put(this.baseURL, TSdata);
+    // TSdata.StepNumberCirculatingWater = "1";
+    TSdata.StepNumber3="3";
+    TSdata.StepNumber="3";
+    return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
+  }
+
+  //PutWaterRequirementDetail
+  PutWaterRequirementDetail(TSdata : ProposalDetails)
+  {
+    // TSdata.StepNumberCirculatingWater = "1";
+    TSdata.StepNumber5="5";
     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
 
