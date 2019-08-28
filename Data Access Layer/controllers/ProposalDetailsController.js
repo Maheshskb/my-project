@@ -328,7 +328,7 @@ router.post('/', (req, res)=>
 
             CirculatingWaterDetail: {
                 
-                 CreatedDate: "",
+                CreatedDate: "",
                 ModifiedDate: "",
                 IsActive: "",
 
