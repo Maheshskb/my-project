@@ -1,53 +1,27 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm,} from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductDetailsService} from '../../../Business Services/product-details.service';
+import { ProductDetailsService} from '../../../../Business Services/product-details.service';
 // import { ProductDetails } from '../shared/product-details.model';
-import { ProductDetails } from '../../../../../../Data Access Layer/models/ProductDetails.model';
+// import { ProductDetails } from '../../../../../../Data Access Layer/models/ProductDetails.model';
+import { ProductDetails } from '../../../../../../../Data Access Layer/models/ProductDetails.model';
 
 import { ToastrService } from 'ngx-toastr';
 
-declare var M:any;
-declare var $:any;
 @Component({
-  selector: 'app-product-curd',
-  templateUrl: './product-curd.component.html',
-  styleUrls: ['./product-curd.component.css'],
+  selector: 'app-corrosion-and-scale-inhibitor',
+  templateUrl: './corrosion-and-scale-inhibitor.component.html',
+  styleUrls: ['./corrosion-and-scale-inhibitor.component.css'],
   providers: [ProductDetailsService]
 })
-export class ProductCURDComponent implements OnInit {
- 
+export class CorrosionAndScaleInhibitorComponent implements OnInit {
+
   constructor(private _productDetailsService : ProductDetailsService, private _toastr: ToastrService, private router : Router) { }
 
-   onRefresh()
-   {
-    
-   }
   ngOnInit() {
-    
-    
     this.resetForm();
     this.refreshProductList();
-
-  //   $(document).ready(function() {
-  //     $('#example').DataTable();
-  // } );
-
-  $(document).ready(function() {
-    $('#dataTable').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": false,
-      "ordering": false,
-      "info": true,
-      "autoWidth": true,
-      "pageLength":5,
-      "lengthMenu": [ 5,10,15,25,30,35,40,45,50,55,60,65,70,75, 100 ]
-      });
-});
-
   }
-
   resetForm(form?:NgForm)
   {
     if(form)
@@ -131,7 +105,4 @@ showAddToaster(){
   this._toastr.warning("Record is deleted successfully.")
 }
 
-btnClick () {
-  this.router.navigateByUrl('/Biocide-Selection');
-};
 }

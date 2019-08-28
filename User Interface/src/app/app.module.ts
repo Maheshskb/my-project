@@ -88,6 +88,10 @@ import { AdminLoginComponent } from './components/admin/admin-login/admin-login.
 import { AdminSignInComponent } from './components/admin/admin-login/admin-sign-in/admin-sign-in.component';
 import { AdminSignUpComponent } from './components/admin/admin-login/admin-sign-up/admin-sign-up.component';
 import { CustomerDataEntryScreenComponent } from './components/PennarSalesEngg Component/pennar-sales-engg-dashboard/customer-data-entry-screen/customer-data-entry-screen.component';
+import { CorrosionAndScaleInhibitorComponent } from './components/admin/product-curd/corrosion-and-scale-inhibitor/corrosion-and-scale-inhibitor.component';
+import { BiodisperasntSelectionComponent } from './components/admin/product-curd/biodisperasnt-selection/biodisperasnt-selection.component';
+import { BiocideSelectionComponent } from './components/admin/product-curd/biocide-selection/biocide-selection.component';
+import { CopperCorrosionControlComponent } from './components/admin/product-curd/copper-corrosion-control/copper-corrosion-control.component';
 
 
 
@@ -145,7 +149,11 @@ import { CustomerDataEntryScreenComponent } from './components/PennarSalesEngg C
     AdminLoginComponent,
     AdminSignInComponent,
     AdminSignUpComponent,
-    CustomerDataEntryScreenComponent
+    CustomerDataEntryScreenComponent,
+    CorrosionAndScaleInhibitorComponent,
+    BiodisperasntSelectionComponent,
+    BiocideSelectionComponent,
+    CopperCorrosionControlComponent
 
   ],
   imports: [

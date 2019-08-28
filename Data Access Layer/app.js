@@ -4,8 +4,13 @@ require('./config/PassportConfiguration');
 require('./config/DSEpassportConfig');
 
 const { mongoose } = require('./models/db');
+//admin module controllers
 var productDetailsController = require('./controllers/ProductDetailsController');
 var priceDetailsController = require('./controllers/PriceDetailsController');
+//productsControler
+var biodisperantProductController = require('./controllers/BiodisperantProductController');
+var biocideProductController = require('./controllers/BiocideProductController');
+var copperCorrosionProductController = require('./controllers/CopperCorrosionProductController');
 //Customer Details Controller (Dealer Sales Engg)
 var customerDetailsController = require('./controllers/customerDetailsController');
 //Register Dealer Sales Enginee Controller
@@ -50,7 +55,11 @@ app.use((err, req, res, next) => {
     }
 });
 
+//Admin Module
 app.use('/productDetails', productDetailsController);
+app.use('/BiodisperantProduct' , biodisperantProductController);
+app.use('/BiocideProduct' , biocideProductController);
+app.use('/CopperCorrosionProduct' , copperCorrosionProductController);
 //Price modification URL
 app.use('/priceDetails', priceDetailsController);
 //add customer Details of PSE 

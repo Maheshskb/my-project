@@ -13,12 +13,14 @@ export class GenerateProposalService {
   readonly baseURL = 'http://localhost:3000/ProposalDetails';
   constructor(private http:HttpClient) { }
 
+  // Post method for Tower Details
   PostTowerDetail(TSdata : ProposalDetails)
   {
     // return this.http.post(this.baseURL, TSdata);
     return this.http.post(environment.apiBaseUrl+'/ProposalDetails',TSdata);
   }
 
+  // Put method for Cooling Make Up Water Details
  PutMakeUpWaterDetail(TSdata : ProposalDetails)
   {
     TSdata.StepNumber2="2";
@@ -36,6 +38,7 @@ export class GenerateProposalService {
     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
 
+  // Put method for Cooling Tower Operating Condition Detail
   PutCoolingTowerOperatingConditionDetail(TSdata : ProposalDetails)
   {
     TSdata.StepNumber4="4";
@@ -44,6 +47,7 @@ export class GenerateProposalService {
     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
 
+  // Put method for Circulating Water Details 
   PutCirculatingWaterDetails(TSdata : ProposalDetails)
   {
     // TSdata.StepNumberCirculatingWater = "1";
@@ -52,7 +56,7 @@ export class GenerateProposalService {
     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
 
-  //PutWaterRequirementDetail
+  // Put method for Water Requirement Detail 
   PutWaterRequirementDetail(TSdata : ProposalDetails)
   {
     // TSdata.StepNumberCirculatingWater = "1";

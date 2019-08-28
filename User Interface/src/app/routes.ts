@@ -10,6 +10,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './components/admin/admin.component';
 // import { ProductDetails } from './components/admin/shared/product-details.model';
 import { ProductCURDComponent } from './components/admin/product-curd/product-curd.component';
+import { BiocideSelectionComponent } from './components/admin/product-curd/biocide-selection/biocide-selection.component';
+import { BiodisperasntSelectionComponent } from './components/admin/product-curd/biodisperasnt-selection/biodisperasnt-selection.component';
+import { CopperCorrosionControlComponent } from './components/admin/product-curd/copper-corrosion-control/copper-corrosion-control.component';
+import { CorrosionAndScaleInhibitorComponent } from './components/admin/product-curd/corrosion-and-scale-inhibitor/corrosion-and-scale-inhibitor.component';
 import { PriceDetailsComponent } from './components/admin/price-details/price-details.component';
 import { PraposalFormatComponent } from './components/admin/praposal-format/praposal-format.component';
 
@@ -73,6 +77,11 @@ export const appRoutes: Routes = [
     {
         path: 'productDetails' , component: ProductCURDComponent, canActivate: [AuthGuard],
     },
+    //Product Child Components
+                   { path: 'Biocide-Selection', component: BiocideSelectionComponent },
+                   { path: 'Biodisperasnt-Selection', component: BiodisperasntSelectionComponent },
+                   { path: 'Copper-Corrosion-Control', component: CopperCorrosionControlComponent },
+                   { path: 'Corrosion-And-Scale-Inhibitor', component: CorrosionAndScaleInhibitorComponent }, 
     {
         path: 'priceDetails' , component: PriceDetailsComponent, canActivate: [AuthGuard],
     },

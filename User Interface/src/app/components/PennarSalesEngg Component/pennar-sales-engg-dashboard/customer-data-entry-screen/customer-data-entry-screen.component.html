@@ -359,13 +359,18 @@
                                     <label style="line-height:30px">Source Of Water :</label>
                                 </div>
                                 <div class="input-field col s8">
+                                     <select class="form-control" style="width: 96%;" name="SourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.SourceOfWater">
+                                        <option value="Filterred"> Filterred </option>
+                                        <option value="Clarified"> Clarified </option>
+                                        <option value="Borewell"> Borewell </option>
+                                        <option value="Recycled"> Recucled </option>
+                                        <option value="RO"> RO </option>
+                                        <option value="Softner"> Softner </option>
+                                        <option value="DM"> DM </option>
+                                    </select> 
                                     <input type="text" name="SourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.SourceOfWater">
                                 </div>
                                 <div class="input-field col s2">
-                                    <!-- <select class="form-control" style="width: 96%;" name="ddlSourceOfWater" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlSourceOfWater">
-                                        <option value="0"> u1 </option>
-                                        <option value="1"> u2 </option>
-                                    </select> -->
                                 </div>
                             </div>
     
@@ -946,7 +951,7 @@
                                     <label style="line-height:30px">How Make Up Done? :</label>
                                 </div>
                                 <div class="input-field col s8">
-                                    <input type="text" name="MakeUpDoneProcess" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpDoneProcess">
+                                    <!-- <input type="text" name="MakeUpDoneProcess" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.MakeUpDoneProcess"> -->
                                 </div>
                                 <div class="input-field col s2">
                                     <select class="form-control" style="width: 96%;" name="ddlMakeUpDoneProcess" #name="ngModel" [(ngModel)]="_GenerateProposal.selectedProposalDetails.ddlMakeUpDoneProcess">
@@ -1169,7 +1174,7 @@
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#PhotoFileUploadModel" data-dismiss="modal" style="width: 15%;">Back</button>&nbsp;&nbsp;&nbsp;
                                 <button class="btn btn-success right " type="submit" style="width: 15%;">Submit</button>&nbsp;&nbsp;&nbsp;
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 15%;">Close</button>&nbsp;&nbsp;&nbsp;
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ProductRecommendationModel" data-dismiss="modal" style="width: 15%;">Next</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ProductRecommendationModel" data-dismiss="modal" style="width: 15%;" (click)="OnProductRecommendation();">Next</button>&nbsp;&nbsp;&nbsp;
                             </div>
                     </div>
                     <!-- End of Modal body -->
