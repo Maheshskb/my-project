@@ -4,6 +4,7 @@ import { NgForm,} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TransactionScreenService } from '../../../../Business Services/transaction-screen.service';
 import { GenerateProposalService } from '../../../../Business Services/generate-proposal.service';
+import { CustomerDetails } from '../../../../../../../Data Access Layer/models/CustomerDetails.model';
 
 @Component({
   selector: 'app-customer-data-entry-screen',
@@ -14,11 +15,27 @@ import { GenerateProposalService } from '../../../../Business Services/generate-
 export class CustomerDataEntryScreenComponent implements OnInit {
   display='none'; 
   buttonType='Next';
+   HEROES = this._GenerateProposal.GetRecommendedProducts1();
+  
+//    [
+//     {Function: "Bidisperent", Product:"PT3475", Dosage :120, Method: "Continously", Basis:"BW", value:"0.8"},
+//     // {id: 2, name:'Batman'},
+//     // {id: 5, name:'BatGirl'},
+//     // {id: 3, name:'Robin'},
+//     // {id: 4, name:'Flash'}
+// ];
+ 
   constructor( private _TransactionScreen:TransactionScreenService, private _GenerateProposal:GenerateProposalService, private router:Router,
     private _toastr: ToastrService) { }
 
+  
   ngOnInit() {
     this.resetForm();
+  //  HEROES =[
+  //     {Function: "Bidisperent", Product:"PT3475", Dosage :120, Method: "Continously", Basis:"BW", value:"0.8"},]
+  //   this._GenerateProposal.HEROES[];
+  // this._GenerateProposal.GetRecommendedProducts1();
+    
   }
   resetForm(form?:NgForm)
   {
@@ -301,14 +318,16 @@ export class CustomerDataEntryScreenComponent implements OnInit {
     this.resetForm(form);
     });
   }
-  OnProductRecommendation( form : NgForm)
-  {
 
-    this._GenerateProposal.GetRecommendedProducts(form.value).subscribe((res)=>{
-    this.showAddToaster();
-    this.resetForm(form);
-    });
-  }
+
+  // OnProductRecommendation( form : NgForm)
+  // {
+
+  //   this._GenerateProposal.GetRecommendedProducts(form.value).subscribe((res)=>{
+  //   this.showAddToaster();
+  //   this.resetForm(form);
+  //   });
+  // }
 
   OnNextClick(selectedName){
     console.log("On Next File Call");
@@ -328,6 +347,10 @@ export class CustomerDataEntryScreenComponent implements OnInit {
     }
  }
 
+ GetRecommendedProducts()
+ {
+   this._GenerateProposal.HEROES
+ }
 ShowForm1(){document.getElementById('Form1').style.display = "block";}
 
 ShowForm2(){  document.getElementById('Form2').style.display = "block";}

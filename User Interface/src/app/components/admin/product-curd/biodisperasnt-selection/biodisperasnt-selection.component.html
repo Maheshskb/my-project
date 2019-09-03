@@ -29,16 +29,16 @@
         
         <!-- Modal body -->
         <div class="modal-body" >
-            <form #BiodisperasntselectionForm="ngForm" (ngSubmit)="onSubmit(BiodisperasntselectionForm)">
+            <form #BiodisperasntselectionForm="ngForm" (ngSubmit)="OnBiodisperasntselectionSubmit(BiodisperasntselectionForm)">
   
-                <input type="hidden"> 
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_productDetailsService.selectedBiodisperantProduct._id"> 
    
                  <div class="row">
    
                    <div class="input-field col s12">
                        <label>Turbidity:
                            </label>
-                     <input type="text" >
+                     <input type="text" name="Turbidity" #name="ngModel" ([ngModel])="_productDetailsService.selectedBiodisperantProduct.Turbidity">
                    </div>
    
                  </div>
@@ -47,7 +47,7 @@
    
                    <div class="input-field col s12">
                        <label>Maint Score (MS) :</label>
-                     <input type="text" >
+                     <input type="text" name="MaintScore" #name="ngModel" ([ngModel])="_productDetailsService.selectedBiodisperantProduct.MaintScore">
                    </div>
    
                  </div>
@@ -56,7 +56,7 @@
    
                    <div class="input-field col s12">
                        <label>Product :</label>
-                     <input type="text" >
+                     <input type="text" name= "Product" #name="ngModel" ([ngModel])="_productDetailsService.selectedBiodisperantProduct.Product">
                    </div>
    
                  </div>
@@ -65,7 +65,7 @@
    
                     <div class="input-field col s12">
                         <label>Dosage &nbsp;&nbsp; :</label>
-                      <input type="text" >
+                      <input type="text" name= "Dosage" #name="ngModel" ([ngModel])="_productDetailsService.selectedBiodisperantProduct.Dosage">
                     </div>
     
                   </div>
@@ -74,9 +74,9 @@
    
                    <div class="input-field col s12">
    
-                     <button class="btn btn-primary right resetbtn btnGroup" type="button" >Reset</button>&nbsp;&nbsp;&nbsp;
+                     <button class="btn btn-primary right resetbtn btnGroup" type="button">Reset</button>&nbsp;&nbsp;&nbsp;
    
-                     <button class="btn btn-success" type="submit" >Submit</button>&nbsp;&nbsp;&nbsp;
+                     <button class="btn btn-success" type="submit">Submit</button>&nbsp;&nbsp;&nbsp;
  
                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
    
