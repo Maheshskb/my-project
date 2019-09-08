@@ -1,0 +1,41 @@
+
+<div>
+  <img src="/assets/img/users.png" id="icon" alt="User Icon" />
+</div>
+<form #SalesMangerHOUpForm="ngForm" (ngSubmit)="SalesMangerHOUpForm.valid && onSalesMangerHOSubmit(SalesMangerHOUpForm)">
+  <input type="text" placeholder="Full Name" #FullName="ngModel" [(ngModel)]="_RegisterSalesManagerHoService.selectedSalesManagerHOLogin.FullName" name="FullName"
+  required  [ngClass]="{'invalid-textbox' :SalesMangerHOUpForm.submitted && !FullName.valid }">
+ <!-- Validation Div -->
+ <div *ngIf="SalesMangerHOUpForm.submitted && !FullName.valid">
+  <label class="validation-message">This field is required.</label>
+</div>
+
+  <input type="text" placeholder="Email"  #Email="ngModel" [(ngModel)]="_RegisterSalesManagerHoService.selectedSalesManagerHOLogin.Email" name="Email"
+  required  [ngClass]="{'invalid-textbox' :SalesMangerHOUpForm.submitted && !Email.valid }">
+  
+   <!-- Validation Div -->
+   <div *ngIf="SalesMangerHOUpForm.submitted && !Email.valid">
+    <label class="validation-message">This field is required.</label>
+    <label *ngIf="Email.errors.pattern" class="validation-message">Invalid email address.</label>
+  </div>
+
+  <input type="password" placeholder="Password" #Password="ngModel" [(ngModel)]="_RegisterSalesManagerHoService.selectedSalesManagerHOLogin.Password" name="Password"
+  required  [ngClass]="{'invalid-textbox' :SalesMangerHOUpForm.submitted && !Password.valid }">
+  
+   <!-- Validation Div -->
+   <div *ngIf="SalesMangerHOUpForm.submitted && !Password.valid">
+    <label class="validation-message">This field is required.</label>
+  </div>
+  
+  <input type="submit" value="Sign Up">
+</form>
+
+<!-- Success message -->
+<div class="success" *ngIf="showSucessMessage">
+  Saved successfully
+</div>
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>

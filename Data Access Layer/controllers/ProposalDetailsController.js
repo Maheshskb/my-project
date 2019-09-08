@@ -5,7 +5,31 @@ var {ProposalDetails} = require('../models/ProposalModels/ProposalDetails.model'
 
 // => localhost:3000/TransactionDataScreen/
 
+// router.get('/Recent', (req, res) => {
+
+//     var proposalItem=null;
+//     ProposalDetails.find().then(function(proposals){
+      
+//         if(!proposals){return res.sendStatus(401);}
+//         var maxValue=0;
+//         proposals.forEach(element => {
+          
+//             var proposalId1= parseInt(element.ProposalId);
+//            if(element.ProposalId!=null)
+//            {
+//             if(maxValue< proposalId1)
+//             {
+//                 proposalItem= element;
+//             }    
+//         }  
+//       });
+//     });
+//       return proposalItem;
+// });
+
 router.get('/', (req, res) => {
+
+
 
     ProposalDetails.find((err, docs) => {
 

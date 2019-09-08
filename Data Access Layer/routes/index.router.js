@@ -10,6 +10,8 @@ const ctrDealerSalesEngg = require('../controllers/DSE.controller');
 //Register Pennar Sales Engineer
 const ctrRegisterPennarSalesEngg = require('../controllers/PSEregisterController');
 
+//Login Sales Manger HO
+const ctrRegisterSalesManagerHo = require('../controllers/SalesManagerHOLoginController');
 
 const jwtHelper = require('../config/jwtHelper');
 const DSEjwtHelper = require('../config/DSEjwtHelper');
@@ -28,6 +30,8 @@ router.post('/RegisterDealerSalesEngg', ctrDealerSalesEngg.RegisterDealerSalesEn
 router.post('/authenticateDealerSalesEngg', ctrDealerSalesEngg.authenticate);//
 router.get('/DealerSalesEnggDashboard',DSEjwtHelper.verifyJwtToken, ctrDealerSalesEngg.DealerSalesEnggDashboard);
 
+//Sales Manager Ho
+//  router.post('/RegisterSalesManagerHo', ctrRegisterSalesManagerHo.RegisterSalesManagerHo);
 
 //Pennar Sales Engineer Routes
 //router.post('/RegisterPennarSalesEngineer', ctrRegisterPennarSalesEngg.RegisterPennarSalesEngineer);

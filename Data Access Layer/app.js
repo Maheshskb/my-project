@@ -11,12 +11,14 @@ var priceDetailsController = require('./controllers/PriceDetailsController');
 var biodisperantProductController = require('./controllers/BiodisperantProductController');
 var biocideProductController = require('./controllers/BiocideProductController');
 var copperCorrosionProductController = require('./controllers/CopperCorrosionProductController');
+
 //Customer Details Controller (Dealer Sales Engg)
 var customerDetailsController = require('./controllers/customerDetailsController');
 //Register Dealer Sales Enginee Controller
 var registerDealerSalesEnggController = require('./controllers/DSEregisterController');
 var registerPennarSalesEnggController = require('./controllers/PSEregisterController');
 var registerDealerController = require('./controllers/DealerRegisterController');
+
 //Pennar Sales Engineer Controller
 var transactinDataController = require('./controllers/TransactionScreenController');
 var proposalDataController =  require('./controllers/ProposalDetailsController');
@@ -24,6 +26,9 @@ var proposalDataController =  require('./controllers/ProposalDetailsController')
 //Dealer Controller 
 var dealerCustomerDetailsController = require('./controllers/DealersCustomerDetailController');
 var dealerSalesEnggController = require('./controllers/DealerSalesEnggController');
+
+//Sales Engineer Congtrioller
+var salesManagerHoLoginController = require('./controllers/SalesManagerHOLoginController');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -71,12 +76,16 @@ app.use('/RegisterPennarSalesEngineer', registerPennarSalesEnggController);
 app.use('/TransactionDataScreen', transactinDataController );
 app.use('/ProposalDetails', proposalDataController );
 
+
 //Dealer
 app.use('/RegisterDealer', registerDealerController);
 //add customer Details of Dealer 
 app.use('/DealersCustomerDetails', dealerCustomerDetailsController);
 //add new dealers sales Engg
 app.use('/AddDealersSalesEngg', dealerSalesEnggController);
+
+//Sales Manager Ho
+app.use('/RegisterSalesManagerHo', salesManagerHoLoginController);
 
 // start server
 app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));

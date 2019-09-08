@@ -2,12 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { observable} from 'rxjs';
 
-// import 'rxjs/add/operator/map';
-
-// import 'rxjs/add/operator/toPromise';
-
-
-
 // import { ProductDetails } from './product-details.model';
 import { ProductDetails } from '../../../../Data Access Layer/models/ProductDetails.model';
 import { BiodisperantProduct } from '../../../../Data Access Layer/models/BiodisperantProduct.model';
@@ -19,9 +13,6 @@ export class ProductDetailsService {
   selectedProductDetails: ProductDetails;
   productDetails: ProductDetails[];
 
-  //Biodisperant Product
-  selectedBiodisperantProduct: BiodisperantProduct;
-  biodisperantProduct: BiodisperantProduct[];
 
   readonly baseURL = 'http://localhost:3000/productDetails';
   readonly BioDisperantBaseURL = "http://localhost:3000/BiodisperantProduct";
@@ -48,23 +39,23 @@ export class ProductDetailsService {
   }
 
 
-  //Biodisperant Product
-  postBiodisperantProduct(biodisperantProduct:BiodisperantProduct)
-  {
- return this.http.post(this.baseURL, biodisperantProduct );
-  }
+//   //Biodisperant Product
+//   postBiodisperantProduct(biodisperantProduct:BiodisperantProduct)
+//   {
+//  return this.http.post(this.BioDisperantBaseURL, biodisperantProduct );
+//   }
   getAllBioDesperantProducts()
   {
     return this.http.get(this.BioDisperantBaseURL);
   }
-  putBioDesperantProduct(biodisperantProduct:BiodisperantProduct)
-  {
-    return this.http.put(this.BioDisperantBaseURL + `/${biodisperantProduct._id}`,biodisperantProduct);
-  }
-  deleteBioDesperantProduct(_id:string)
-  {
-     return this.http.delete(this.BioDisperantBaseURL + `/${_id}`);
-  }
+//   putBioDesperantProduct(biodisperantProduct:BiodisperantProduct)
+//   {
+//     return this.http.put(this.BioDisperantBaseURL + `/${biodisperantProduct._id}`,biodisperantProduct);
+//   }
+//   deleteBioDesperantProduct(_id:string)
+//   {
+//      return this.http.delete(this.BioDisperantBaseURL + `/${_id}`);
+//   }
 
 
   //Need to Look at logic
@@ -75,10 +66,10 @@ export class ProductDetailsService {
   //Need to Implement
  
 
-  getAllBiocideProducts()
-  {
-    return this.http.get(this.BiocideSelectionBaseURL);
-  }
+  // getAllBiocideProducts()
+  // {
+  //   return this.http.get(this.BiocideSelectionBaseURL);
+  // }
   //Function for Fetch all products from mongodb
   
 }

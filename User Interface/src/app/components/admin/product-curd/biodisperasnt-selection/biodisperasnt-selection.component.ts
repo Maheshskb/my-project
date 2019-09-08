@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductDetailsService} from '../../../../Business Services/product-details.service';
+import { BiodisperantProductService } from '../../../../Business Services/biodisperant-product.service';
+// import { ProductDetailsService} from '../../../../Business Services/product-details.service';
 import { BiodisperantProduct} from '../../../../../../../Data Access Layer/models/BiodisperantProduct.model';
 import { ToastrService } from 'ngx-toastr';
 
@@ -9,11 +10,11 @@ import { ToastrService } from 'ngx-toastr';
   selector: 'app-biodisperasnt-selection',
   templateUrl: './biodisperasnt-selection.component.html',
   styleUrls: ['./biodisperasnt-selection.component.css'],
-  providers: [ProductDetailsService]
+  providers: [BiodisperantProductService]
 })
 export class BiodisperasntSelectionComponent implements OnInit {
 
-  constructor( private _productDetailsService : ProductDetailsService, private _toastr: ToastrService, private router : Router ) { }
+  constructor( private _biodisperantProductService : BiodisperantProductService, private _toastr: ToastrService, private router : Router ) { }
 
   ngOnInit() {
     this.resetForm();
@@ -23,7 +24,7 @@ export class BiodisperasntSelectionComponent implements OnInit {
   {
     if(form)
     form.reset();
-    this._productDetailsService.selectedBiodisperantProduct = {
+    this._biodisperantProductService.selectedBiodisperantProduct = {
       _id: " ",
     CreatedDate:null,
     ModifiedDate:null,
@@ -42,7 +43,7 @@ export class BiodisperasntSelectionComponent implements OnInit {
   {
     if(form.value._id == " ")
     {
-    this._productDetailsService.postBiodisperantProduct(form.value).subscribe((_res)=>
+    this._biodisperantProductService.postBiodisperantProduct(form.value).subscribe((_res)=>
   {
     // this._productDetailsService.productDetails = res as ProductDetails[];
       this.resetForm(form);
@@ -51,7 +52,7 @@ export class BiodisperasntSelectionComponent implements OnInit {
     });
   }
   else{
-    this._productDetailsService.putBioDesperantProduct(form.value).subscribe((_res)=>
+    this._biodisperantProductService.putBioDesperantProduct(form.value).subscribe((_res)=>
     {
       // this._productDetailsService.productDetails = res as ProductDetails[];
       
@@ -64,22 +65,22 @@ export class BiodisperasntSelectionComponent implements OnInit {
 
   refreshProductList()
   {
-    this._productDetailsService.getAllProducts().subscribe((res)=>
+    this._biodisperantProductService.getAllBioDesperantProducts().subscribe((res)=>
     {
-      this._productDetailsService.biodisperantProduct = res as BiodisperantProduct[];
+      this._biodisperantProductService.biodisperantProduct = res as BiodisperantProduct[];
     });
   }
   onEdit(biodisperantProduct : BiodisperantProduct)
   {
     
-  this._productDetailsService.selectedBiodisperantProduct = biodisperantProduct;
+  this._biodisperantProductService.selectedBiodisperantProduct = biodisperantProduct;
   }
 
   onDelete(_id:string, form:NgForm)
   {
     if(confirm('Are you sure to delete this record ?')==true)
     {
-      this._productDetailsService.deleteBioDesperantProduct(_id).subscribe((_res)=>
+      this._biodisperantProductService.deleteBioDesperantProduct(_id).subscribe((_res)=>
       {
         this.resetForm(form);
         this.showDeleteToaster();

@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TransactionScreenService } from '../../../../Business Services/transaction-screen.service';
 import { GenerateProposalService } from '../../../../Business Services/generate-proposal.service';
 import { CustomerDetails } from '../../../../../../../Data Access Layer/models/CustomerDetails.model';
+import { Console } from '@angular/core/src/console';
 
 @Component({
   selector: 'app-customer-data-entry-screen',
@@ -15,7 +16,7 @@ import { CustomerDetails } from '../../../../../../../Data Access Layer/models/C
 export class CustomerDataEntryScreenComponent implements OnInit {
   display='none'; 
   buttonType='Next';
-   HEROES = this._GenerateProposal.GetRecommendedProducts1();
+  HEROES = this._GenerateProposal.GetRecommendedProducts1();
   
 //    [
 //     {Function: "Bidisperent", Product:"PT3475", Dosage :120, Method: "Continously", Basis:"BW", value:"0.8"},
@@ -347,23 +348,12 @@ export class CustomerDataEntryScreenComponent implements OnInit {
     }
  }
 
- GetRecommendedProducts()
+ GetRecommendedProducts( form : NgForm)
  {
-   this._GenerateProposal.HEROES
+  this._toastr.show("This is Test ");
+  alert(form);
+   this._GenerateProposal.GetRecommendedProducts(form);
  }
-ShowForm1(){document.getElementById('Form1').style.display = "block";}
-
-ShowForm2(){  document.getElementById('Form2').style.display = "block";}
-HideForm2() {document.getElementById('Form2').style.display = "none";}
-
-ShowForm3() {document.getElementById('Form3').style.display = "block";}
-HideForm3(){ document.getElementById('Form3').style.display = "none"; }
-
-ShowForm4(){ document.getElementById('Form4').style.display = "block";}
-HideForm4(){ document.getElementById('Form4').style.display = "none"; }
-
-ShowForm5(){ document.getElementById('Form5').style.display = "block"; }
-HideForm5(){ document.getElementById('Form5').style.display = "none";}
 
   // code to toast notification
   showDeleteToaster(){

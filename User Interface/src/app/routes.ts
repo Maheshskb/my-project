@@ -26,6 +26,9 @@ import { CustomerDetailsComponent } from './components/DealerSalesEngg Component
 
 
 //Sales Manager Ho//
+import { SalesManagerHoLoginComponent } from './components/SalesManagerHo Component/sales-manager-ho-login/sales-manager-ho-login.component';
+import { SalesManagerHoSignInComponent } from './components/SalesManagerHo Component/sales-manager-ho-login/sales-manager-ho-sign-in/sales-manager-ho-sign-in.component';
+import { SalesManagerHoSignUpComponent } from './components/SalesManagerHo Component/sales-manager-ho-login/sales-manager-ho-sign-up/sales-manager-ho-sign-up.component';
 import { SalesManagerHOComponent } from './components/SalesManagerHo Component/sales-manager-ho/sales-manager-ho.component';
 import { ApprovalForNewDealerComponent } from './components/SalesManagerHo Component/sales-manager-ho/approval-for-new-dealer/approval-for-new-dealer.component';
 import {ApprovalForPennarSalesEngineerComponent } from './components/SalesManagerHo Component/sales-manager-ho/approval-for-pennar-sales-engineer/approval-for-pennar-sales-engineer.component';
@@ -95,7 +98,14 @@ export const appRoutes: Routes = [
         path: '', redirectTo: '/home' , pathMatch: 'full'
     },
     // Sales manager ho //
-
+    {
+        path: 'Sales-Manager-Ho-Sign-Up', component: SalesManagerHoLoginComponent,
+        children: [{ path: '', component:  SalesManagerHoSignUpComponent}]
+    },
+    {
+        path: 'Sales-Manager-Ho-Sign-In', component: SalesManagerHoLoginComponent,
+        children: [{ path: '', component: SalesManagerHoSignInComponent }]
+    },
     {
         path: 'approval-for-new-dealer' , component: ApprovalForNewDealerComponent, canActivate: [AuthGuard],
     },

@@ -92,6 +92,9 @@ import { CorrosionAndScaleInhibitorComponent } from './components/admin/product-
 import { BiodisperasntSelectionComponent } from './components/admin/product-curd/biodisperasnt-selection/biodisperasnt-selection.component';
 import { BiocideSelectionComponent } from './components/admin/product-curd/biocide-selection/biocide-selection.component';
 import { CopperCorrosionControlComponent } from './components/admin/product-curd/copper-corrosion-control/copper-corrosion-control.component';
+import { SalesManagerHoLoginComponent } from './components/SalesManagerHo Component/sales-manager-ho-login/sales-manager-ho-login.component';
+import { SalesManagerHoSignInComponent } from './components/SalesManagerHo Component/sales-manager-ho-login/sales-manager-ho-sign-in/sales-manager-ho-sign-in.component';
+import { SalesManagerHoSignUpComponent } from './components/SalesManagerHo Component/sales-manager-ho-login/sales-manager-ho-sign-up/sales-manager-ho-sign-up.component';
 
 
 
@@ -153,7 +156,10 @@ import { CopperCorrosionControlComponent } from './components/admin/product-curd
     CorrosionAndScaleInhibitorComponent,
     BiodisperasntSelectionComponent,
     BiocideSelectionComponent,
-    CopperCorrosionControlComponent
+    CopperCorrosionControlComponent,
+    SalesManagerHoLoginComponent,
+    SalesManagerHoSignInComponent,
+    SalesManagerHoSignUpComponent
 
   ],
   imports: [

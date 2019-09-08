@@ -29,15 +29,15 @@
     
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <form>
+                                <form #CopperCorrosionProductForm="ngForm" (ngSubmit)="onSubmit(CopperCorrosionProductForm)">
     
-                                    <input type="hidden">
+                                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="_CopperCorrosionProductService.selectedCopperCorrosionProduct._id">
     
                                     <div class="row">
     
                                         <div class="input-field col s12">
                                             <label>Product Name :</label>
-                                            <input type="text">
+                                            <input type="text" name="ProductName" #_id="ngModel" [(ngModel)]="_CopperCorrosionProductService.selectedCopperCorrosionProduct.ProductName">
                                         </div>
     
                                     </div>
@@ -46,7 +46,7 @@
     
                                         <div class="input-field col s12">
                                             <label>Dosage&nbsp;&nbsp; :</label>
-                                            <input type="text">
+                                            <input type="text" name="Dosage" #_id="ngModel" [(ngModel)]="_CopperCorrosionProductService.selectedCopperCorrosionProduct.Dosage">
                                         </div>
     
                                     </div>
@@ -56,9 +56,9 @@
     
                                         <div class="input-field col s12">
     
-                                            <button class="btn btn-primary right resetbtn btnGroup" type="button">Reset</button>&nbsp;&nbsp;&nbsp;
+                                            <button class="btn btn-primary right resetbtn btnGroup" type="button" (click)="resetForm(CopperCorrosionProductForm)">Reset</button>&nbsp;&nbsp;&nbsp;
     
-                                            <button class="btn btn-success" type="submit">Submit</button>&nbsp;&nbsp;&nbsp;
+                                            <button class="btn btn-success" type="submit" [disabled]="!CopperCorrosionProductForm.valid" (click)="pageRefresh();">Submit</button>&nbsp;&nbsp;&nbsp;
     
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
     
@@ -82,31 +82,25 @@
                     <!-- class="mytable" -->
                     <thead>
                         <tr>
-                            <th>Turbidity</th>
-                            <th>Maint Score</th>
                             <th>Product Name</th>
                             <th>Dosage</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr *ngFor="let products of _CopperCorrosionProductService. copperCorrosionProduct">
     
-                            <td></td>
+                            <td>{{products.ProductName}}</td>
     
-                            <td></td>
-    
-                            <td></td>
-    
-                            <td></td>
+                            <td>{{products.Dosage}}</td>
     
                             <td>
     
-                                <button type="button" class="btn btn-primary btn-sm mybtn" data-toggle="modal" data-target="#myModal">
+                                <button type="button" class="btn btn-primary btn-sm mybtn" data-toggle="modal" data-target="#myModal" (click)="onEdit(products)">
                                     <i class="fa fa-edit"></i>&nbsp; Edit
                                 </button>&nbsp;&nbsp;&nbsp;&nbsp;
     
-                                <button type="button" class="btn btn-danger btn-sm mybtn"><i class="fa fa-trash-o"></i>&nbsp;Delete</button>
+                                <button type="button" class="btn btn-danger btn-sm mybtn" (click)="onDelete(products._id,CopperCorrosionProductForm)"><i class="fa fa-trash-o"></i>&nbsp;Delete</button>
                             </td>
     
                         </tr>

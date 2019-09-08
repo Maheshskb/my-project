@@ -8,15 +8,16 @@ import { CopperCorrosionProduct } from '../../../../Data Access Layer/models/Cop
 import { ProductDetailsService} from '../Business Services/product-details.service'
 import { map } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class GenerateProposalService {
   selectedProposalDetails: ProposalDetails;
   currentProductDetails:ProductDetails;
-  PD: ProposalDetails[];
+  PD: ProposalDetails[]=[{}];
   RecommendationArray: ProposalDetails[];
-
+  
   //Hard Coded value binding to grid
  
   // messages = [{function : 'A'}, {product :'B'}, {Doasage :120}];
@@ -25,9 +26,18 @@ export class GenerateProposalService {
     
   ];
    GetRecommendedProducts1() { 
-     this.HEROES.push({Function: "Bidisperent", Product:"PT3475", Dosage :120, Method: "Continously", Basis:"BW", value:"0.8"})
+
+
+     this.HEROES.push({Function: "Bidisperent_new", Product:"PT3475", Dosage :120, Method: "Continously", Basis:"BW", value:"0.8"})
      return this.HEROES;
    }
+   GetRecommendedProducts12() { 
+
+
+    this.HEROES.push({Function: "Bidisperent_new_FromRecommendation", Product:"PT3475", Dosage :120, Method: "Continously", Basis:"BW", value:"0.8"})
+    return this.HEROES;
+  }
+
 
 
   readonly baseURL = 'http://localhost:3000/ProposalDetails';
@@ -83,10 +93,65 @@ export class GenerateProposalService {
     TSdata.StepNumber5="5";
     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
   }
+  //https://dzone.com/articles/how-to-parse-json-data-from-a-rest-api-using-simpl
 
- 
+ GetProposalDetail(TSdata : ProposalDetails)
+  {
+    // return this.http.post(this.baseURL, TSdata);
+    alert("proposalDetails Get Proposaldetails  Called");
+    var proposalDetails1 =  this.http.get(environment.apiBaseUrl+'/ProposalDetails',TSdata);
+    var maxValue=0;
+    var proposalItem=null;
+    var vvv1 =   ((JSON.parse(JSON.stringify(proposalDetails1))));
+vvv1.results.array.forEach(element => {
+  alert("vv1 All RetrievedCount "+String(element));
+});
+
+     this.PD = ((JSON.parse(JSON.stringify(proposalDetails1))));
+    alert("itemListResponse All RetrievedCount "+String(this.PD.length));
+
+    alert("All Retrieved "+String(JSON.stringify(proposalDetails1)));
+    this.PD.forEach(element => {
+      alert("All Retrieved "+String(JSON.stringify(element)));
+    });
+    
+    this.PD.forEach(function(value)
+    {
+      alert("retrieved forEach "+JSON.stringify(value));
+      var v1= JSON.stringify(value);
+      
+      alert("retrieved forEach v1 "+v1);
+      let currentItem:ProposalDetails=JSON.parse(value);
+     
+      var selectedProposalDetails=JSON.parse(v1);
+    
+      alert("Get Proposal Called in collection foreach-currentItem"+JSON.stringify(currentItem));
+      alert("Get Proposal Called in collection foreach-mystring"+value.ProposalId);
+    
+console.log(value.myString);
+      var proposalId1= parseInt(value.ProposalId);
+      if(currentItem.ProposalId!=null)
+      {
+       if(maxValue< proposalId1)
+       {
+           proposalItem= currentItem;
+           alert("Get Proposal Called in collection foreach"+ proposalId1);
+       }    
+    }});
+    alert("Get Proposal Called in IterationCompleted");
+    return proposalItem;
+  }
   GetRecommendedProducts(TSdata : ProposalDetails)
   {
+    alert("Generae Proposal Service GetRecommendedProducts  called");
+    var proposalDetails= this.GetProposalDetail(TSdata);
+    alert("Generae Proposal Service proposalDetails Retrieved");
+    var currentProposal  = proposalDetails as ProposalDetails;
+    alert("Proposal Id"+ currentProposal.ProposalId);
+    alert("Proposal : "+proposalDetails);
+ //  var corrosionProducts= this.GetCorrosionScaleSelection(proposalDetails)
+    return this.GetRecommendedProducts12();
+    
     //Create array
     //Add items
     //return array
@@ -144,18 +209,19 @@ return Products;
   }
   GetBioDesperateSelection(TSdata:ProposalDetails)  
   {
-    var COCTaken=  Number(TSdata.CirculatingWaterTotalHardness)/  Number(TSdata.MakeUpWaterTotalHardness);
-    var BD = Number(TSdata.Evaporation)/(COCTaken-1);
+    var COCTaken=  Number(TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness)/  Number(TSdata.MakeUpWaterDetail.MakeUpWaterTotalHardness);
+    var Evaporation = Number(TSdata.CoolingTowerDetail.DeltaT)*Number(TSdata.CoolingTowerDetail.WaterCirculationRate)/(675);
+    var BD = Number(Evaporation)/(COCTaken-1);
     var Products = new Map();
     var turbidity = TSdata.CirculatingWaterDetail.CirculatingWaterTurbidity;
-    var TotalHardness = TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness;
+    // var TotalHardness = TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness;
     var waterTurbidity = Number(turbidity);
 
-    var IsTowerMaintenanceProper = (TSdata.IsTowerMaintenanceProper=="" || TSdata.IsTowerMaintenanceProper=="No")?1 :0;
-    var IsAlgaeSeenOnTower=(TSdata.IsAlgaeSeenOnTower==""||TSdata.IsAlgaeSeenOnTower=="Yes")?1:0 ;
-    var IsSlimeInTower=(TSdata.IsSlimeInTower==""|| TSdata.IsSlimeInTower=="Yes")?1:0;
-    var IsSumpWaterTurbidity=(TSdata.IsSumpWaterTurbidity=="" || TSdata.IsSumpWaterTurbidity=="Yes")?1:0;
-    var IsThereAnyContamination=(TSdata.IsThereAnyContamination=="" ||TSdata.IsThereAnyContamination=="Yes")?1:0;
+    var IsTowerMaintenanceProper = (TSdata.CoolingTowerOperatingCondition.IsTowerMaintenanceProper=="" || TSdata.CoolingTowerOperatingCondition.IsTowerMaintenanceProper=="No")?1 :0;
+    var IsAlgaeSeenOnTower=(TSdata.CoolingTowerOperatingCondition.IsAlgaeSeenOnTower==""||TSdata.CoolingTowerOperatingCondition.IsAlgaeSeenOnTower=="Yes")?1:0 ;
+    var IsSlimeInTower=(TSdata.CoolingTowerOperatingCondition.IsSlimeInTower==""|| TSdata.CoolingTowerOperatingCondition.IsSlimeInTower=="Yes")?1:0;
+    var IsSumpWaterTurbidity=(TSdata.CoolingTowerOperatingCondition.IsSumpWaterTurbidity=="" || TSdata.CoolingTowerOperatingCondition.IsSumpWaterTurbidity=="Yes")?1:0;
+    var IsThereAnyContamination=(TSdata.CoolingTowerOperatingCondition.IsThereAnyContamination=="" ||TSdata.CoolingTowerOperatingCondition.IsThereAnyContamination=="Yes")?1:0;
     var maintScore = IsTowerMaintenanceProper+IsAlgaeSeenOnTower+IsSlimeInTower+IsSumpWaterTurbidity+IsThereAnyContamination;
   
 
@@ -181,9 +247,25 @@ else if((currentTurbidity >=30 || currentMaintScore>=3 ) && (waterTurbidity >=30
   });
   return Products;
 }
+
   GetCorrosionScaleSelection(TSdata:ProposalDetails)  
   {
-    var COCTaken=  Number(TSdata.CirculatingWaterTotalHardness)/  Number(TSdata.MakeUpWaterTotalHardness);
+    var RecommendationArray = [
+      {Function:"XXXXX", Product:"PT3475", Dosage :Number(TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness),
+       Method: "Continously11", Basis:"BW", value:"0.8"}];
+      var sFunction="";
+      var sProduct="";
+      var sDosage=0;
+      var sMethod="";
+      var sBasis="";
+      var sValue="";
+      var test= false;
+    
+     
+      // RecommendationArray.push({Function:TSdata.CirculatingWaterTotalHardness,Product:sProduct,Dosage:sDosage,Basis:sBasis,Method:sMethod,value:sValue});
+ if(test)
+ {
+    var COCTaken=  Number(TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness)/  Number(TSdata.MakeUpWaterTotalHardness);
     var BD = Number(TSdata.Evaporation)/(COCTaken-1);
     var HF = 0.693 * (Number(TSdata.CoolingTowerSumpVolume));
     var halfLife = HF/BD;
@@ -193,10 +275,15 @@ else if((currentTurbidity >=30 || currentMaintScore>=3 ) && (waterTurbidity >=30
     var Ph = Number(WaterPh);
     var Th = Number(TotalHardness);
     
+sFunction="CorrosionScaleSelection";
+sBasis="BlowDown";
+sMethod="Contineous";//Suggested by Nipun
 
     var productCollection=this.ProductDetailsService.getAllProducts();
-
+   
+   
   productCollection.forEach(element => {
+    
     var item= (element as ProductDetails);
     var minph = item.MinpHRange;
     var maxph = item.MaxpHRange;
@@ -207,26 +294,32 @@ else if((currentTurbidity >=30 || currentMaintScore>=3 ) && (waterTurbidity >=30
     if((minph>=7 && maxph<=7.4) && (Ph>=7 && Ph<=7.4))
     {
       //frequency will be NA as not defined in EXCEL
-      var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage,ProductType:"CorrosionScaleSelection" };
-      Products.set(item.ProductName,obj);
+    //  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage,ProductType:"CorrosionScaleSelection" };
+      sProduct=item.ProductName;
+      sDosage=item.Dosage;
+      sValue=String((item.Dosage * BD)/1000);
+    
     }
     if((minph>=7.4 && maxph<=7.8) && (Ph>=7.4 && Ph<=7.8))
     {
-      //frequency will be NA as not defined in EXCEL
-      var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage , ProductType:"CorrosionScaleSelection"};
-      Products.set(item.ProductName,obj);
+      sProduct=item.ProductName;
+      sDosage=item.Dosage;
+      sValue=String((item.Dosage * BD)/1000);
+     
     }
     if(minph>=7.8 && maxph<=8.2 && (Ph>=7.8 && Ph<=8.2))
     {
-      //frequency will be NA as not defined in EXCEL
-      var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-      Products.set(item.ProductName,obj);
+      sProduct=item.ProductName;
+      sDosage=item.Dosage;
+      sValue=String((item.Dosage * BD)/1000);
+    
     }
     if((minph>=8.2 && maxph<=8.5) && (Ph>=8.2 && Ph<=8.5))
     {
-      //frequency will be NA as not defined in EXCEL
-      var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-      Products.set(item.ProductName,obj);
+      sProduct=item.ProductName;
+      sDosage=item.Dosage;
+      sValue=String((item.Dosage * BD)/1000);
+     
     }
   }
   else
@@ -234,27 +327,31 @@ else if((currentTurbidity >=30 || currentMaintScore>=3 ) && (waterTurbidity >=30
   {
   if((minph>=7 && maxph<=7.4) && (Ph>=7 && Ph<=7.4))
   {
-    //frequency will be NA as not defined in EXCEL
-    var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-    Products.set(item.ProductName,obj);
+    sProduct=item.ProductName;
+    sDosage=item.Dosage;
+    sValue=String((item.Dosage * BD)/1000);
+    sMethod="Contineous";//Suggested by Nipun
   }
   if((minph>=7.4 && maxph<=7.8) && (Ph>=7.4 && Ph<=7.8))
   {
-    //frequency will be NA as not defined in EXCEL
-    var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-    Products.set(item.ProductName,obj);
+    sProduct=item.ProductName;
+    sDosage=item.Dosage;
+    sValue=String((item.Dosage * BD)/1000);
+    sMethod="Continous";//Suggested by Nipun
   }
   if((minph>=7.8 && maxph<=8.2) && (Ph>=7.8 && Ph<=8.2))
   {
-    //frequency will be NA as not defined in EXCEL
-    var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-    Products.set(item.ProductName,obj);
+    sProduct=item.ProductName;
+    sDosage=item.Dosage;
+    sValue=String((item.Dosage * BD)/1000);
+    sMethod="Continous";//Suggested by Nipun
   }
   if((minph>=8.2 && maxph<=8.5) && (Ph>=8.2 && Ph<=8.5))
   {
-    //frequency will be NA as not defined in EXCEL
-    var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-    Products.set(item.ProductName,obj);
+    sProduct=item.ProductName;
+    sDosage=item.Dosage;
+    sValue=String((item.Dosage * BD)/1000);
+    sMethod="Contineous";//Suggested by Nipun
   }
 }
 else
@@ -263,26 +360,34 @@ if((minth>=100 && maxth<=300)  && (Th>=100 && Th<=300))
 if((minph>=7 && maxph<=7.4) && (Ph>=7 && Ph<=7.4))
 {
   //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
+  sMethod="Contineous";//Suggested by Nipun
 }
 if((minph>=7.4 && maxph<=7.8) && (Ph>=7.4 && Ph<=7.8))
 {
   //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
+  sMethod="Contineous";//Suggested by Nipun
 }
 if((minph>=7.8 && maxph<=8.2) && (Ph>=7.8 && Ph<=8.2))
 {
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
   //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+ 
 }
 if((minph>=8.2 && maxph<=8.5) && (Ph>=8.2 && Ph<=8.5))
 {
-  //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage,ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
+  sMethod="Contineous";//Suggested by Nipun
+ 
 }
 }
 else
@@ -290,32 +395,46 @@ if((minth>=300 && maxth<=500)  && (Th>=300 && Th<=500))
 {
 if((minph>=7 && maxph<=7.4) && (Ph>=7 && Ph<=7.4))
 {
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
+  sMethod="Contineous";//Suggested by Nipun
   //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+ 
 }
 if((minph>=7.4 && maxph<=7.8) && (Ph>=7.4 && Ph<=7.8))
 {
-  //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
+  sMethod="Contineous";//Suggested by Nipun
+ 
 }
 if((minph>=7.8 && maxph<=8.2) && (Ph>=7.8 && Ph<=8.2))
 {
-  //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
+  sMethod="Contineous";//Suggested by Nipun
+  
 }
 if((minph>=8.2 && maxph<=8.5) && (Ph>=8.2 && Ph<=8.5))
 {
-  //frequency will be NA as not defined in EXCEL
-  var obj: {[k: string]: any} = {Frequency:"NA",Dosage:item.Dosage, ProductType:"CorrosionScaleSelection"};
-  Products.set(item.ProductName,obj);
+  sProduct=item.ProductName;
+  sDosage=item.Dosage;
+  sValue=String((item.Dosage * BD)/1000);
+  sMethod="Contineous";//Suggested by Nipun
 }
 
 }
-  });
-  }
+ 
+RecommendationArray.push({Function:sFunction,Product:sProduct,Dosage:sDosage,Basis:sBasis,Method:sMethod,value:sValue});
+});
+
+}
+
+  return RecommendationArray;
+}
 //   GetBiocideSelection(TSdata:ProposalDetails)
 //   {
     
@@ -427,4 +546,5 @@ if((minph>=8.2 && maxph<=8.5) && (Ph>=8.2 && Ph<=8.5))
 // });
 //   return Products;
 // }
-  }
+  
+}

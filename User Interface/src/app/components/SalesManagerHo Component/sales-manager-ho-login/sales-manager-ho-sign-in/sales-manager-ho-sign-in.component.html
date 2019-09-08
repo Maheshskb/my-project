@@ -1,0 +1,33 @@
+<div>
+  <img src="assets/img/single_user.png" id="icon" alt="User Icon" />
+</div>
+<form #SMsignInForm="ngForm" (ngSubmit)="OnLiginValidation()">
+  <input type="text" placeholder="Email" name="Email" [(ngModel)]="Email">
+  
+  <input type="password" placeholder="Password" name="Password" [(ngModel)] ="Password">
+  
+  <input type="submit" value="Sign In" (click)="OnLiginValidation();">
+</form>
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>
+
+<hr>
+
+<form (submit)="loginUser($event)">
+<div class="input">
+<label>Email</label>
+<input type="text">
+</div>
+
+<div class="input">
+  <label>Password</label>
+  <input type="password">
+  </div>
+
+  <div class="input">
+    <input type="submit" value="Login">
+    </div>
+</form>

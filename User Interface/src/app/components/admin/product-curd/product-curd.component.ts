@@ -29,9 +29,9 @@ export class ProductCURDComponent implements OnInit {
     this.resetForm();
     this.refreshProductList();
 
-  //   $(document).ready(function() {
-  //     $('#example').DataTable();
-  // } );
+    $(document).ready(function() {
+      $('#example').DataTable();
+  } );
 
   $(document).ready(function() {
     $('#dataTable').DataTable({
@@ -117,9 +117,8 @@ export class ProductCURDComponent implements OnInit {
     }
   }
 
-   // code to toast notification
    
-
+  // code to toast notification
 showAddToaster(){
   this._toastr.success("Record is added successfully!")
 }

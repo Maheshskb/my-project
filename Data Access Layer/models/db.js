@@ -14,6 +14,9 @@ require('./DSEUser.model');
 //Add model for Registration of pennar sales engg
 require('./PSEregister.model');
 
+//Add model for Registration of Sales Manager Ho
+require('./SalesManagerHOLogin.model');
+
 //Add DealerRegister Model
 require('./DealerRegister.model');
 
