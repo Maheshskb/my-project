@@ -6,7 +6,12 @@ import { ProductDetails } from '../../../../Data Access Layer/models/ProductDeta
 import { BiodisperantProduct } from '../../../../Data Access Layer/models/BiodisperantProduct.model';
 import { CopperCorrosionProduct } from '../../../../Data Access Layer/models/CopperCorrosionProduct.model';
 import { ProductDetailsService} from '../Business Services/product-details.service'
-import { map } from 'rxjs/operators';
+import 'rxjs/add/operator/map';
+import 'rxjs/operator/delay';
+import 'rxjs/operator/mergeMap';
+import 'rxjs/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
+import { delay } from 'q';
 
 
 @Injectable({
@@ -15,7 +20,7 @@ import { map } from 'rxjs/operators';
 export class GenerateProposalService {
   selectedProposalDetails: ProposalDetails;
   currentProductDetails:ProductDetails;
-  PD: ProposalDetails[]=[{}];
+  PD: ProposalDetails[]=[];
   RecommendationArray: ProposalDetails[];
   
   //Hard Coded value binding to grid
@@ -41,7 +46,7 @@ export class GenerateProposalService {
 
 
   readonly baseURL = 'http://localhost:3000/ProposalDetails';
-  constructor(private http:HttpClient,private ProductDetailsService:ProductDetailsService ) { }
+  constructor(private http:HttpClient,private ProductDetailsService:ProductDetailsService ) { } 
 
   // Post method for Tower Details
   PostTowerDetail(TSdata : ProposalDetails)
@@ -51,7 +56,7 @@ export class GenerateProposalService {
   }
 
   // Put method for Cooling Make Up Water Details
- PutMakeUpWaterDetail(TSdata : ProposalDetails)
+ PutMakeUpWaterDetail(TSdata : ProposalDetails) 
   {
     TSdata.StepNumber2="2";
     TSdata.StepNumber="2";
@@ -95,62 +100,86 @@ export class GenerateProposalService {
   }
   //https://dzone.com/articles/how-to-parse-json-data-from-a-rest-api-using-simpl
 
+  private extractData(res: Response) {
+    
+    return res;
+ }
+ 
+
+private handleError(error: any) {
+  // In a real world app, we might use a remote logging infrastructure
+  // We'd also dig deeper into the error to get a better message
+  let errMsg = (error.message) ? error.message :
+  error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+       console.error(errMsg); // log to console instead
+       return Observable.throw(errMsg);
+}
  GetProposalDetail(TSdata : ProposalDetails)
   {
-    // return this.http.post(this.baseURL, TSdata);
-    alert("proposalDetails Get Proposaldetails  Called");
-    var proposalDetails1 =  this.http.get(environment.apiBaseUrl+'/ProposalDetails',TSdata);
-    var maxValue=0;
-    var proposalItem=null;
-    var vvv1 =   ((JSON.parse(JSON.stringify(proposalDetails1))));
-vvv1.results.array.forEach(element => {
-  alert("vv1 All RetrievedCount "+String(element));
-});
-
-     this.PD = ((JSON.parse(JSON.stringify(proposalDetails1))));
-    alert("itemListResponse All RetrievedCount "+String(this.PD.length));
-
-    alert("All Retrieved "+String(JSON.stringify(proposalDetails1)));
-    this.PD.forEach(element => {
-      alert("All Retrieved "+String(JSON.stringify(element)));
-    });
+    var result ;
+  
+    var proposalDetails1 =  this.http.get(environment.apiBaseUrl+'/ProposalDetails')
     
-    this.PD.forEach(function(value)
-    {
-      alert("retrieved forEach "+JSON.stringify(value));
-      var v1= JSON.stringify(value);
-      
-      alert("retrieved forEach v1 "+v1);
-      let currentItem:ProposalDetails=JSON.parse(value);
+    .map(this.extractData).toPromise()
+    .then(s=>  this.PD.push(s)).catch(this.handleError);
+    delay(1000);
+     var maxValue=0;
+     var proposalItem=null;
+
      
-      var selectedProposalDetails=JSON.parse(v1);
+     this.PD.forEach(element => {
+            
+            element.forEach(element1 => {
+                var proposalId1= parseInt(element1.ProposalId);
+                if(element1.ProposalId!=null)
+                {
+                  if(maxValue < proposalId1)
+                  {
+                      proposalItem= element1;
+                    
+                  }    
+              }
+            });
+          });
+     
+   //  this.PD.forEach(function(value)
+  //  {
+    //  alert("retrieved forEach "+JSON.stringify(value));
+   //   var v1= JSON.stringify(value);
+      
+   //   alert("retrieved forEach v1 "+v1);
+      // let currentItem:ProposalDetails=JSON.parse(value);
+     
+    //  var selectedProposalDetails=JSON.parse(v1);
     
-      alert("Get Proposal Called in collection foreach-currentItem"+JSON.stringify(currentItem));
-      alert("Get Proposal Called in collection foreach-mystring"+value.ProposalId);
+     // alert("Get Proposal Called in collection foreach-currentItem"+JSON.stringify(currentItem));
+//       alert("Get Proposal Called in collection foreach-mystring"+value.ProposalId);
     
-console.log(value.myString);
-      var proposalId1= parseInt(value.ProposalId);
-      if(currentItem.ProposalId!=null)
-      {
-       if(maxValue< proposalId1)
-       {
-           proposalItem= currentItem;
-           alert("Get Proposal Called in collection foreach"+ proposalId1);
-       }    
-    }});
+// console.log(value.myString);
+//       var proposalId1= parseInt(value.ProposalId);
+//       if(currentItem.ProposalId!=null)
+//       {
+//        if(maxValue< proposalId1)
+//        {
+//            proposalItem= currentItem;
+//            alert("Get Proposal Called in collection foreach"+ proposalId1);
+//        }    
+//     }
+ // });
     alert("Get Proposal Called in IterationCompleted");
     return proposalItem;
   }
+
+
   GetRecommendedProducts(TSdata : ProposalDetails)
   {
-    alert("Generae Proposal Service GetRecommendedProducts  called");
+   
     var proposalDetails= this.GetProposalDetail(TSdata);
-    alert("Generae Proposal Service proposalDetails Retrieved");
+   
     var currentProposal  = proposalDetails as ProposalDetails;
-    alert("Proposal Id"+ currentProposal.ProposalId);
-    alert("Proposal : "+proposalDetails);
- //  var corrosionProducts= this.GetCorrosionScaleSelection(proposalDetails)
-    return this.GetRecommendedProducts12();
+    //alert("test");
+    var corrosionProducts= this.GetCorrosionScaleSelection(proposalDetails)
+    return corrosionProducts;
     
     //Create array
     //Add items
@@ -159,7 +188,7 @@ console.log(value.myString);
 
 
     //var biosideproducts = this.GetBiocideSelection(TSdata);
-//     var corrosionProducts= this.GetCorrosionScaleSelection(TSdata);
+  // var corrosionProducts= this.GetCorrosionScaleSelection(TSdata);
    //var copperProducts= this.GetCopperCorrosionSelection(TSdata);
 
 //     var biodesperantProducts= this.GetBioDesperateSelection(TSdata);
@@ -251,8 +280,8 @@ else if((currentTurbidity >=30 || currentMaintScore>=3 ) && (waterTurbidity >=30
   GetCorrosionScaleSelection(TSdata:ProposalDetails)  
   {
     var RecommendationArray = [
-      {Function:"XXXXX", Product:"PT3475", Dosage :Number(TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness),
-       Method: "Continously11", Basis:"BW", value:"0.8"}];
+      {Function:"XXXXX", Product:"PTTEST", Dosage :Number(TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness),
+       Method: "Continously11", Basis:"BW", value:"100"}];
       var sFunction="";
       var sProduct="";
       var sDosage=0;
@@ -263,11 +292,12 @@ else if((currentTurbidity >=30 || currentMaintScore>=3 ) && (waterTurbidity >=30
     
      
       // RecommendationArray.push({Function:TSdata.CirculatingWaterTotalHardness,Product:sProduct,Dosage:sDosage,Basis:sBasis,Method:sMethod,value:sValue});
- if(test)
+ if(true)
  {
-    var COCTaken=  Number(TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness)/  Number(TSdata.MakeUpWaterTotalHardness);
-    var BD = Number(TSdata.Evaporation)/(COCTaken-1);
-    var HF = 0.693 * (Number(TSdata.CoolingTowerSumpVolume));
+  var COCTaken=  Number(TSdata.CirculatingWaterDetail.CirculatingWaterTotalHardness)/  Number(TSdata.MakeUpWaterDetail.MakeUpWaterTotalHardness);
+  var Evaporation = Number(TSdata.CoolingTowerDetail.DeltaT)*Number(TSdata.CoolingTowerDetail.WaterCirculationRate)/(675);
+  var BD = Number(Evaporation)/(COCTaken-1);
+    var HF = 0.693 * (Number(TSdata.CoolingTowerDetail.CoolingTowerSumpVolume));
     var halfLife = HF/BD;
     var Products = new Map();
     var WaterPh = TSdata.CirculatingWaterDetail.CirculatingWaterPh;
@@ -279,12 +309,17 @@ sFunction="CorrosionScaleSelection";
 sBasis="BlowDown";
 sMethod="Contineous";//Suggested by Nipun
 
-    var productCollection=this.ProductDetailsService.getAllProducts();
+var DataCol:any[] =[];
+    var productCollection=this.ProductDetailsService.getAllProducts().map((response) => {
+      return response;
+    }).subscribe(
+      data => DataCol.push(data));
    
    
-  productCollection.forEach(element => {
-    
-    var item= (element as ProductDetails);
+      DataCol.forEach(element => {
+    var item1= (element as ProductDetails);
+    item1.forEach(item => {
+   
     var minph = item.MinpHRange;
     var maxph = item.MaxpHRange;
     var minth = item.MinTHRange;
@@ -430,10 +465,12 @@ if((minph>=8.2 && maxph<=8.5) && (Ph>=8.2 && Ph<=8.5))
  
 RecommendationArray.push({Function:sFunction,Product:sProduct,Dosage:sDosage,Basis:sBasis,Method:sMethod,value:sValue});
 });
-
+return RecommendationArray;
+  });
+  return RecommendationArray;
 }
 
-  return RecommendationArray;
+ 
 }
 //   GetBiocideSelection(TSdata:ProposalDetails)
 //   {
