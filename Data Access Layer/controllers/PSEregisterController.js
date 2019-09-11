@@ -21,6 +21,31 @@ const RegisterPennarSalesEnginner = mongoose.model('RegisterPennarSalesEnginner'
     
     });
     router.post('/', (req, res, next) => {
+//         console.log("PostCall")
+//         var ID=1;
+//         var NextId="1";
+//        RegisterPennarSalesEnginner.find().then(function(proposals){
+        
+//         if(!proposals){return res.sendStatus(401);}
+//       var maxValue=0;
+//         proposals.forEach(element => {
+           
+//             var Id1= parseInt(element.ID);
+           
+//             if(maxValue< Id1)
+//             {
+//                 maxValue = Id1;
+//             }          
+//       });
+//       ID= maxValue + 1;
+     
+//       if(ID!=null)
+//       {
+//         NextId=ID.toString();
+      
+//       }
+// });
+
     var registerPennarSalesEngineer = new RegisterPennarSalesEnginner();
     registerPennarSalesEngineer.FirstName = req.body.FirstName;
     registerPennarSalesEngineer.LastName = req.body.LastName;

@@ -4,6 +4,10 @@ const bcrypt = require('bcryptjs');
 // const jwt = require('jsonwebtoken');
 
 var registerPennarSalesEnggSchema = new mongoose.Schema({
+    ID:{type:String},
+    CreatedDate : { type : String },
+    ModifiedDate : { type : String },
+    IsActive : { type : String },
     FirstName: {
         type: String,
         required: 'Full name can\'t be empty'

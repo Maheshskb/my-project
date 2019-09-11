@@ -19,14 +19,14 @@ export class PseSignUpComponent implements OnInit {
 
   ngOnInit() {
   }
-  onPSESubmit(form: NgForm) {
+  onPSESubmit(form: NgForm) { debugger;
     this._RegisterPennarSalesEnginnerService.PostPennarSalesEngg(form.value).subscribe(
      res => {
         this.showSucessMessage = true;
        setTimeout(() => this.showSucessMessage = false, 4000);
        this.resetForm(form);
      },
-     err => {
+     err => { debugger;
        if (err.status === 422) {
           this.serverErrorMessages = err.error.join('<br/>');
         }

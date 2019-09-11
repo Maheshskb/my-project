@@ -14,6 +14,7 @@ import { Observable } from 'rxjs/Observable';
 import { delay } from 'q';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -114,20 +115,17 @@ private handleError(error: any) {
        console.error(errMsg); // log to console instead
        return Observable.throw(errMsg);
 }
- GetProposalDetail(TSdata : ProposalDetails)
+ async GetProposalDetail(TSdata : ProposalDetails)
   {
     var result ;
   
-    var proposalDetails1 =  this.http.get(environment.apiBaseUrl+'/ProposalDetails')
-    
-    .map(this.extractData).toPromise()
-    .then(s=>  this.PD.push(s)).catch(this.handleError);
-    delay(1000);
-     var maxValue=0;
-     var proposalItem=null;
-
-     
-     this.PD.forEach(element => {
+    var proposalItem=null;
+    var vresult = await  this.http.get(environment.apiBaseUrl+'/ProposalDetails');
+    vresult.map(this.extractData)
+    .toPromise().then(s=>  this.PD.push(s)).catch(this.handleError).then((t)=>
+    {
+      var maxValue=0; debugger;
+      this.PD.forEach(element => {
             
             element.forEach(element1 => {
                 var proposalId1= parseInt(element1.ProposalId);
@@ -135,12 +133,21 @@ private handleError(error: any) {
                 {
                   if(maxValue < proposalId1)
                   {
-                      proposalItem= element1;
-                    
+                      proposalItem= element1;                        
                   }    
               }
             });
           });
+          return proposalItem;
+    });
+    
+
+    //var proposalDetails1 =  this.http.get(environment.apiBaseUrl+'/ProposalDetails')
+    
+    //.map(this.extractData).toPromise()
+    //.then(s=>  this.PD.push(s)).catch(this.handleError);
+   // delay(1000);
+    
      
    //  this.PD.forEach(function(value)
   //  {
@@ -166,20 +173,24 @@ private handleError(error: any) {
 //        }    
 //     }
  // });
-    alert("Get Proposal Called in IterationCompleted");
-    return proposalItem;
+    //alert("Get Proposal Called in IterationCompleted");
+    //return proposalItem;
   }
 
 
-  GetRecommendedProducts(TSdata : ProposalDetails)
-  {
+  // ayanc GetRecommendedProducts(TSdata : ProposalDetails)
+  // {
    
-    var proposalDetails= this.GetProposalDetail(TSdata);
-   
-    var currentProposal  = proposalDetails as ProposalDetails;
-    //alert("test");
-    var corrosionProducts= this.GetCorrosionScaleSelection(proposalDetails)
-    return corrosionProducts;
+  //   var proposalDetails= await this.GetProposalDetail(TSdata);
+
+  // var currentProposal  = proposalDetails as ProposalDetails;
+  // //alert("test");
+  // var corrosionProducts= await this.GetCorrosionScaleSelection(proposalDetails)
+ 
+  // return corrosionProducts;
+ 
+
+    
     
     //Create array
     //Add items
@@ -209,7 +220,7 @@ private handleError(error: any) {
 //     TSdata.StepNumber="1";
 //     // return this.http.put(this.baseURL, TSdata);
 //     return this.http.put(environment.apiBaseUrl+'/ProposalDetails' ,TSdata);
-  }
+  // }
   GetCopperCorrosionSelection(TSdata:ProposalDetails)  
   {
     var Evaporation= Number(TSdata.DeltaT) *(TSdata.WaterCirculationRate) / Number(675)
